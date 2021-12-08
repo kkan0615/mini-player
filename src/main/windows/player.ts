@@ -2,18 +2,18 @@ import { BrowserWindow, screen } from 'electron'
 import path from 'path'
 import isDev from 'electron-is-dev'
 
-export let appWindow: BrowserWindow | undefined
+export let playerWindow: BrowserWindow | undefined
 
-export const createAppWindow = () => {
+export const createPlayerWindow = () => {
   const displayScreen = screen.getPrimaryDisplay()
   const dimensions = displayScreen.workAreaSize
 
-  appWindow = new BrowserWindow({
+  playerWindow = new BrowserWindow({
     width: parseInt((dimensions.width * 0.8).toString()),
     height: parseInt((dimensions.height * 0.8).toString()),
     autoHideMenuBar: true,
-    minWidth: 1024,
-    minHeight: 576,
+    minWidth: 400,
+    minHeight: 500,
     maximizable: true,
     resizable: true,
     webPreferences: {
@@ -23,19 +23,18 @@ export const createAppWindow = () => {
     }
   })
 
-  appWindow.loadURL(isDev ? 'http://localhost:3000' : `file://${path.join(__dirname, '../../dist/index.html')}`)
+  playerWindow.loadURL(isDev ? 'http://localhost:3000' : `file://${path.join(__dirname, '../../dist/index.html')}`)
+  if (isDev) {
+    playerWindow.webContents.openDevTools()
+  }
 
-  // appWindow.webContents.on('did-frame-finish-load', () => {
-  //   if (appWindow) {
-  //     appWindow.webContents.send('move-app')
+  // playerWindow.webContents.on('did-frame-finish-load', () => {
+  //   if (playerWindow) {
+  //     playerWindow.webContents.send('move-player')
   //   }
   // })
 
-  if (isDev) {
-    appWindow.webContents.openDevTools()
-  }
-
-  appWindow.on('closed', () => {
-    appWindow = undefined
+  playerWindow.on('closed', () => {
+    playerWindow = undefined
   })
 }
