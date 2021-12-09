@@ -1,7 +1,7 @@
 import { InjectionKey } from 'vue'
 import { createLogger, createStore, Store } from 'vuex'
-import { PrototypeState } from '@/store/modules/systems/prototype/state'
-import { prototypeModule, PrototypeStore } from '@/store/modules/systems/prototype'
+import { PrototypeState } from '@/store/modules/prototype/state'
+import { prototypeModule, PrototypeStore } from '@/store/modules/prototype'
 // import { ApplicationState } from '@/store/modules/systems/application/state'
 // import { applicationModule, ApplicationStore } from '@/store/modules/systems/application'
 

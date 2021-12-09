@@ -28,11 +28,11 @@ export const createPlayerWindow = () => {
     playerWindow.webContents.openDevTools()
   }
 
-  // playerWindow.webContents.on('did-frame-finish-load', () => {
-  //   if (playerWindow) {
-  //     playerWindow.webContents.send('move-player')
-  //   }
-  // })
+  playerWindow.webContents.on('did-frame-finish-load', () => {
+    if (playerWindow) {
+      playerWindow.webContents.send('move-to-player')
+    }
+  })
 
   playerWindow.on('closed', () => {
     playerWindow = undefined

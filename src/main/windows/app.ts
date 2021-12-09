@@ -25,11 +25,11 @@ export const createAppWindow = () => {
 
   appWindow.loadURL(isDev ? 'http://localhost:3000' : `file://${path.join(__dirname, '../../dist/index.html')}`)
 
-  // appWindow.webContents.on('did-frame-finish-load', () => {
-  //   if (appWindow) {
-  //     appWindow.webContents.send('move-app')
-  //   }
-  // })
+  appWindow.webContents.on('did-frame-finish-load', () => {
+    if (appWindow) {
+      appWindow.webContents.send('move-to-app')
+    }
+  })
 
   if (isDev) {
     appWindow.webContents.openDevTools()
