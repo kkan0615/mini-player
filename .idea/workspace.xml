@@ -2,15 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9faee569-f067-44e5-a268-fe59bf3854c5" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/renderer/libs/twtich.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/renderer/styles/index.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/renderer/styles/tailwind.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/main.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/main.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/windows/player.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/windows/player.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/renderer/App.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/renderer/App.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/renderer/components/commons/layouts/Appbar/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/renderer/components/commons/layouts/Appbar/index.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/renderer/main.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/renderer/main.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/renderer/views/players/Base/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/renderer/views/players/Base/index.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
@@ -69,6 +63,7 @@
       <workItem from="1639142365376" duration="52000" />
       <workItem from="1639142421975" duration="95000" />
       <workItem from="1639142530312" duration="1381000" />
+      <workItem from="1639145951363" duration="874000" />
     </task>
     <servers />
   </component>

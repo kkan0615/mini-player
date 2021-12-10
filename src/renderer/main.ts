@@ -8,6 +8,9 @@ import { router } from '@/router'
 import './styles/index.scss'
 /* Tailwind */
 import '@/styles/tailwind.scss'
+/* Bootstrap */
+import 'bootstrap/dist/css/bootstrap.min.css'
+import 'bootstrap'
 
 const app = createApp(App)
 app
