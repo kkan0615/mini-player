@@ -4,6 +4,10 @@ import App from './App.vue'
 import { store } from '@/store'
 /* Router */
 import { router } from '@/router'
+/* Add default index scss */
+import './styles/index.scss'
+/* Tailwind */
+import '@/styles/tailwind.scss'
 
 const app = createApp(App)
 app

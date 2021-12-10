@@ -16,7 +16,7 @@ app.whenReady()
 
 /* When app is ready to open */
 app.on('ready', () => {
-  createAppWindow()
+  // createAppWindow()
   createPlayerWindow()
 
   /** App windows */

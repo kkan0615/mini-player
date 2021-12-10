@@ -2,22 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9faee569-f067-44e5-a268-fe59bf3854c5" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/renderer/mixins/useElectron.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/renderer/mixins/useToast.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/renderer/router/index.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/renderer/router/modules/apps/home.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/renderer/router/modules/apps/index.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/renderer/router/modules/players/index.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/renderer/views/apps/Home/index.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/renderer/views/apps/index.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/renderer/views/players/Base/index.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/renderer/views/players/index.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/renderer/libs/twtich.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/renderer/styles/index.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/renderer/styles/tailwind.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/windows/app.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/windows/app.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/main.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/main.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/windows/player.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/windows/player.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/renderer/App.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/renderer/App.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/renderer/main.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/renderer/main.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/renderer/store/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/renderer/store/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/renderer/views/players/Base/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/renderer/views/players/Base/index.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,16 +36,20 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/renderer/router/modules" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/renderer/styles" />
     <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.standard" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.standard" value="" />
     <property name="nodejs_package_manager_path" value="yarn" />
-    <property name="settings.editor.selected.configurable" value="terminal" />
-    <property name="ts.external.directory.path" value="C:\Users\kkan0\Desktop\Study\mini-player\node_modules\typescript\lib" />
+    <property name="settings.editor.selected.configurable" value="settings.javascript.linters.eslint" />
+    <property name="ts.external.directory.path" value="D:\personalStudy\mini-player\node_modules\typescript\lib" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\personalStudy\mini-player\src\renderer\styles" />
+      <recent name="D:\personalStudy\mini-player" />
       <recent name="C:\Users\kkan0\Desktop\Study\mini-player\src\renderer\router\modules" />
       <recent name="C:\Users\kkan0\Desktop\Study\mini-player\src\renderer" />
     </key>
@@ -64,10 +64,47 @@
       <updated>1639015545913</updated>
       <workItem from="1639015549037" duration="121000" />
       <workItem from="1639015685886" duration="1128000" />
+      <workItem from="1639140456645" duration="1643000" />
+      <workItem from="1639142120366" duration="237000" />
+      <workItem from="1639142365376" duration="52000" />
+      <workItem from="1639142421975" duration="95000" />
+      <workItem from="1639142530312" duration="1381000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+    <option name="exactExcludedFiles">
+      <list>
+        <option value="$PROJECT_DIR$/src/main/preload.js.map" />
+        <option value="$PROJECT_DIR$/src/main/main.js" />
+        <option value="$PROJECT_DIR$/src/main/main.js.map" />
+        <option value="$PROJECT_DIR$/src/main/preload.js" />
+        <option value="$PROJECT_DIR$/src/main/windows/player.js.map" />
+        <option value="$PROJECT_DIR$/src/main/windows/app.js" />
+        <option value="$PROJECT_DIR$/src/main/windows/player.js" />
+        <option value="$PROJECT_DIR$/src/main/windows/app.js.map" />
+        <option value="$PROJECT_DIR$/src/main/services/playerWindow.js.map" />
+        <option value="$PROJECT_DIR$/src/main/services/playerWindow.js" />
+        <option value="$PROJECT_DIR$/src/main/services/appWindow.js.map" />
+        <option value="$PROJECT_DIR$/src/main/services/appWindow.js" />
+      </list>
+    </option>
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>

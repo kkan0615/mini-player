@@ -13,9 +13,9 @@ export const createPlayerWindow = () => {
     height: parseInt((dimensions.height * 0.8).toString()),
     autoHideMenuBar: true,
     minWidth: 400,
-    minHeight: 500,
     maximizable: true,
     resizable: true,
+    alwaysOnTop: !isDev,
     webPreferences: {
       // preload: path.join(__dirname, '../preload.js'),
       nodeIntegration: true,
