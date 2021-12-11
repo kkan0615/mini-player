@@ -1,23 +1,22 @@
 <template>
   <div
-    class="video-container tw-h-1/2"
+    class="tw-h-full"
   >
-    <div
-      class="tw-absolute tw-top-4 tw-right-4 tw-z-10 tw-text-white rounded-0 tw-flex tw-justify-center tw-items-center hover:tw-bg-white hover:tw-text-black hover:tw-shadow-2xl"
-    >
-      <button>
-        <c-material-icon
-          class="tw-mt-1"
-        >
-          more_vert
-        </c-material-icon>
-      </button>
+    {{ $route.name }}
+    <div>
+      <c-button
+        @click="onClickMoveTest('YoutubeVideoPlayer')"
+      >
+        Youtube
+      </c-button>
     </div>
-    <iframe
-      src="https://player.twitch.tv/?channel=nokduro&enableExtensions=true&parent=localhost"
-      style="height: 100%; width: 100%"
-      allowfullscreen="true"
-    />
+    <div>
+      <c-button
+        @click="onClickMoveTest('TwitchVideoPlayer')"
+      >
+        Twitch
+      </c-button>
+    </div>
   </div>
 </template>
 <script lang="ts">
@@ -27,8 +26,18 @@ export default {
 </script>
 <script setup lang="ts">
 import { onMounted, ref } from 'vue'
-import CAppbarLayout from '@/components/commons/layouts/Appbar/index.vue'
-import CMaterialIcon from '@/components/commons/icons/Material/index.vue'
+import { useRouter } from 'vue-router'
+import CButton from '@/components/commons/Button/index.vue'
+
+const router = useRouter()
+
+const onClickMoveTest = async (name: string) => {
+  try {
+    await router.push({ name, })
+  } catch (e) {
+    console.error(e)
+  }
+}
 
 // const videoRef = ref<HTMLDivElement>()
 // const embedInstance = ref<any>()
@@ -43,10 +52,3 @@ import CMaterialIcon from '@/components/commons/icons/Material/index.vue'
 //   })
 // })
 </script>
-<style
-  lang="scss"
->
-.video-container {
-  @apply tw-h-full tw-relative;
-}
-</style>
