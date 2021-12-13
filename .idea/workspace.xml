@@ -1,7 +1,57 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9faee569-f067-44e5-a268-fe59bf3854c5" name="Changes" comment="" />
+    <list default="true" id="93d8f2f0-546b-42a6-a3c5-c0009b25c6c4" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/jsLinters/eslint.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/postcss.config.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/services/selectorWindow.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/types/store.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/windows/selector.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/renderer/components/commons/inputs/Multiselect/index.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/renderer/data/models/players/index.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/renderer/libs/twtich.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/renderer/locale/index.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/renderer/locale/langs/en.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/renderer/locale/langs/ko.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/renderer/router/modules/players/video.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/renderer/router/modules/selectors/form.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/renderer/router/modules/selectors/index.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/renderer/styles/index.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/renderer/styles/libs/multiselect.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/renderer/styles/tailwind.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/renderer/types/commons/components/form.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/renderer/types/models/attributes.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/renderer/types/models/players/form.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/renderer/types/models/players/index.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/renderer/types/systems/date.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/renderer/utils/commons/lang.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/renderer/views/players/videos/Twitch/index.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/renderer/views/players/videos/Youtube/index.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/renderer/views/players/videos/index.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/renderer/views/selectors/Base/index.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/renderer/views/selectors/forms/index.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/renderer/views/selectors/forms/twitch/index.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/renderer/views/selectors/forms/youtube/index.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/renderer/views/selectors/index.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tailwind.config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/main.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/main.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/services/playerWindow.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/services/playerWindow.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/windows/app.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/windows/app.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/windows/player.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/windows/player.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/renderer/App.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/renderer/App.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/renderer/components/commons/inputs/Base/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/renderer/components/commons/inputs/Base/index.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/renderer/components/commons/layouts/Appbar/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/renderer/components/commons/layouts/Appbar/index.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/renderer/main.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/renderer/main.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/renderer/router/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/renderer/router/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/renderer/router/modules/players/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/renderer/router/modules/players/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/renderer/views/players/Base/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/renderer/views/players/Base/index.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/renderer/views/players/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/renderer/views/players/index.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -9,6 +59,14 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GithubPullRequestsUISettings">
+    <option name="selectedUrlAndAccountId">
+      <UrlAndAccount>
+        <option name="accountId" value="1410c983-e0b0-4bfa-9a0a-6fa3de123070" />
+        <option name="url" value="https://github.com/kkan0615/mini-player.git" />
+      </UrlAndAccount>
+    </option>
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -23,34 +81,62 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/renderer/router/modules" />
     <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.standard" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.standard" value="" />
     <property name="nodejs_package_manager_path" value="yarn" />
-    <property name="settings.editor.selected.configurable" value="terminal" />
+    <property name="settings.editor.selected.configurable" value="settings.javascript.linters.eslint" />
     <property name="ts.external.directory.path" value="C:\Users\kkan0\Desktop\Study\mini-player\node_modules\typescript\lib" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\kkan0\Desktop\Study\mini-player\src\renderer\router\modules" />
-      <recent name="C:\Users\kkan0\Desktop\Study\mini-player\src\renderer" />
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\kkan0\Desktop\Study\mini-player\src\renderer\utils" />
     </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="9faee569-f067-44e5-a268-fe59bf3854c5" name="Changes" comment="" />
+      <changelist id="93d8f2f0-546b-42a6-a3c5-c0009b25c6c4" name="Changes" comment="" />
       <created>1639015545913</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1639015545913</updated>
       <workItem from="1639015549037" duration="121000" />
       <workItem from="1639015685886" duration="1128000" />
+      <workItem from="1639378811601" duration="51000" />
+      <workItem from="1639400539710" duration="4247000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+    <option name="exactExcludedFiles">
+      <list>
+        <option value="$PROJECT_DIR$/src/main/types/store.js.map" />
+        <option value="$PROJECT_DIR$/src/main/types/store.js" />
+        <option value="$PROJECT_DIR$/src/main/windows/selector.js.map" />
+        <option value="$PROJECT_DIR$/src/main/windows/selector.js" />
+        <option value="$PROJECT_DIR$/src/main/services/selectorWindow.js.map" />
+        <option value="$PROJECT_DIR$/src/main/services/selectorWindow.js" />
+      </list>
+    </option>
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>

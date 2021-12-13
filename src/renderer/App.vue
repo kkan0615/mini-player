@@ -10,7 +10,6 @@ const router = useRouter()
 const { ipcRenderer } = useElectron()
 
 ipcRenderer.on('move-to-app', async () => {
-  console.log('pass1')
   try {
     await router.push({ name: 'AppLayout' })
   } catch (e) {
@@ -19,9 +18,16 @@ ipcRenderer.on('move-to-app', async () => {
 })
 
 ipcRenderer.on('move-to-player', async () => {
-  console.log('pass2')
   try {
     await router.push({ name: 'PlayerLayout' })
+  } catch (e) {
+    console.error(e)
+  }
+})
+
+ipcRenderer.on('move-to-selector', async () => {
+  try {
+    await router.push({ name: 'SelectorLayout' })
   } catch (e) {
     console.error(e)
   }
@@ -29,11 +35,6 @@ ipcRenderer.on('move-to-player', async () => {
 </script>
 <style>
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+  @apply tw-h-screen;
 }
 </style>
