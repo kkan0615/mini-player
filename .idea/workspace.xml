@@ -1,24 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9faee569-f067-44e5-a268-fe59bf3854c5" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/renderer/mixins/useElectron.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/renderer/mixins/useToast.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/renderer/router/index.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/renderer/router/modules/apps/home.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/renderer/router/modules/apps/index.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/renderer/router/modules/players/index.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/renderer/views/apps/Home/index.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/renderer/views/apps/index.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/renderer/views/players/Base/index.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/renderer/views/players/index.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/windows/app.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/windows/app.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/windows/player.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/windows/player.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/renderer/App.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/renderer/App.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/renderer/main.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/renderer/main.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/renderer/store/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/renderer/store/index.ts" afterDir="false" />
-    </list>
+    <list default="true" id="9faee569-f067-44e5-a268-fe59bf3854c5" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
