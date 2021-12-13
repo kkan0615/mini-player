@@ -2,57 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2240b902-039c-4b2b-9301-9123da0ea255" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/jsLinters/eslint.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/postcss.config.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/services/selectorWindow.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/types/store.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/windows/selector.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/renderer/libs/twtich.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/renderer/locale/index.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/renderer/locale/langs/en.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/renderer/locale/langs/ko.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/renderer/mixins/useElectron.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/renderer/mixins/useToast.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/renderer/router/index.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/renderer/router/modules/apps/home.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/renderer/router/modules/apps/index.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/renderer/router/modules/players/index.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/renderer/router/modules/players/video.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/renderer/router/modules/selectors/form.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/renderer/router/modules/selectors/index.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/renderer/styles/index.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/renderer/styles/tailwind.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/renderer/types/models/attributes.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/renderer/types/models/players/form.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/renderer/types/models/players/index.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/renderer/types/systems/date.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/renderer/utils/commons/lang.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/renderer/views/apps/Home/index.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/renderer/views/apps/index.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/renderer/views/players/Base/index.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/renderer/views/players/index.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/renderer/views/players/videos/Twitch/index.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/renderer/views/players/videos/Youtube/index.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/renderer/views/players/videos/index.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/renderer/views/selectors/Base/index.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/renderer/views/selectors/forms/index.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/renderer/views/selectors/forms/twitch/index.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/renderer/views/selectors/forms/youtube/index.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/renderer/views/selectors/index.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tailwind.config.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/main.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/main.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/services/playerWindow.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/services/playerWindow.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/windows/app.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/windows/app.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/windows/player.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/windows/player.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/renderer/App.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/renderer/App.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/renderer/components/commons/layouts/Appbar/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/renderer/components/commons/layouts/Appbar/index.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/renderer/main.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/renderer/main.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/renderer/store/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/renderer/store/index.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
