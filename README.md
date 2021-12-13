@@ -1,5 +1,8 @@
 # Mini-player
 
+## Project preview link
+<a>https://www.notion.so/Mini-Player-72abac3cfa5445faaf18d0e68835bfce</a>
+
 ## Tech stacks
 1. Vue 3
 2. Typescript

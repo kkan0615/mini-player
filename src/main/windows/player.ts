@@ -9,15 +9,16 @@ export const createPlayerWindow = () => {
   const dimensions = displayScreen.workAreaSize
 
   playerWindow = new BrowserWindow({
-    width: parseInt((dimensions.width * 0.8).toString()),
-    height: parseInt((dimensions.height * 0.8).toString()),
-    autoHideMenuBar: true,
+    // width: parseInt((dimensions.width * 0.8).toString()),
+    // height: parseInt((dimensions.height * 0.8).toString()),
+    width: 400,
+    height: 300,
     minWidth: 400,
-    minHeight: 500,
     maximizable: true,
     resizable: true,
+    alwaysOnTop: !isDev,
     webPreferences: {
-      // preload: path.join(__dirname, '../preload.js'),
+      preload: path.join(__dirname, '../preload.js'),
       nodeIntegration: true,
       contextIsolation: false,
     }
@@ -28,11 +29,12 @@ export const createPlayerWindow = () => {
     playerWindow.webContents.openDevTools()
   }
 
-  // playerWindow.webContents.on('did-frame-finish-load', () => {
-  //   if (playerWindow) {
-  //     playerWindow.webContents.send('move-player')
-  //   }
-  // })
+  /* When finish to frame loaded */
+  playerWindow.webContents.once('did-finish-load', () => {
+    if (playerWindow) {
+      playerWindow.webContents.send('move-to-player')
+    }
+  })
 
   playerWindow.on('closed', () => {
     playerWindow = undefined

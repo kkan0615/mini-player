@@ -17,3 +17,9 @@ export const closePlayerWindow = () => {
     playerWindow.close()
   }
 }
+
+export const onResizePlayerWindow = () => {
+  if (playerWindow) {
+    // @TODO: Save current width and height to electron store
+  }
+}

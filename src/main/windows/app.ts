@@ -17,7 +17,7 @@ export const createAppWindow = () => {
     maximizable: true,
     resizable: true,
     webPreferences: {
-      // preload: path.join(__dirname, '../preload.js'),
+      preload: path.join(__dirname, '../preload.js'),
       nodeIntegration: true,
       contextIsolation: false,
     }
@@ -25,11 +25,12 @@ export const createAppWindow = () => {
 
   appWindow.loadURL(isDev ? 'http://localhost:3000' : `file://${path.join(__dirname, '../../dist/index.html')}`)
 
-  // appWindow.webContents.on('did-frame-finish-load', () => {
-  //   if (appWindow) {
-  //     appWindow.webContents.send('move-app')
-  //   }
-  // })
+  /* When finish to frame loaded */
+  appWindow.webContents.once('did-frame-finish-load', () => {
+    if (appWindow) {
+      appWindow.webContents.send('move-to-app')
+    }
+  })
 
   if (isDev) {
     appWindow.webContents.openDevTools()
