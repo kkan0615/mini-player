@@ -6,6 +6,8 @@ import { TwitchPlayerInfo, YoutubePlayerInfo } from '@/types/models/players'
 import dayjs from 'dayjs'
 import { TwitchPlayerForm, YoutubePlayerForm } from '@/types/models/players/form'
 
+const electron = window.require('electron')
+
 export enum PlayerActionTypes {
   CREATE_YOUTUBE_PLAYER = 'player/CREATE_YOUTUBE_PLAYER',
   CREATE_TWITCH_PLAYER = 'player/CREATE_TWITCH_PLAYER',
@@ -41,17 +43,19 @@ export const playerActions: ActionTree<PlayerState, RootState> & PlayerActions =
       createdAt: dayjs(),
       updatedAt: dayjs()
     }
+    electron.ipcRenderer.send('set-player', player)
     commit(PlayerMutationTypes.SET_PLAYER, player)
   },
   [PlayerActionTypes.CREATE_TWITCH_PLAYER] ({ commit }, payload) {
     const player: TwitchPlayerInfo = {
       id: '',
-      type: 'YOUTUBE',
+      type: 'TWITCH',
       kindType: 'VIDEO',
       channelId: payload.channelId,
       createdAt: dayjs(),
       updatedAt: dayjs()
     }
+    electron.ipcRenderer.send('set-player', player)
     commit(PlayerMutationTypes.SET_PLAYER, player)
   },
 }
