@@ -1,6 +1,5 @@
 import { RouteRecordRaw } from 'vue-router'
 import SelectorLayout from '@/views/selectors/index.vue'
-import { formSelectorRoutes } from '@/router/modules/selectors/form'
 
 export const selectorRoutes: RouteRecordRaw = {
   path: '/selector',
@@ -13,6 +12,5 @@ export const selectorRoutes: RouteRecordRaw = {
       name: 'BaseFormSelector',
       component: () => import('@/views/selectors/Base/index.vue'),
     },
-    ...formSelectorRoutes,
   ],
 }
