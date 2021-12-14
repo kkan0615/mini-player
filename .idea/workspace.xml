@@ -2,54 +2,21 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="93d8f2f0-546b-42a6-a3c5-c0009b25c6c4" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/jsLinters/eslint.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/postcss.config.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/services/selectorWindow.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/types/store.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/windows/selector.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/renderer/components/commons/inputs/Multiselect/index.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/renderer/data/models/players/index.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/renderer/libs/twtich.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/renderer/locale/index.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/renderer/locale/langs/en.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/renderer/locale/langs/ko.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/renderer/router/modules/players/video.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/renderer/router/modules/selectors/form.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/renderer/router/modules/selectors/index.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/renderer/styles/index.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/renderer/styles/libs/multiselect.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/renderer/styles/tailwind.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/renderer/types/commons/components/form.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/renderer/types/models/attributes.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/renderer/types/models/players/form.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/renderer/types/models/players/index.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/renderer/types/systems/date.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/renderer/utils/commons/lang.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/renderer/views/players/videos/Twitch/index.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/renderer/views/players/videos/Youtube/index.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/renderer/views/players/videos/index.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/renderer/views/selectors/Base/index.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/renderer/views/selectors/forms/index.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/renderer/views/selectors/forms/twitch/index.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/renderer/views/selectors/forms/youtube/index.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/renderer/views/selectors/index.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tailwind.config.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/renderer/views/selectors/Base/components/Twitch.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/renderer/views/selectors/Base/components/Youtube.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/main.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/main.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/services/playerWindow.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/services/playerWindow.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/windows/app.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/windows/app.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/windows/player.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/windows/player.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/renderer/App.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/renderer/App.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/postcss.config.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/renderer/components/commons/Button/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/renderer/components/commons/Button/index.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/renderer/components/commons/displays/Row/components/Content.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/renderer/components/commons/displays/Row/components/Content.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/renderer/components/commons/displays/Row/components/Label.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/renderer/components/commons/displays/Row/components/Label.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/renderer/components/commons/displays/Row/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/renderer/components/commons/displays/Row/index.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/renderer/components/commons/inputs/Base/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/renderer/components/commons/inputs/Base/index.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/renderer/components/commons/layouts/Appbar/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/renderer/components/commons/layouts/Appbar/index.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/renderer/locale/langs/ko.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/renderer/locale/langs/ko.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/renderer/main.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/renderer/main.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/renderer/router/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/renderer/router/index.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/renderer/router/modules/players/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/renderer/router/modules/players/index.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/renderer/views/players/Base/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/renderer/views/players/Base/index.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/renderer/views/players/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/renderer/views/players/index.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/renderer/types/models/players/form.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/renderer/types/models/players/form.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/renderer/views/selectors/Base/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/renderer/views/selectors/Base/index.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tailwind.config.js" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -92,6 +59,7 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\kkan0\Desktop\Study\mini-player" />
       <recent name="C:\Users\kkan0\Desktop\Study\mini-player\src\renderer\utils" />
     </key>
   </component>
@@ -106,7 +74,8 @@
       <workItem from="1639015549037" duration="121000" />
       <workItem from="1639015685886" duration="1128000" />
       <workItem from="1639378811601" duration="51000" />
-      <workItem from="1639400539710" duration="4247000" />
+      <workItem from="1639400539710" duration="4269000" />
+      <workItem from="1639480666085" duration="4333000" />
     </task>
     <servers />
   </component>

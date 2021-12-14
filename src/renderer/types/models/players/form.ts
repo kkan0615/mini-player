@@ -2,20 +2,24 @@ import { Player, PlayerType } from '@/types/models/players/index'
 
 export type PlayerForm = Pick<Player, 'kindType' | 'type'>
 
-export type YoutubePlayerForm = PlayerType & {
+export interface YoutubePlayerForm {
+  type: PlayerType
   videoId: string
   start?: number
   end?: number
 }
 
-export type TwitchPlayerForm = PlayerType & {
+export interface TwitchPlayerForm {
+  type: PlayerType
   channelId: string
 }
 
-export type ExUrlPlayerForm = PlayerType & {
+export interface ExUrlPlayerForm {
+  type: PlayerType
   url: string
 }
 
-export type InPcPlayerForm = PlayerType & {
+export interface InPcPlayerForm {
+  type: PlayerType
   file: File
 }

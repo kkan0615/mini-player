@@ -11,11 +11,14 @@ import '@/styles/tailwind.scss'
 /* Bootstrap */
 import 'bootstrap/dist/css/bootstrap.min.css'
 import 'bootstrap'
+/* i18n */
+import i18n from '@/locale'
 /* Vueform/multiselect */
 // import '@vueform/multiselect/themes/default.scss'
 
 const app = createApp(App)
 app
+  .use(i18n)
   .use(store)
   .use(router)
   .mount('#app')
