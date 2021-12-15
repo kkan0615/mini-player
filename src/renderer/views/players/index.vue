@@ -23,6 +23,30 @@ export default {
 </script>
 <script setup lang="ts">
 import CMaterialIcon from '@/components/commons/icons/Material/index.vue'
+import { PlayerActionTypes } from '@/store/modules/model/actions'
+import { useRouter } from 'vue-router'
+import useStore from '@/store'
+import useElectron from '@/mixins/useElectron'
+
+const router = useRouter()
+const store = useStore()
+const { ipcRenderer } = useElectron()
+
+const setYoutubePlayer = async (event, args) => {
+  try {
+    console.log('test!', args)
+    /* Set player */
+    await store.dispatch(PlayerActionTypes.SET_PLAYER, args)
+    /* Redirect to video player */
+    await router.push({ name: 'YoutubeVideoPlayer' })
+    /* Off */
+    ipcRenderer.off('set-youtube-player', setYoutubePlayer)
+  } catch (e) {
+    console.error(e)
+  }
+}
+
+ipcRenderer.on('set-youtube-player', setYoutubePlayer)
 </script>
 <style
   lang="scss"

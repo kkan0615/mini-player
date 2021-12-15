@@ -43,8 +43,11 @@ import CRowDisplayContent from '@/components/commons/displays/Row/components/Con
 import CBtn from '@/components/commons/Button/index.vue'
 import { useI18n } from 'vue-i18n'
 import { TwitchPlayerForm } from '@/types/models/players/form'
+import useStore from '@/store'
+import { PlayerActionTypes } from '@/store/modules/model/actions'
 
 const channelId = ref('')
+const store = useStore()
 
 const onClickSaveBtn = async () => {
   try {
@@ -52,6 +55,7 @@ const onClickSaveBtn = async () => {
       type: 'TWITCH',
       channelId: channelId.value
     } as TwitchPlayerForm
+    await store.dispatch(PlayerActionTypes.CREATE_TWITCH_PLAYER, params)
   } catch (e) {
     console.error(e)
   }

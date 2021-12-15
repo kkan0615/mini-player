@@ -5,6 +5,7 @@ import { closePlayerWindow, openPlayerWindow } from './services/playerWindow'
 import { closeAppWindow, openAppWindow } from './services/appWindow'
 import { closeSelectorWindow, openSelectorWindow } from './services/selectorWindow'
 import { createSelectorWindow } from './windows/selector'
+import { setPlayerInfo } from './services/player'
 // import isDev from 'electron-is-dev'
 
 app.whenReady()
@@ -20,7 +21,7 @@ app.whenReady()
 app.on('ready', () => {
   // createAppWindow()
   createSelectorWindow()
-  // createPlayerWindow()
+  createPlayerWindow()
 
   /** App windows */
   ipcMain.on('open-app-window', openAppWindow)
@@ -33,6 +34,9 @@ app.on('ready', () => {
   /** Selector windows */
   ipcMain.on('open-selector-window', openSelectorWindow)
   ipcMain.on('close-selector-window', closeSelectorWindow)
+
+  /* Player */
+  ipcMain.on('set-player-info', setPlayerInfo)
 })
 
 /* When all windows are closed */
