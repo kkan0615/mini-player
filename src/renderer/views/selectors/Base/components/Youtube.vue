@@ -38,7 +38,6 @@ export default {
 <script setup lang="ts">
 import { ref } from 'vue'
 import { useRouter } from 'vue-router'
-import { PlayerType } from '@/types/models/players'
 import CBaseInput from '@/components/commons/inputs/Base/index.vue'
 import CRowDisplay from '@/components/commons/displays/Row/index.vue'
 import CRowDisplayLabel from '@/components/commons/displays/Row/components/Label.vue'

@@ -5,8 +5,8 @@ import { PlayerInfo } from '../types/models/players'
 
 export const setPlayerInfo = (event: IpcMainEvent, payload: PlayerInfo) => {
   /* Close selector window */
-  // if (selectorWindow && selectorWindow.closable)
-  //   selectorWindow.close()
+  if (selectorWindow && selectorWindow.closable)
+    selectorWindow.close()
 
   /* Open player window */
   if (!playerWindow)
