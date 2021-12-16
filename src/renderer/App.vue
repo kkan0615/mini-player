@@ -5,7 +5,6 @@
 <script setup lang="ts">
 import useElectron from '@/mixins/useElectron'
 import { useRouter } from 'vue-router'
-import { PlayerActionTypes } from '@/store/modules/model/actions'
 import useStore from '@/store'
 
 const router = useRouter()
@@ -23,7 +22,6 @@ ipcRenderer.on('move-to-app', async () => {
 ipcRenderer.on('move-to-player', async () => {
   try {
     await router.push({ name: 'PlayerLayout' })
-    console.log('pass?')
   } catch (e) {
     console.error(e)
   }

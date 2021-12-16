@@ -28,6 +28,9 @@
       <twitch-base-selector
         v-else-if="playerType === 'TWITCH'"
       />
+      <ex-url-base-selector
+        v-else-if="playerType === 'EX_URL'"
+      />
     </c-form>
   </div>
 </template>
@@ -48,6 +51,7 @@ import { ref } from 'vue'
 import { PlayerType } from '@/types/models/players'
 import TwitchBaseSelector from './components/Twitch.vue'
 import YoutubeBaseSelector from './components/Youtube.vue'
+import ExUrlBaseSelector from '@/views/selectors/Base/components/ExUrl.vue'
 
 const router = useRouter()
 

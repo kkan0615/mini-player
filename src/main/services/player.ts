@@ -5,8 +5,8 @@ import { PlayerInfo } from '../types/models/players'
 
 export const setPlayerInfo = (event: IpcMainEvent, payload: PlayerInfo) => {
   /* Close selector window */
-  if (selectorWindow && selectorWindow.closable)
-    selectorWindow.close()
+  // if (selectorWindow && selectorWindow.closable)
+  //   selectorWindow.close()
 
   /* Open player window */
   if (!playerWindow)
@@ -17,7 +17,6 @@ export const setPlayerInfo = (event: IpcMainEvent, payload: PlayerInfo) => {
   if (playerWindow) {
     switch (payload.type) {
       case 'YOUTUBE':
-        console.log('내마음과같다면')
         playerWindow.webContents.send('set-youtube-player', payload)
         break
       case 'TWITCH':

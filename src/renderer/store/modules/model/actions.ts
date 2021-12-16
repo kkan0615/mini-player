@@ -2,9 +2,15 @@ import { ActionContext, ActionTree } from 'vuex'
 import { RootState } from '@/store'
 import { PlayerMutations, PlayerMutationTypes } from './mutations'
 import { PlayerState } from './state'
-import { PlayerInfo, TwitchPlayerInfo, YoutubePlayerInfo } from '@/types/models/players'
+import {
+  ExUrlPlayerInfo,
+  InPcPlayerInfo,
+  PlayerInfo,
+  TwitchPlayerInfo,
+  YoutubePlayerInfo
+} from '@/types/models/players'
 import dayjs from 'dayjs'
-import { TwitchPlayerForm, YoutubePlayerForm } from '@/types/models/players/form'
+import { ExUrlPlayerForm, InPcPlayerForm, TwitchPlayerForm, YoutubePlayerForm } from '@/types/models/players/form'
 import { v4 } from 'uuid'
 
 const electron = window.require('electron')
@@ -13,6 +19,8 @@ export enum PlayerActionTypes {
   SET_PLAYER = 'player/SET_PLAYER',
   CREATE_YOUTUBE_PLAYER = 'player/CREATE_YOUTUBE_PLAYER',
   CREATE_TWITCH_PLAYER = 'player/CREATE_TWITCH_PLAYER',
+  CREATE_EX_URL_PLAYER = 'player/CREATE_EX_URL_PLAYER',
+  CREATE_IN_PC_PLAYER = 'player/CREATE_IN_PC_PLAYER',
 }
 
 export type AugmentedActionContext = {
@@ -35,6 +43,14 @@ export interface PlayerActions {
     { commit }: AugmentedActionContext,
     payload: TwitchPlayerForm
   ): void
+  [PlayerActionTypes.CREATE_EX_URL_PLAYER] (
+    { commit }: AugmentedActionContext,
+    payload: ExUrlPlayerForm
+  ): void
+  [PlayerActionTypes.CREATE_IN_PC_PLAYER] (
+    { commit }: AugmentedActionContext,
+    payload: InPcPlayerForm
+  ): void
 }
 
 export const playerActions: ActionTree<PlayerState, RootState> & PlayerActions = {
@@ -42,7 +58,6 @@ export const playerActions: ActionTree<PlayerState, RootState> & PlayerActions =
     commit(PlayerMutationTypes.SET_PLAYER, payload)
   },
   [PlayerActionTypes.CREATE_YOUTUBE_PLAYER] ({ commit }, payload) {
-    console.log('payload', payload)
     const player: YoutubePlayerInfo = {
       id: v4(),
       kindType: 'VIDEO',
@@ -62,6 +77,30 @@ export const playerActions: ActionTree<PlayerState, RootState> & PlayerActions =
       type: 'TWITCH',
       kindType: 'VIDEO',
       channelId: payload.channelId,
+      createdAt: dayjs(),
+      updatedAt: dayjs()
+    }
+    electron.ipcRenderer.send('set-player-info', player)
+    commit(PlayerMutationTypes.SET_PLAYER, player)
+  },
+  [PlayerActionTypes.CREATE_EX_URL_PLAYER] ({ commit }, payload) {
+    const player: ExUrlPlayerInfo = {
+      id: v4(),
+      type: 'EX_URL',
+      kindType: 'VIDEO',
+      url: payload.url,
+      createdAt: dayjs(),
+      updatedAt: dayjs()
+    }
+    electron.ipcRenderer.send('set-player-info', player)
+    commit(PlayerMutationTypes.SET_PLAYER, player)
+  },
+  [PlayerActionTypes.CREATE_IN_PC_PLAYER] ({ commit }, payload) {
+    const player: InPcPlayerInfo = {
+      id: v4(),
+      type: 'IN_PC',
+      kindType: 'VIDEO',
+      file: payload.file,
       createdAt: dayjs(),
       updatedAt: dayjs()
     }

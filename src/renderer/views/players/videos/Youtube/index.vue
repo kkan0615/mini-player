@@ -19,26 +19,20 @@ import { YouTubePlayer } from 'youtube-player/dist/types'
 import { computed, onBeforeUnmount, onMounted, ref } from 'vue'
 import useStore from '@/store'
 import useElectron from '@/mixins/useElectron'
-import { PlayerActionTypes } from '@/store/modules/model/actions'
 import { YoutubePlayerInfo } from '@/types/models/players'
+import usePlayer from '@/mixins/usePlayer'
+import { useRouter } from 'vue-router'
 
+const router = useRouter()
 const store = useStore()
 const { ipcRenderer } = useElectron()
+const { setYoutubePlayer } = usePlayer()
 
-// const player = ref<YouTubePlayer>()
 const player = ref<YouTubePlayer | null>()
 
 const playerInfo = computed(() => store.getters.Player as YoutubePlayerInfo)
 
-ipcRenderer.on('set-youtube-player', async (event, args) => {
-  try {
-    console.log('temp')
-    await store.dispatch(PlayerActionTypes.SET_PLAYER, args)
-    initPlayer()
-  } catch (e) {
-    console.error(e)
-  }
-})
+ipcRenderer.on('set-youtube-player', setYoutubePlayer)
 
 onMounted(() => {
   initPlayer()
@@ -50,19 +44,27 @@ onBeforeUnmount(() => {
 
 const initPlayer = () => {
   resetPlayer()
-  console.log('playerInfo.value', playerInfo.value)
   player.value = YoutubePlayerFactory('youtube-player', {
     height: '100%',
     width: '100%',
     videoId: playerInfo.value.videoId,
   })
   player.value?.playVideo()
+  player.value?.on('error', handlePlayerErr)
 }
 
 const resetPlayer = () => {
   if (player.value) {
     player.value?.destroy()
     player.value = null
+  }
+}
+
+const handlePlayerErr = async () => {
+  try {
+    await router.push({ name: 'BasePlayer' })
+  } catch (e) {
+    console.error(e)
   }
 }
 

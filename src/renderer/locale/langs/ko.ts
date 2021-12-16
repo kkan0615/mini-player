@@ -31,6 +31,9 @@ export const koreanDictionary = {
           },
           twitch: {
             ChannelId: '채널 아이디'
+          },
+          exUrl: {
+            Url: '링크 주소'
           }
         },
       }

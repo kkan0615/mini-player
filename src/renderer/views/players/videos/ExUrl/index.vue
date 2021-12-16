@@ -12,14 +12,14 @@
 </template>
 <script lang="ts">
 export default {
-  name: 'TwitchVideoPlayer',
+  name: 'ExUrlVideoPlayer',
 }
 </script>
 <script setup lang="ts">
 import { computed, onBeforeMount, ref } from 'vue'
 import useStore from '@/store'
 import useElectron from '@/mixins/useElectron'
-import { TwitchPlayerInfo } from '@/types/models/players'
+import { ExUrlPlayerInfo } from '@/types/models/players'
 import usePlayer from '@/mixins/usePlayer'
 
 const store = useStore()
@@ -28,7 +28,7 @@ const { setTwitchPlayer } = usePlayer()
 
 const src = ref('')
 
-const playerInfo = computed(() => store.getters.Player as TwitchPlayerInfo)
+const playerInfo = computed(() => store.getters.Player as ExUrlPlayerInfo)
 
 ipcRenderer.on('set-twitch-player', setTwitchPlayer)
 
@@ -38,7 +38,7 @@ onBeforeMount(() => {
 
 const initPlayer = () => {
   resetPlayer()
-  src.value = `https://player.twitch.tv/?channel=${playerInfo.value.channelId}&enableExtensions=true&parent=localhost`
+  src.value = playerInfo.value.url
 }
 
 const resetPlayer = () => {
