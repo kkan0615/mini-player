@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="2240b902-039c-4b2b-9301-9123da0ea255" name="Changes" comment="" />
+    <list default="true" id="2240b902-039c-4b2b-9301-9123da0ea255" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -32,7 +34,7 @@
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="9faee569-f067-44e5-a268-fe59bf3854c5" name="Changes" comment="" />
+      <changelist id="2240b902-039c-4b2b-9301-9123da0ea255" name="Changes" comment="" />
       <created>1639015545913</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
@@ -40,6 +42,7 @@
       <workItem from="1639015549037" duration="121000" />
       <workItem from="1639015685886" duration="1128000" />
       <workItem from="1639378811601" duration="51000" />
+      <workItem from="1639616791021" duration="53000" />
     </task>
     <servers />
   </component>
