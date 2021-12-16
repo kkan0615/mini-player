@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="93d8f2f0-546b-42a6-a3c5-c0009b25c6c4" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/renderer/views/selectors/Base/components/Youtube.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/renderer/views/selectors/Base/components/Youtube.vue" afterDir="false" />
-    </list>
+    <list default="true" id="93d8f2f0-546b-42a6-a3c5-c0009b25c6c4" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -70,7 +67,7 @@
       <workItem from="1639490092292" duration="1721000" />
       <workItem from="1639492508400" duration="150000" />
       <workItem from="1639568083740" duration="5554000" />
-      <workItem from="1639575349497" duration="75000" />
+      <workItem from="1639575349497" duration="92000" />
     </task>
     <servers />
   </component>
