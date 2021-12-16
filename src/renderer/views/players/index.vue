@@ -23,6 +23,15 @@ export default {
 </script>
 <script setup lang="ts">
 import CMaterialIcon from '@/components/commons/icons/Material/index.vue'
+import useElectron from '@/mixins/useElectron'
+import usePlayer from '@/mixins/usePlayer'
+
+const { ipcRenderer } = useElectron()
+const { setYoutubePlayer, setTwitchPlayer } = usePlayer()
+
+/* List to Event listening */
+ipcRenderer.on('set-youtube-player', setYoutubePlayer)
+ipcRenderer.on('set-twitch-player', setTwitchPlayer)
 </script>
 <style
   lang="scss"

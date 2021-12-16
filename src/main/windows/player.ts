@@ -1,6 +1,7 @@
 import { BrowserWindow, screen } from 'electron'
 import path from 'path'
 import isDev from 'electron-is-dev'
+import { selectorWindow } from './selector'
 
 export let playerWindow: BrowserWindow | undefined
 
@@ -37,6 +38,9 @@ export const createPlayerWindow = () => {
   })
 
   playerWindow.on('closed', () => {
+    /* Remove Selector window too if it's opened*/
+    if (selectorWindow)
+      selectorWindow.destroy()
     playerWindow = undefined
   })
 }

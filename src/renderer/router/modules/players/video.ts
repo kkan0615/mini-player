@@ -16,6 +16,11 @@ export const videoPlayerRoutes: Array<RouteRecordRaw> = [
         name: 'TwitchVideoPlayer',
         component: () => import('@/views/players/videos/Twitch/index.vue'),
       },
+      {
+        path: 'ex-url',
+        name: 'ExUrlVideoPlayer',
+        component: () => import('@/views/players/videos/ExUrl/index.vue'),
+      },
     ]
   },
 ]

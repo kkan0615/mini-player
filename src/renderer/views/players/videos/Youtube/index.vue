@@ -2,7 +2,6 @@
   <div
     class="tw-h-full tw-w-full"
   >
-    {{ $route.name }}
     <div
       id="youtube-player"
       class="tw-h-full tw-w-full"
@@ -17,12 +16,23 @@ export default {
 <script setup lang="ts">
 import YoutubePlayerFactory from 'youtube-player'
 import { YouTubePlayer } from 'youtube-player/dist/types'
-import { onBeforeUnmount, onMounted, ref } from 'vue'
+import { computed, onBeforeMount, onBeforeUnmount, ref } from 'vue'
+import useStore from '@/store'
+import useElectron from '@/mixins/useElectron'
+import { YoutubePlayerInfo } from '@/types/models/players'
+import usePlayer from '@/mixins/usePlayer'
 
-// const player = ref<YouTubePlayer>()
+const store = useStore()
+const { ipcRenderer } = useElectron()
+const { setYoutubePlayer } = usePlayer()
+
 const player = ref<YouTubePlayer | null>()
 
-onMounted(() => {
+const playerInfo = computed(() => store.getters.Player as YoutubePlayerInfo)
+
+ipcRenderer.on('set-youtube-player', setYoutubePlayer)
+
+onBeforeMount(() => {
   initPlayer()
 })
 
@@ -35,7 +45,7 @@ const initPlayer = () => {
   player.value = YoutubePlayerFactory('youtube-player', {
     height: '100%',
     width: '100%',
-    videoId: '2ryZMFhfXLc',
+    videoId: playerInfo.value.videoId,
   })
   player.value?.playVideo()
 }
