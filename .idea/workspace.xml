@@ -2,13 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9faee569-f067-44e5-a268-fe59bf3854c5" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/renderer/types/models/attributes.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/renderer/types/models/players/index.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/renderer/types/systems/date.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/renderer/locale/langs/ko.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/renderer/locale/langs/ko.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -70,7 +64,7 @@
       <workItem from="1639199314948" duration="325000" />
       <workItem from="1639199654287" duration="2188000" />
       <workItem from="1639237324421" duration="1489000" />
-      <workItem from="1639281395770" duration="3491000" />
+      <workItem from="1639281395770" duration="4707000" />
     </task>
     <servers />
   </component>
