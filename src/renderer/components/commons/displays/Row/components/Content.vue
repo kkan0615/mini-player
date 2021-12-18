@@ -12,3 +12,11 @@ export default {
 </script>
 <script setup lang="ts">
 </script>
+<style
+    lang="scss"
+    scoped
+>
+.c-row-display-content {
+  @apply tw-w-full md:tw-w-9/12;
+}
+</style>

@@ -2,7 +2,6 @@
   <div
     class="tw-h-full tw-w-full"
   >
-    {{ $route.name }}
     <div
       id="youtube-player"
       class="tw-h-full tw-w-full"
@@ -17,10 +16,20 @@ export default {
 <script setup lang="ts">
 import YoutubePlayerFactory from 'youtube-player'
 import { YouTubePlayer } from 'youtube-player/dist/types'
-import { onBeforeUnmount, onMounted, ref } from 'vue'
+import { computed, onBeforeUnmount, onMounted, ref } from 'vue'
+import useStore from '@/store'
+import useElectron from '@/mixins/useElectron'
+import { YoutubePlayerInfo } from '@/types/models/players'
+import { useRouter } from 'vue-router'
+import { PlayerActionTypes } from '@/store/modules/model/actions'
+import { IpcRendererEvent } from 'electron'
+const router = useRouter()
+const store = useStore()
+const { ipcRenderer } = useElectron()
 
-// const player = ref<YouTubePlayer>()
 const player = ref<YouTubePlayer | null>()
+
+const playerInfo = computed(() => store.getters.Player as YoutubePlayerInfo)
 
 onMounted(() => {
   initPlayer()
@@ -35,9 +44,10 @@ const initPlayer = () => {
   player.value = YoutubePlayerFactory('youtube-player', {
     height: '100%',
     width: '100%',
-    videoId: '2ryZMFhfXLc',
+    videoId: playerInfo.value.videoId,
   })
   player.value?.playVideo()
+  player.value?.on('error', handlePlayerErr)
 }
 
 const resetPlayer = () => {
@@ -47,4 +57,23 @@ const resetPlayer = () => {
   }
 }
 
+const handlePlayerErr = async () => {
+  try {
+    await router.push({ name: 'BasePlayer' })
+  } catch (e) {
+    console.error(e)
+  }
+}
+
+const setYoutubePlayer = async (event: IpcRendererEvent, args: YoutubePlayerInfo) => {
+  try {
+    /* Set player */
+    await store.dispatch(PlayerActionTypes.SET_PLAYER, args)
+    initPlayer()
+  } catch (e) {
+    console.error(e)
+  }
+}
+
+ipcRenderer.on('set-youtube-player', setYoutubePlayer)
 </script>

@@ -9,10 +9,10 @@ export const createSelectorWindow = () => {
   selectorWindow = new BrowserWindow({
     width: 300,
     height: 400,
-    minWidth: 400,
-    maximizable: false,
-    resizable: false,
-    alwaysOnTop: !isDev,
+    minWidth: 300,
+    maximizable: isDev,
+    resizable: isDev,
+    alwaysOnTop: true,
     webPreferences: {
       preload: path.join(__dirname, '../preload.js'),
       nodeIntegration: true,

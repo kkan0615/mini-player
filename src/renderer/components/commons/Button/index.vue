@@ -10,7 +10,7 @@
     lang="ts"
 >
 export default {
-  name: 'CButton',
+  name: 'CBtn',
 }
 </script>
 <script setup lang="ts">

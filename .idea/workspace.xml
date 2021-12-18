@@ -2,7 +2,75 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9faee569-f067-44e5-a268-fe59bf3854c5" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/services/player.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/types/models/attributes.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/types/models/players/form.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/types/models/players/index.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/types/store.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/types/systems/date.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/renderer/components/commons/Tooltip/index.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/renderer/components/commons/icons/FontAwesome/index.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/renderer/components/commons/inputs/File/index.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/renderer/components/commons/inputs/Multiselect/index.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/renderer/data/models/players/index.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/renderer/store/modules/model/actions.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/renderer/store/modules/model/getters.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/renderer/store/modules/model/index.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/renderer/store/modules/model/mutations.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/renderer/store/modules/model/state.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/renderer/styles/libs/multiselect.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/renderer/types/commons/components/form.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/renderer/types/models/players/form.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/renderer/utils/bootstrap/validate.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/renderer/utils/helpers/pagination.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/renderer/utils/libs/dayjs.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/renderer/utils/libs/fontAwesomeIcon.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/renderer/utils/libs/multiselect.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/renderer/views/players/components/MenuDropdown.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/renderer/views/players/videos/ExUrl/index.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/renderer/views/players/videos/InPc/index.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/renderer/views/selectors/Base/components/ExUrl.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/renderer/views/selectors/Base/components/ExUrlLogo.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/renderer/views/selectors/Base/components/InPc.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/renderer/views/selectors/Base/components/InPcLogo.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/renderer/views/selectors/Base/components/Twitch.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/renderer/views/selectors/Base/components/TwitchLogo.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/renderer/views/selectors/Base/components/Youtube.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/renderer/views/selectors/Base/components/YoutubeLogo.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/main.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/main.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/services/playerWindow.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/services/playerWindow.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/services/selectorWindow.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/services/selectorWindow.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/windows/player.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/windows/player.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/windows/selector.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/windows/selector.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/renderer/App.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/renderer/App.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/renderer/components/commons/Button/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/renderer/components/commons/Button/index.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/renderer/components/commons/displays/Row/components/Content.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/renderer/components/commons/displays/Row/components/Content.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/renderer/components/commons/displays/Row/components/Label.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/renderer/components/commons/displays/Row/components/Label.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/renderer/components/commons/displays/Row/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/renderer/components/commons/displays/Row/index.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/renderer/components/commons/inputs/Base/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/renderer/components/commons/inputs/Base/index.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/renderer/locale/langs/ko.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/renderer/locale/langs/ko.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/renderer/main.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/renderer/main.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/renderer/router/modules/players/video.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/renderer/router/modules/players/video.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/renderer/router/modules/selectors/form.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/renderer/router/modules/selectors/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/renderer/router/modules/selectors/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/renderer/store/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/renderer/store/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/renderer/store/modules/prototype/getters.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/renderer/store/modules/prototype/getters.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/renderer/styles/index.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/renderer/styles/index.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/renderer/styles/tailwind.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/renderer/styles/tailwind.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/renderer/types/models/players/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/renderer/types/models/players/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/renderer/views/players/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/renderer/views/players/index.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/renderer/views/players/videos/Twitch/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/renderer/views/players/videos/Twitch/index.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/renderer/views/players/videos/Youtube/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/renderer/views/players/videos/Youtube/index.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/renderer/views/selectors/Base/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/renderer/views/selectors/Base/index.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/renderer/views/selectors/forms/index.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/renderer/views/selectors/forms/twitch/index.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/renderer/views/selectors/forms/youtube/index.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tailwind.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/tailwind.config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -11,6 +79,14 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GithubPullRequestsUISettings">
+    <option name="selectedUrlAndAccountId">
+      <UrlAndAccount>
+        <option name="accountId" value="1410c983-e0b0-4bfa-9a0a-6fa3de123070" />
+        <option name="url" value="https://github.com/kkan0615/mini-player.git" />
+      </UrlAndAccount>
+    </option>
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -25,23 +101,27 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/renderer/router/modules" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/renderer/views/players/videos" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.standard" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.standard" value="" />
     <property name="nodejs_package_manager_path" value="yarn" />
-    <property name="settings.editor.selected.configurable" value="terminal" />
+    <property name="settings.editor.selected.configurable" value="settings.javascript.linters.eslint" />
     <property name="ts.external.directory.path" value="D:\personalStudy\mini-player\node_modules\typescript\lib" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\personalStudy\mini-player\src\renderer\router\modules" />
-      <recent name="D:\personalStudy\mini-player\src\main\services" />
-      <recent name="D:\personalStudy\mini-player\src\renderer\views\players\videos\Youtube" />
-      <recent name="D:\personalStudy\mini-player\src\renderer\styles" />
-      <recent name="D:\personalStudy\mini-player" />
+      <recent name="D:\personalStudy\mini-player\src\renderer\views\players\videos" />
+      <recent name="D:\personalStudy\mini-player\src\renderer\views\selectors\Base\components" />
+      <recent name="C:\Users\kkan0\Desktop\Study\mini-player\src\main\types" />
+      <recent name="C:\Users\kkan0\Desktop\Study\mini-player\src\renderer\store\modules" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\personalStudy\mini-player\src\renderer\views\players" />
+      <recent name="C:\Users\kkan0\Desktop\Study\mini-player" />
+      <recent name="C:\Users\kkan0\Desktop\Study\mini-player\src\renderer\utils" />
     </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -54,17 +134,15 @@
       <updated>1639015545913</updated>
       <workItem from="1639015549037" duration="121000" />
       <workItem from="1639015685886" duration="1128000" />
-      <workItem from="1639140456645" duration="1643000" />
-      <workItem from="1639142120366" duration="237000" />
-      <workItem from="1639142365376" duration="52000" />
-      <workItem from="1639142421975" duration="95000" />
-      <workItem from="1639142530312" duration="1381000" />
-      <workItem from="1639145951363" duration="874000" />
-      <workItem from="1639186916078" duration="7598000" />
-      <workItem from="1639199314948" duration="325000" />
-      <workItem from="1639199654287" duration="2188000" />
-      <workItem from="1639237324421" duration="1489000" />
-      <workItem from="1639281395770" duration="4707000" />
+      <workItem from="1639378811601" duration="51000" />
+      <workItem from="1639400539710" duration="4269000" />
+      <workItem from="1639480666085" duration="5146000" />
+      <workItem from="1639490092292" duration="1721000" />
+      <workItem from="1639492508400" duration="150000" />
+      <workItem from="1639568083740" duration="5554000" />
+      <workItem from="1639575349497" duration="92000" />
+      <workItem from="1639648708389" duration="6219000" />
+      <workItem from="1639822928705" duration="2059000" />
     </task>
     <servers />
   </component>
@@ -72,22 +150,34 @@
     <option name="version" value="3" />
     <option name="exactExcludedFiles">
       <list>
-        <option value="$PROJECT_DIR$/src/main/preload.js.map" />
-        <option value="$PROJECT_DIR$/src/main/main.js" />
-        <option value="$PROJECT_DIR$/src/main/main.js.map" />
-        <option value="$PROJECT_DIR$/src/main/preload.js" />
-        <option value="$PROJECT_DIR$/src/main/windows/player.js.map" />
-        <option value="$PROJECT_DIR$/src/main/windows/app.js" />
-        <option value="$PROJECT_DIR$/src/main/windows/player.js" />
-        <option value="$PROJECT_DIR$/src/main/windows/app.js.map" />
-        <option value="$PROJECT_DIR$/src/main/services/playerWindow.js.map" />
-        <option value="$PROJECT_DIR$/src/main/services/playerWindow.js" />
-        <option value="$PROJECT_DIR$/src/main/services/appWindow.js.map" />
-        <option value="$PROJECT_DIR$/src/main/services/appWindow.js" />
+        <option value="$PROJECT_DIR$/src/main/types/store.js.map" />
+        <option value="$PROJECT_DIR$/src/main/types/store.js" />
         <option value="$PROJECT_DIR$/src/main/windows/selector.js.map" />
         <option value="$PROJECT_DIR$/src/main/windows/selector.js" />
         <option value="$PROJECT_DIR$/src/main/services/selectorWindow.js.map" />
         <option value="$PROJECT_DIR$/src/main/services/selectorWindow.js" />
+        <option value="$PROJECT_DIR$/src/main/services/player.js.map" />
+        <option value="$PROJECT_DIR$/src/main/services/player.js" />
+        <option value="$PROJECT_DIR$/src/main/types/models/attributes.js" />
+        <option value="$PROJECT_DIR$/src/main/types/models/attributes.js.map" />
+        <option value="$PROJECT_DIR$/src/main/types/systems/date.js.map" />
+        <option value="$PROJECT_DIR$/src/main/types/systems/date.js" />
+        <option value="$PROJECT_DIR$/src/main/types/models/players/index.js" />
+        <option value="$PROJECT_DIR$/src/main/types/models/players/index.js.map" />
+        <option value="$PROJECT_DIR$/src/main/types/models/players/form.js" />
+        <option value="$PROJECT_DIR$/src/main/types/models/players/form.js.map" />
+        <option value="$PROJECT_DIR$/src/main/types/store.js.map" />
+        <option value="$PROJECT_DIR$/src/main/types/store.js" />
+        <option value="$PROJECT_DIR$/src/main/services/player.js.map" />
+        <option value="$PROJECT_DIR$/src/main/services/player.js" />
+        <option value="$PROJECT_DIR$/src/main/types/models/attributes.js" />
+        <option value="$PROJECT_DIR$/src/main/types/models/attributes.js.map" />
+        <option value="$PROJECT_DIR$/src/main/types/systems/date.js.map" />
+        <option value="$PROJECT_DIR$/src/main/types/systems/date.js" />
+        <option value="$PROJECT_DIR$/src/main/types/models/players/index.js" />
+        <option value="$PROJECT_DIR$/src/main/types/models/players/index.js.map" />
+        <option value="$PROJECT_DIR$/src/main/types/models/players/form.js" />
+        <option value="$PROJECT_DIR$/src/main/types/models/players/form.js.map" />
       </list>
     </option>
   </component>

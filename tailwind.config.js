@@ -1,9 +1,9 @@
 module.exports = {
   content: [
-    './index.html',
+    '../../index.html',
     './src/**/*.{vue,js,ts,jsx,tsx}',
   ],
-  darkMode: 'class',
+  prefix: 'tw-',
   theme: {
     extend: {
       colors: {
@@ -15,23 +15,18 @@ module.exports = {
         'bs-danger': '#dc3545', // bootstrap 5 default coors
         'bs-light': '#f8f9fa', // bootstrap 5 default coors
         'bs-dark': '#212529', // bootstrap 5 default coors
-        'general-sidebar': {
+        'app-sidebar': {
           light: '#1c2742',
           DEFAULT: '#1c2742',
           dark: '#1c2742',
-        }, // general layout sidebar colors
+        }, // app sidebar colors
+        /* Only For this app */
+        'YOUTUBE': '#cd201f',
+        'TWITCH': '#9147ff',
+        'EX_URL': '#405de6',
+        'IN_PC': '#fffc00',
       },
-      fontSize: {
-        cxs: ['0.5rem', '1rem']
-      },
-      width: {
-        '62': '15.5rem'
-      },
-      height: {
-        '18': '4.5rem'
-      }
     },
   },
-  prefix: 'tw-',
   plugins: [],
 }

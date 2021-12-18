@@ -4,7 +4,7 @@
   >
     <span
       v-if="required"
-      class="tw-text-red-500"
+      class="c-row-display-label--required"
     >
       *
     </span>
@@ -27,3 +27,15 @@ const props = defineProps({
   }
 })
 </script>
+<style
+  lang="scss"
+  scoped
+>
+.c-row-display-label {
+  @apply tw-w-full md:tw-w-3/12;
+
+  &--required {
+    @apply tw-text-red-500;
+  }
+}
+</style>
