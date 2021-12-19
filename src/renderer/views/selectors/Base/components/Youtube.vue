@@ -17,11 +17,6 @@
       class="tw-mt-2 tw-flex tw-justify-end"
     >
       <c-btn
-        class="btn-outline-primary tw-mr-2"
-      >
-        {{ $t('commons.actions.Cancel') }}
-      </c-btn>
-      <c-btn
         class="btn-primary"
         @click="onClickSaveBtn"
       >

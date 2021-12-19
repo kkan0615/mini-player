@@ -3,13 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="9faee569-f067-44e5-a268-fe59bf3854c5" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/main.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/main.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/services/player.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/services/player.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/renderer/store/modules/model/actions.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/renderer/store/modules/model/actions.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/renderer/types/models/players/form.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/renderer/types/models/players/form.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/renderer/types/models/players/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/renderer/types/models/players/index.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/renderer/views/players/videos/InPc/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/renderer/views/players/videos/InPc/index.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/renderer/views/selectors/Base/components/InPc.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/renderer/views/selectors/Base/components/InPc.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/renderer/views/selectors/Base/components/Twitch.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/renderer/views/selectors/Base/components/Twitch.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/renderer/views/selectors/Base/components/Youtube.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/renderer/views/selectors/Base/components/Youtube.vue" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -82,7 +78,7 @@
       <workItem from="1639575349497" duration="92000" />
       <workItem from="1639648708389" duration="6219000" />
       <workItem from="1639822928705" duration="2084000" />
-      <workItem from="1639886226296" duration="5562000" />
+      <workItem from="1639886226296" duration="5620000" />
     </task>
     <servers />
   </component>
