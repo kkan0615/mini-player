@@ -2,75 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9faee569-f067-44e5-a268-fe59bf3854c5" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/services/player.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/types/models/attributes.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/types/models/players/form.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/types/models/players/index.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/types/store.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/types/systems/date.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/renderer/components/commons/Tooltip/index.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/renderer/components/commons/icons/FontAwesome/index.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/renderer/components/commons/inputs/File/index.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/renderer/components/commons/inputs/Multiselect/index.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/renderer/data/models/players/index.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/renderer/store/modules/model/actions.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/renderer/store/modules/model/getters.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/renderer/store/modules/model/index.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/renderer/store/modules/model/mutations.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/renderer/store/modules/model/state.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/renderer/styles/libs/multiselect.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/renderer/types/commons/components/form.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/renderer/types/models/players/form.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/renderer/utils/bootstrap/validate.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/renderer/utils/helpers/pagination.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/renderer/utils/libs/dayjs.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/renderer/utils/libs/fontAwesomeIcon.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/renderer/utils/libs/multiselect.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/renderer/views/players/components/MenuDropdown.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/renderer/views/players/videos/ExUrl/index.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/renderer/views/players/videos/InPc/index.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/renderer/views/selectors/Base/components/ExUrl.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/renderer/views/selectors/Base/components/ExUrlLogo.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/renderer/views/selectors/Base/components/InPc.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/renderer/views/selectors/Base/components/InPcLogo.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/renderer/views/selectors/Base/components/Twitch.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/renderer/views/selectors/Base/components/TwitchLogo.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/renderer/views/selectors/Base/components/Youtube.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/renderer/views/selectors/Base/components/YoutubeLogo.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/main.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/main.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/services/playerWindow.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/services/playerWindow.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/services/selectorWindow.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/services/selectorWindow.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/windows/player.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/windows/player.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/windows/selector.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/windows/selector.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/renderer/App.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/renderer/App.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/renderer/components/commons/Button/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/renderer/components/commons/Button/index.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/renderer/components/commons/displays/Row/components/Content.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/renderer/components/commons/displays/Row/components/Content.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/renderer/components/commons/displays/Row/components/Label.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/renderer/components/commons/displays/Row/components/Label.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/renderer/components/commons/displays/Row/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/renderer/components/commons/displays/Row/index.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/renderer/components/commons/inputs/Base/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/renderer/components/commons/inputs/Base/index.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/renderer/locale/langs/ko.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/renderer/locale/langs/ko.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/renderer/main.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/renderer/main.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/renderer/router/modules/players/video.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/renderer/router/modules/players/video.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/renderer/router/modules/selectors/form.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/renderer/router/modules/selectors/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/renderer/router/modules/selectors/index.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/renderer/store/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/renderer/store/index.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/renderer/store/modules/prototype/getters.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/renderer/store/modules/prototype/getters.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/renderer/styles/index.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/renderer/styles/index.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/renderer/styles/tailwind.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/renderer/styles/tailwind.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/services/player.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/services/player.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/renderer/store/modules/model/actions.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/renderer/store/modules/model/actions.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/renderer/types/models/players/form.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/renderer/types/models/players/form.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/renderer/types/models/players/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/renderer/types/models/players/index.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/renderer/views/players/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/renderer/views/players/index.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/renderer/views/players/videos/Twitch/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/renderer/views/players/videos/Twitch/index.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/renderer/views/players/videos/Youtube/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/renderer/views/players/videos/Youtube/index.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/renderer/views/selectors/Base/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/renderer/views/selectors/Base/index.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/renderer/views/selectors/forms/index.vue" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/renderer/views/selectors/forms/twitch/index.vue" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/renderer/views/selectors/forms/youtube/index.vue" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tailwind.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/tailwind.config.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/renderer/views/players/videos/InPc/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/renderer/views/players/videos/InPc/index.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/renderer/views/selectors/Base/components/InPc.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/renderer/views/selectors/Base/components/InPc.vue" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -142,7 +81,8 @@
       <workItem from="1639568083740" duration="5554000" />
       <workItem from="1639575349497" duration="92000" />
       <workItem from="1639648708389" duration="6219000" />
-      <workItem from="1639822928705" duration="2059000" />
+      <workItem from="1639822928705" duration="2084000" />
+      <workItem from="1639886226296" duration="5562000" />
     </task>
     <servers />
   </component>

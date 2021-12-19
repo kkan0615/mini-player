@@ -21,5 +21,6 @@ export interface ExUrlPlayerForm {
 
 export interface InPcPlayerForm {
   type: PlayerType
-  file: File
+  // file: File
+  filePath: string
 }

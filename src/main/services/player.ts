@@ -1,7 +1,8 @@
-import { IpcMainEvent } from 'electron'
+import { IpcMainEvent, IpcMainInvokeEvent } from 'electron'
 import { createPlayerWindow, playerWindow } from '../windows/player'
 import { selectorWindow } from '../windows/selector'
 import { PlayerInfo } from '../types/models/players'
+import * as fs from 'fs'
 
 export const setPlayerInfo = (event: IpcMainEvent, payload: PlayerInfo) => {
   /* Close selector window */
@@ -30,4 +31,13 @@ export const setPlayerInfo = (event: IpcMainEvent, payload: PlayerInfo) => {
         break
     }
   }
+}
+
+/**
+ * get video by file path in the pc
+ * @param event
+ * @param payload - file path
+ */
+export const getVideoInPc = (event: IpcMainInvokeEvent, payload: string) => {
+  return fs.readFileSync(payload)
 }

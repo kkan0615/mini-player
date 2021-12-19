@@ -100,7 +100,8 @@ export const playerActions: ActionTree<PlayerState, RootState> & PlayerActions =
       id: v4(),
       type: 'IN_PC',
       kindType: 'VIDEO',
-      file: payload.file,
+      // file: payload.file,
+      filePath: payload.filePath,
       createdAt: dayjs(),
       updatedAt: dayjs()
     }

@@ -27,6 +27,9 @@ import { PlayerActionTypes } from '@/store/modules/model/actions'
 
 const store = useStore()
 const { ipcRenderer } = useElectron()
+
+// @TODO: Create custom controls
+// const playerRef = ref<HTMLVideoElement>()
 const src = ref('')
 
 const playerInfo = computed(() => store.getters.Player as InPcPlayerInfo)
@@ -35,17 +38,11 @@ onMounted(() => {
   initPlayer()
 })
 
-const initPlayer = () => {
+const initPlayer = async () => {
   resetPlayer()
-  console.log('playerInfo.value.file', playerInfo.value.file)
-  const reader = new FileReader()
-  reader.onload = e => {
-    if (e.target) {
-      src.value = e.target.result as string
-    }
-  }
-  reader.readAsDataURL(new Blob([playerInfo.value.file]))
-
+  const videoBuffer: Buffer = await ipcRenderer.invoke('get-video-in-pc', playerInfo.value.filePath)
+  const videoBlob = new Blob([videoBuffer], { type: 'video/mp4' })
+  src.value = URL.createObjectURL(videoBlob)
 }
 
 const resetPlayer = () => {
@@ -58,7 +55,7 @@ const setInPcPlayer = async (event: IpcRendererEvent, args: TwitchPlayerInfo) =>
   try {
     /* Set player */
     await store.dispatch(PlayerActionTypes.SET_PLAYER, args)
-    initPlayer()
+    await initPlayer()
   } catch (e) {
     console.error(e)
   }

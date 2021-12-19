@@ -62,12 +62,15 @@ const test = (event: any) => {
 
 const onClickSaveBtn = async () => {
   try {
-    const params = {
-      type: 'IN_PC',
-      file: new Int8Array(await file.value.arrayBuffer())
-    } as InPcPlayerForm
-    console.log('file', file.value)
-    await store.dispatch(PlayerActionTypes.CREATE_IN_PC_PLAYER, params)
+    if (file.value) {
+      const params = {
+        type: 'IN_PC',
+        // file: new Int8Array(await file.value.arrayBuffer()) as any
+        filePath: file.value?.path
+      } as InPcPlayerForm
+      console.log('file', file.value)
+      await store.dispatch(PlayerActionTypes.CREATE_IN_PC_PLAYER, params)
+    }
   } catch (e) {
     console.error(e)
   }

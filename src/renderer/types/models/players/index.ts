@@ -12,6 +12,6 @@ export interface Player extends Attribute {
 export type YoutubePlayerInfo = Player & Pick<YoutubePlayerForm, 'videoId' | 'start' | 'end'>
 export type TwitchPlayerInfo = Player & Pick<TwitchPlayerForm, 'channelId'>
 export type ExUrlPlayerInfo = Player & Pick<ExUrlPlayerForm, 'url'>
-export type InPcPlayerInfo = Player & Pick<InPcPlayerForm, 'file'>
+export type InPcPlayerInfo = Player & Pick<InPcPlayerForm, 'filePath'>
 
 export type PlayerInfo = YoutubePlayerInfo | TwitchPlayerInfo | ExUrlPlayerInfo | InPcPlayerInfo

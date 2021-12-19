@@ -5,7 +5,7 @@ import { closePlayerWindow, openPlayerWindow } from './services/playerWindow'
 import { closeAppWindow, openAppWindow } from './services/appWindow'
 import { closeSelectorWindow, openSelectorWindow } from './services/selectorWindow'
 import { createSelectorWindow } from './windows/selector'
-import { setPlayerInfo } from './services/player'
+import { getVideoInPc, setPlayerInfo } from './services/player'
 // import isDev from 'electron-is-dev'
 
 app.whenReady()
@@ -37,6 +37,7 @@ app.on('ready', () => {
 
   /* Player */
   ipcMain.on('set-player-info', setPlayerInfo)
+  ipcMain.handle('get-video-in-pc', getVideoInPc)
 })
 
 /* When all windows are closed */
