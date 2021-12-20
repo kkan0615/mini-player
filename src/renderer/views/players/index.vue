@@ -1,9 +1,27 @@
 <template>
   <div
-    class="video-container"
+    class="tw-h-full sm:tw-block"
+    :class="{
+      'tw-flex': false,
+    }"
   >
-    <player-menu-drop-down />
-    <router-view />
+    <div
+      class="video-container"
+    >
+      <div
+        class="sm:tw-hidden tw-block sm:tw-static tw-absolute tw-right-0 tw-bg-white sm:tw-w-1/3 tw-w-2/3"
+      >
+        play list
+      </div>
+      <player-menu-drop-down />
+      <router-view />
+    </div>
+    <div
+      v-if="false"
+      class="sm:tw-block tw-bg-white tw-w-1/3"
+    >
+      play list
+    </div>
   </div>
 </template>
 <script lang="ts">
@@ -133,8 +151,9 @@ if (route.name !== 'InPcVideoPlayer') {
 
 .video-container-menu {
   @apply tw-opacity-0;
-  @apply tw-absolute tw-top-4 tw-right-4 tw-z-10 tw-text-white tw-rounded-lg tw-flex tw-justify-center tw-items-center;
-  @apply hover:tw-bg-gray-300 hover:tw-text-black hover:tw-shadow-xl;
+  @apply tw-absolute tw-top-1/3 tw-right-4 tw-z-10 tw-text-white tw-rounded-lg;
+  //@apply hover:tw-bg-gray-300 hover:tw-text-black hover:tw-shadow-xl;
   @apply tw-transition tw-ease-in-out tw-duration-300;
+  @apply tw-flex;
 }
 </style>

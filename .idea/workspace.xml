@@ -2,18 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9faee569-f067-44e5-a268-fe59bf3854c5" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/renderer/store/modules/windows/player/actions.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/renderer/store/modules/windows/player/getters.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/renderer/store/modules/windows/player/index.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/renderer/store/modules/windows/player/mutations.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/renderer/store/modules/windows/player/state.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/renderer/store/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/renderer/store/index.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/renderer/views/selectors/Base/components/ExUrl.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/renderer/views/selectors/Base/components/ExUrl.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/renderer/views/selectors/Base/components/InPc.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/renderer/views/selectors/Base/components/InPc.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/renderer/views/selectors/Base/components/Twitch.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/renderer/views/selectors/Base/components/Twitch.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/renderer/views/selectors/Base/components/Youtube.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/renderer/views/selectors/Base/components/Youtube.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/windows/player.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/windows/player.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/renderer/views/players/components/MenuDropdown.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/renderer/views/players/components/MenuDropdown.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/renderer/views/players/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/renderer/views/players/index.vue" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,7 +43,7 @@
     <property name="node.js.selected.package.standard" value="" />
     <property name="nodejs_package_manager_path" value="yarn" />
     <property name="settings.editor.selected.configurable" value="settings.javascript.linters.eslint" />
-    <property name="ts.external.directory.path" value="D:\GITGIT\mini-player\node_modules\typescript\lib" />
+    <property name="ts.external.directory.path" value="C:\Users\kkan0\Desktop\Study\mini-player\node_modules\typescript\lib" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
@@ -137,6 +129,7 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
