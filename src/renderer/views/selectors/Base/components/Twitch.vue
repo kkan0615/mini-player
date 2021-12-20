@@ -17,7 +17,7 @@
     class="tw-mt-2 tw-flex tw-justify-end"
   >
     <c-btn
-      class="btn-primary"
+      class="btn-primary tw-w-full"
       @click="onClickSaveBtn"
     >
       {{ $t('commons.actions.Save') }}

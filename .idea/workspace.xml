@@ -1,7 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9faee569-f067-44e5-a268-fe59bf3854c5" name="Changes" comment="" />
+    <list default="true" id="9faee569-f067-44e5-a268-fe59bf3854c5" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/renderer/store/modules/windows/player/actions.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/renderer/store/modules/windows/player/getters.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/renderer/store/modules/windows/player/index.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/renderer/store/modules/windows/player/mutations.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/renderer/store/modules/windows/player/state.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/renderer/store/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/renderer/store/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/renderer/views/selectors/Base/components/ExUrl.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/renderer/views/selectors/Base/components/ExUrl.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/renderer/views/selectors/Base/components/InPc.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/renderer/views/selectors/Base/components/InPc.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/renderer/views/selectors/Base/components/Twitch.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/renderer/views/selectors/Base/components/Twitch.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/renderer/views/selectors/Base/components/Youtube.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/renderer/views/selectors/Base/components/Youtube.vue" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -31,18 +44,19 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/renderer/views/players/videos" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/renderer/store/modules/windows" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.standard" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.standard" value="" />
     <property name="nodejs_package_manager_path" value="yarn" />
     <property name="settings.editor.selected.configurable" value="settings.javascript.linters.eslint" />
-    <property name="ts.external.directory.path" value="D:\personalStudy\mini-player\node_modules\typescript\lib" />
+    <property name="ts.external.directory.path" value="D:\GITGIT\mini-player\node_modules\typescript\lib" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\GITGIT\mini-player\src\renderer\store\modules\windows" />
       <recent name="D:\personalStudy\mini-player\src\renderer\views\players\videos" />
       <recent name="D:\personalStudy\mini-player\src\renderer\views\selectors\Base\components" />
       <recent name="C:\Users\kkan0\Desktop\Study\mini-player\src\main\types" />
@@ -74,6 +88,7 @@
       <workItem from="1639648708389" duration="6219000" />
       <workItem from="1639822928705" duration="2084000" />
       <workItem from="1639886226296" duration="5633000" />
+      <workItem from="1639981743660" duration="4249000" />
     </task>
     <servers />
   </component>
@@ -122,7 +137,6 @@
         </entry>
       </map>
     </option>
-    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
