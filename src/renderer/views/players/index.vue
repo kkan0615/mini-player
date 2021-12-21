@@ -1,26 +1,22 @@
 <template>
   <div
-    class="tw-h-full sm:tw-block"
+    class="tw-h-full"
     :class="{
-      'tw-flex': false,
+      'tw-flex': isOpenNavigator,
     }"
   >
     <div
       class="video-container"
     >
-      <div
-        class="sm:tw-hidden tw-block sm:tw-static tw-absolute tw-right-0 tw-bg-white sm:tw-w-1/3 tw-w-2/3"
-      >
-        play list
-      </div>
       <player-menu-drop-down />
       <router-view />
     </div>
     <div
-      v-if="false"
+      v-if="isOpenNavigator"
       class="sm:tw-block tw-bg-white tw-w-1/3"
+      style="min-width: 300px;"
     >
-      play list
+      @TODO: player navigator will be here
     </div>
   </div>
 </template>
@@ -32,7 +28,7 @@ export default {
 <script setup lang="ts">
 import useElectron from '@/mixins/useElectron'
 import { useRoute, useRouter } from 'vue-router'
-import { onBeforeUnmount } from 'vue'
+import { computed, onBeforeUnmount } from 'vue'
 import { IpcRendererEvent } from 'electron'
 import { InPcPlayerInfo, TwitchPlayerInfo, YoutubePlayerInfo } from '@/types/models/players'
 import { PlayerActionTypes } from '@/store/modules/model/actions'
@@ -44,7 +40,10 @@ const router = useRouter()
 const route = useRoute()
 const { ipcRenderer } = useElectron()
 
+const isOpenNavigator = computed(() => store.getters.IsOpenAppWindowNavigator)
+
 onBeforeUnmount(() => {
+  /* Off all electron events */
   ipcRenderer.off('set-youtube-player', setYoutubePlayer)
   ipcRenderer.off('set-twitch-player', setTwitchPlayer)
   ipcRenderer.off('set-ex_url-player', setExUrlPlayer)

@@ -10,10 +10,7 @@ import { prototypeGetters, PrototypeGetters } from './getters'
 import { prototypeMutations, PrototypeMutations } from './mutations'
 import { prototypeActions, PrototypeActions } from './actions'
 
-export type PrototypeStore<S = PrototypeState> = Omit<
-VuexStore<S>,
-'commit' | 'getters' | 'dispatch'
-> & {
+export type PrototypeStore<S = PrototypeState> = Omit<VuexStore<S>, 'commit' | 'getters' | 'dispatch'> & {
   commit<K extends keyof PrototypeMutations, P extends Parameters<PrototypeMutations[K]>[1]>(
     key: K,
     payload: P,

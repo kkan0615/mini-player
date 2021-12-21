@@ -2,7 +2,11 @@ import { BrowserWindow, screen } from 'electron'
 import path from 'path'
 import isDev from 'electron-is-dev'
 import { selectorWindow } from './selector'
-import { onFocusPlayerWindow } from '../services/playerWindow'
+import {
+  DEFAULT_PLAYER_WINDOW_HEIGHT,
+  DEFAULT_PLAYER_WINDOW_MIN_WIDTH,
+  DEFAULT_PLAYER_WINDOW_WIDTH
+} from '../types/windows/player'
 
 export let playerWindow: BrowserWindow | undefined
 
@@ -13,9 +17,9 @@ export const createPlayerWindow = () => {
   playerWindow = new BrowserWindow({
     // width: parseInt((dimensions.width * 0.8).toString()),
     // height: parseInt((dimensions.height * 0.8).toString()),
-    width: 400,
-    height: 300,
-    minWidth: 400,
+    width: DEFAULT_PLAYER_WINDOW_WIDTH,
+    height: DEFAULT_PLAYER_WINDOW_HEIGHT,
+    minWidth: DEFAULT_PLAYER_WINDOW_MIN_WIDTH,
     autoHideMenuBar: true,
     maximizable: true,
     resizable: true,

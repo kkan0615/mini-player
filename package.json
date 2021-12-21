@@ -1,6 +1,6 @@
 {
   "name": "mini-player",
-  "version": "0.0.3",
+  "version": "0.0.3a",
   "author": "Youngjin Kwak",
   "description": "Create your personal manager",
   "private": "true",
@@ -27,7 +27,7 @@
       {
         "provider": "github",
         "owner": "kkan0615",
-        "repo": "my-personal-manger"
+        "repo": "mini-player"
       }
     ],
     "mac": {

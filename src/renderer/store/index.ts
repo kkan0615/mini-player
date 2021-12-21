@@ -6,18 +6,22 @@ import { PlayerState } from '@/store/modules/model/state'
 import { playerModule, PlayerStore } from '@/store/modules/model'
 import { PlayerWindowState } from '@/store/modules/windows/player/state'
 import { playerWindowModule, PlayerWindowStore } from '@/store/modules/windows/player'
+import { AppWindowState } from '@/store/modules/windows/app/state'
+import { appWindowModule, AppWindowStore } from '@/store/modules/windows/app'
 
 // define your typings for the store state
 export interface RootState {
   prototype: PrototypeState
   player: PlayerState
   playerWindow: PlayerWindowState
+  appWindow: AppWindowState
 }
 
 export type RootStore =
     PrototypeStore<Pick<RootState, 'prototype'>> &
     PlayerStore<Pick<RootState, 'player'>> &
-    PlayerWindowStore<Pick<RootState, 'playerWindow'>>
+    PlayerWindowStore<Pick<RootState, 'playerWindow'>> &
+    AppWindowStore<Pick<RootState, 'appWindow'>>
 
 // define injection key
 export const key: InjectionKey<Store<RootState>> = Symbol()
@@ -31,6 +35,7 @@ export const store = createStore<RootState>({
     prototype: prototypeModule,
     player: playerModule,
     playerWindow: playerWindowModule,
+    appWindow: appWindowModule,
   }
 })
 

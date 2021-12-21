@@ -1,7 +1,7 @@
 import { app, BrowserWindow, ipcMain } from 'electron'
 import { createAppWindow } from './windows/app'
 import { createPlayerWindow } from './windows/player'
-import { closePlayerWindow, openPlayerWindow } from './services/playerWindow'
+import { closePlayerWindow, closePlayWindowNavigator, openPlayerWindow, openPlayWindowNavigator } from './services/playerWindow'
 import { closeAppWindow, openAppWindow } from './services/appWindow'
 import { closeSelectorWindow, openSelectorWindow } from './services/selectorWindow'
 import { createSelectorWindow } from './windows/selector'
@@ -30,6 +30,8 @@ app.on('ready', () => {
   /** Player windows */
   ipcMain.on('open-player-window', openPlayerWindow)
   ipcMain.on('close-player-window', closePlayerWindow)
+  ipcMain.on('open-player-window-navigator', openPlayWindowNavigator)
+  ipcMain.on('close-player-window-navigator', closePlayWindowNavigator)
 
   /** Selector windows */
   ipcMain.on('open-selector-window', openSelectorWindow)
