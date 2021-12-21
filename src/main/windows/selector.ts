@@ -5,7 +5,6 @@ import isDev from 'electron-is-dev'
 export let selectorWindow: BrowserWindow | undefined
 
 export const createSelectorWindow = () => {
-
   selectorWindow = new BrowserWindow({
     width: 300,
     height: 400,
@@ -25,7 +24,7 @@ export const createSelectorWindow = () => {
     selectorWindow.webContents.openDevTools()
   }
 
-  /* When finish to frame loaded */
+  /* When finish frame loading */
   selectorWindow.webContents.once('did-finish-load', () => {
     if (selectorWindow) {
       selectorWindow.webContents.send('move-to-selector')

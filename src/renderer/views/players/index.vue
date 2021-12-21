@@ -11,13 +11,11 @@
       <player-menu-drop-down />
       <router-view />
     </div>
-    <div
+    <player-navigator
       v-if="isOpenNavigator"
       class="sm:tw-block tw-bg-white tw-w-1/3"
       style="min-width: 300px;"
-    >
-      @TODO: player navigator will be here
-    </div>
+    />
   </div>
 </template>
 <script lang="ts">
@@ -26,14 +24,15 @@ export default {
 }
 </script>
 <script setup lang="ts">
-import useElectron from '@/mixins/useElectron'
-import { useRoute, useRouter } from 'vue-router'
 import { computed, onBeforeUnmount } from 'vue'
+import useStore from '@/store'
+import { useRoute, useRouter } from 'vue-router'
+import useElectron from '@/mixins/useElectron'
 import { IpcRendererEvent } from 'electron'
 import { InPcPlayerInfo, TwitchPlayerInfo, YoutubePlayerInfo } from '@/types/models/players'
 import { PlayerActionTypes } from '@/store/modules/model/actions'
-import useStore from '@/store'
 import PlayerMenuDropDown from './components/MenuDropdown.vue'
+import PlayerNavigator from './components/Navigator.vue'
 
 const store = useStore()
 const router = useRouter()
