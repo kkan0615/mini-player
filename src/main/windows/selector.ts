@@ -11,7 +11,7 @@ export const createSelectorWindow = () => {
     minWidth: 300,
     maximizable: isDev,
     resizable: isDev,
-    alwaysOnTop: true,
+    alwaysOnTop: !isDev,
     webPreferences: {
       preload: path.join(__dirname, '../preload.js'),
       nodeIntegration: true,

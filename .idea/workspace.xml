@@ -2,12 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9faee569-f067-44e5-a268-fe59bf3854c5" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/renderer/views/players/components/Menubar.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/renderer/views/players/components/Navigator.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/types/store.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/types/store.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/services/playerWindow.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/services/playerWindow.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/types/windows/player.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/types/windows/player.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/windows/selector.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/windows/selector.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/renderer/components/HelloWorld.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/renderer/components/commons/Tooltip/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/renderer/components/commons/Tooltip/index.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/renderer/locale/langs/ko.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/renderer/locale/langs/ko.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/renderer/store/modules/windows/player/mutations.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/renderer/store/modules/windows/player/mutations.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/renderer/views/players/components/Menubar.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/renderer/views/players/components/Menubar.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/renderer/views/players/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/renderer/views/players/index.vue" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -46,7 +48,7 @@
     <property name="node.js.selected.package.standard" value="" />
     <property name="nodejs_package_manager_path" value="yarn" />
     <property name="settings.editor.selected.configurable" value="settings.javascript.linters.eslint" />
-    <property name="ts.external.directory.path" value="D:\GITGIT\mini-player\node_modules\typescript\lib" />
+    <property name="ts.external.directory.path" value="C:\Users\kkan0\Desktop\Study\mini-player\node_modules\typescript\lib" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
@@ -121,6 +123,8 @@
         <option value="$PROJECT_DIR$/src/main/types/models/players/index.js.map" />
         <option value="$PROJECT_DIR$/src/main/types/models/players/form.js" />
         <option value="$PROJECT_DIR$/src/main/types/models/players/form.js.map" />
+        <option value="$PROJECT_DIR$/src/main/types/windows/player.js" />
+        <option value="$PROJECT_DIR$/src/main/types/windows/player.js.map" />
       </list>
     </option>
   </component>
@@ -134,6 +138,7 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

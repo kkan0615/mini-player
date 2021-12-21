@@ -10,6 +10,7 @@ export type PlayerWindowMutations<S = PlayerWindowState> = {
 
 export const playerWindowMutations: MutationTree<PlayerWindowState> & PlayerWindowMutations = {
   [PlayerWindowMutationTypes.SET_IS_OPEN_NAVIGATOR] (state, payload) {
+    console.log(payload)
     state.isOpenNavigator = payload
   },
 }

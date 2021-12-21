@@ -3,7 +3,6 @@ import { selectorWindow } from '../windows/selector'
 import {
   DEFAULT_PLAYER_WINDOW_HEIGHT,
   DEFAULT_PLAYER_WINDOW_MIN_WIDTH,
-  DEFAULT_PLAYER_WINDOW_WIDTH
 } from '../types/windows/player'
 
 /**
@@ -46,11 +45,11 @@ export const openPlayWindowNavigator = () => {
   if (playerWindow) {
     const { width, height } = playerWindow.getContentBounds()
     if (width <= DEFAULT_PLAYER_WINDOW_MIN_WIDTH + 300) {
+      /*  Change minWidth */
+      playerWindow.setMinimumSize(DEFAULT_PLAYER_WINDOW_MIN_WIDTH + 300, DEFAULT_PLAYER_WINDOW_HEIGHT)
       /*  Change width */
       // @TODO: Animation에 문제 있으면 해당 true 빼기
       playerWindow.setBounds({ width: DEFAULT_PLAYER_WINDOW_MIN_WIDTH + 300, height, }, true)
-      /*  Change minWidth */
-      playerWindow.setMinimumSize(DEFAULT_PLAYER_WINDOW_MIN_WIDTH + 300, DEFAULT_PLAYER_WINDOW_HEIGHT)
       // playerWindow
     }
   }
@@ -63,11 +62,11 @@ export const closePlayWindowNavigator = () => {
   if (playerWindow) {
     const { width, height } = playerWindow.getContentBounds()
     if (width - 300 <= DEFAULT_PLAYER_WINDOW_MIN_WIDTH) {
+      /*  Change minWidth */
+      playerWindow.setMinimumSize(DEFAULT_PLAYER_WINDOW_MIN_WIDTH, DEFAULT_PLAYER_WINDOW_HEIGHT)
       /*  Change width */
       // @TODO: Animation에 문제 있으면 해당 true 빼기
       playerWindow.setBounds({ width: DEFAULT_PLAYER_WINDOW_MIN_WIDTH, height, }, true)
-      /*  Change minWidth */
-      playerWindow.setMinimumSize(DEFAULT_PLAYER_WINDOW_MIN_WIDTH, DEFAULT_PLAYER_WINDOW_HEIGHT)
     }
   }
 }
