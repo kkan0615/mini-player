@@ -25,10 +25,10 @@ export interface PlayerWindowActions {
     payload: boolean
   ): void
   [PlayerWindowActionTypes.OPEN_SELECTOR_WINDOW] (
-      { commit }: AugmentedActionContext,
+    context: AugmentedActionContext,
   ): void
   [PlayerWindowActionTypes.CLOSE_SELECTOR_WINDOW] (
-      { commit }: AugmentedActionContext,
+    context: AugmentedActionContext,
   ): void
 }
 
@@ -43,10 +43,10 @@ export const playerWindowActions: ActionTree<PlayerWindowState, RootState> & Pla
     }
     commit(PlayerWindowMutationTypes.SET_IS_OPEN_NAVIGATOR, payload)
   },
-  [PlayerWindowActionTypes.OPEN_SELECTOR_WINDOW] ({ commit }) {
+  [PlayerWindowActionTypes.OPEN_SELECTOR_WINDOW] () {
     ipcRenderer.send('open-selector-window')
   },
-  [PlayerWindowActionTypes.CLOSE_SELECTOR_WINDOW] ({ commit }) {
+  [PlayerWindowActionTypes.CLOSE_SELECTOR_WINDOW] () {
     ipcRenderer.send('close-selector-window')
   },
 }

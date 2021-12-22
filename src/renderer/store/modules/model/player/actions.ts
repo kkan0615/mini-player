@@ -10,7 +10,13 @@ import {
   YoutubePlayerInfo
 } from '@/types/models/players'
 import dayjs from 'dayjs'
-import { ExUrlPlayerForm, InPcPlayerForm, TwitchPlayerForm, YoutubePlayerForm } from '@/types/models/players/form'
+import {
+  ExUrlPlayerForm,
+  InPcPlayerForm,
+  PlayerForm,
+  TwitchPlayerForm,
+  YoutubePlayerForm
+} from '@/types/models/players/form'
 import { v4 } from 'uuid'
 
 const electron = window.require('electron')
@@ -21,6 +27,7 @@ export enum PlayerActionTypes {
   CREATE_TWITCH_PLAYER = 'player/CREATE_TWITCH_PLAYER',
   CREATE_EX_URL_PLAYER = 'player/CREATE_EX_URL_PLAYER',
   CREATE_IN_PC_PLAYER = 'player/CREATE_IN_PC_PLAYER',
+  ADD_TO_PLAY_LIST = 'player/ADD_TO_PLAY_LIST',
 }
 
 export type AugmentedActionContext = {
@@ -50,6 +57,10 @@ export interface PlayerActions {
   [PlayerActionTypes.CREATE_IN_PC_PLAYER] (
     { commit }: AugmentedActionContext,
     payload: InPcPlayerForm
+  ): void
+  [PlayerActionTypes.ADD_TO_PLAY_LIST] (
+    { commit }: AugmentedActionContext,
+    payload: YoutubePlayerForm | TwitchPlayerForm | ExUrlPlayerForm | InPcPlayerForm
   ): void
 }
 
@@ -100,12 +111,66 @@ export const playerActions: ActionTree<PlayerState, RootState> & PlayerActions =
       id: v4(),
       type: 'IN_PC',
       kindType: 'VIDEO',
-      // file: payload.file,
       filePath: payload.filePath,
       createdAt: dayjs(),
       updatedAt: dayjs()
     }
     electron.ipcRenderer.send('set-player-info', player)
     commit(PlayerMutationTypes.SET_PLAYER, player)
+  },
+  [PlayerActionTypes.ADD_TO_PLAY_LIST] ({ commit }, payload) {
+    let player: PlayerInfo | null = null
+    switch (payload.type) {
+      case 'YOUTUBE':
+        payload = payload as YoutubePlayerForm
+        player = {
+          id: v4(),
+          kindType: 'VIDEO',
+          type: 'YOUTUBE',
+          videoId: (payload).videoId,
+          start: payload.start,
+          end: payload.end,
+          createdAt: dayjs(),
+          updatedAt: dayjs()
+        } as YoutubePlayerInfo
+        break
+      case 'TWITCH':
+        payload = payload as TwitchPlayerForm
+        player = {
+          id: v4(),
+          type: 'TWITCH',
+          kindType: 'VIDEO',
+          channelId: payload.channelId,
+          createdAt: dayjs(),
+          updatedAt: dayjs()
+        } as TwitchPlayerInfo
+        break
+      case 'EX_URL':
+        payload = payload as ExUrlPlayerForm
+        player = {
+          id: v4(),
+          type: 'EX_URL',
+          kindType: 'VIDEO',
+          url: payload.url,
+          createdAt: dayjs(),
+          updatedAt: dayjs()
+        } as ExUrlPlayerInfo
+        break
+      case 'IN_PC':
+        payload = payload as InPcPlayerForm
+        player = {
+          id: v4(),
+          type: 'IN_PC',
+          kindType: 'VIDEO',
+          filePath: payload.filePath,
+          createdAt: dayjs(),
+          updatedAt: dayjs()
+        } as InPcPlayerInfo
+        break
+    }
+    if (player) {
+      electron.ipcRenderer.send('add-to-play-list', player)
+      commit(PlayerMutationTypes.SET_PLAYER, player)
+    }
   },
 }

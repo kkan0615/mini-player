@@ -1,6 +1,5 @@
 import { IpcMainEvent, IpcMainInvokeEvent } from 'electron'
 import { createPlayerWindow, playerWindow } from '../windows/player'
-import { selectorWindow } from '../windows/selector'
 import { PlayerInfo } from '../types/models/players'
 import * as fs from 'fs'
 
@@ -30,6 +29,12 @@ export const setPlayerInfo = (event: IpcMainEvent, payload: PlayerInfo) => {
         playerWindow.webContents.send('set-in_pc-player', payload)
         break
     }
+  }
+}
+
+export const addToPlayList = (event: IpcMainEvent, payload: PlayerInfo) => {
+  if (playerWindow) {
+    playerWindow.webContents.send('add-to-play-list', payload)
   }
 }
 

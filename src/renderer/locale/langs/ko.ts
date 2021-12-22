@@ -5,6 +5,7 @@ export const koreanDictionary = {
     actions: {
       Search: '검색',
       Save: '저장',
+      AddToPlayList: '플레이 리스트에 저장',
       Cancel: '취소'
     },
     tooltips: {

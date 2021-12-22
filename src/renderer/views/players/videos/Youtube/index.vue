@@ -21,7 +21,7 @@ import useStore from '@/store'
 import useElectron from '@/mixins/useElectron'
 import { YoutubePlayerInfo } from '@/types/models/players'
 import { useRouter } from 'vue-router'
-import { PlayerActionTypes } from '@/store/modules/model/actions'
+import { PlayerActionTypes } from '@/store/modules/model/player/actions'
 import { IpcRendererEvent } from 'electron'
 const router = useRouter()
 const store = useStore()

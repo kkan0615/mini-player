@@ -39,7 +39,7 @@ import CBtn from '@/components/commons/Button/index.vue'
 import { useI18n } from 'vue-i18n'
 import { ExUrlPlayerForm } from '@/types/models/players/form'
 import useStore from '@/store'
-import { PlayerActionTypes } from '@/store/modules/model/actions'
+import { PlayerActionTypes } from '@/store/modules/model/player/actions'
 
 const url = ref('')
 const store = useStore()

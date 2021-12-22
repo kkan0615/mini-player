@@ -5,7 +5,7 @@ import { closePlayerWindow, closePlayWindowNavigator, openPlayerWindow, openPlay
 import { closeAppWindow, openAppWindow } from './services/appWindow'
 import { closeSelectorWindow, openSelectorWindow } from './services/selectorWindow'
 import { createSelectorWindow } from './windows/selector'
-import { getVideoInPc, setPlayerInfo } from './services/player'
+import { addToPlayList, getVideoInPc, setPlayerInfo } from './services/player'
 // import isDev from 'electron-is-dev'
 
 app.whenReady()
@@ -39,6 +39,7 @@ app.on('ready', () => {
 
   /* Player */
   ipcMain.on('set-player-info', setPlayerInfo)
+  ipcMain.on('add-to-play-list', addToPlayList)
   ipcMain.handle('get-video-in-pc', getVideoInPc)
 })
 

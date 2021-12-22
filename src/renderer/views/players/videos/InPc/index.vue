@@ -23,7 +23,7 @@ import useStore from '@/store'
 import useElectron from '@/mixins/useElectron'
 import { InPcPlayerInfo, TwitchPlayerInfo } from '@/types/models/players'
 import { IpcRendererEvent } from 'electron'
-import { PlayerActionTypes } from '@/store/modules/model/actions'
+import { PlayerActionTypes } from '@/store/modules/model/player/actions'
 
 const store = useStore()
 const { ipcRenderer } = useElectron()
