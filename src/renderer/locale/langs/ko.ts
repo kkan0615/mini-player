@@ -6,7 +6,11 @@ export const koreanDictionary = {
       Search: '검색',
       Save: '저장',
       Cancel: '취소'
-    }
+    },
+    tooltips: {
+      Navigator: '네비게이터',
+      OnAlwaysTop: '항상 최상단',
+    },
   },
   types: {
     models: {

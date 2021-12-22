@@ -6,14 +6,23 @@
     }"
   >
     <div
-      class="video-container"
+      class="video-container tw-grow tw-shrink-0 tw-flex tw-flex-col"
     >
       <player-menu-drop-down />
-      <router-view />
+      <div
+        class="tw-grow tw-shrink-0"
+      >
+        <router-view />
+      </div>
+      <div
+        class="player-menu-bar"
+      >
+        <player-menubar />
+      </div>
     </div>
     <player-navigator
       v-if="isOpenNavigator"
-      class="sm:tw-block tw-bg-white tw-w-1/3"
+      class="sm:tw-block tw-bg-white tw-h-full tw-w-1/3"
       style="min-width: 300px;"
     />
   </div>
@@ -33,20 +42,23 @@ import { InPcPlayerInfo, TwitchPlayerInfo, YoutubePlayerInfo } from '@/types/mod
 import { PlayerActionTypes } from '@/store/modules/model/actions'
 import PlayerMenuDropDown from './components/MenuDropdown.vue'
 import PlayerNavigator from './components/Navigator.vue'
+import CMaterialIcon from '@/components/commons/icons/Material/index.vue'
+import { PlayerWindowActionTypes } from '@/store/modules/windows/player/actions'
+import PlayerMenubar from '@/views/players/components/Menubar.vue'
 
 const store = useStore()
 const router = useRouter()
 const route = useRoute()
 const { ipcRenderer } = useElectron()
 
-const isOpenNavigator = computed(() => store.getters.IsOpenAppWindowNavigator)
+const isOpenNavigator = computed(() => store.getters.IsOpenPlayerWindowNavigator)
 
 onBeforeUnmount(() => {
   /* Off all electron events */
-  ipcRenderer.off('set-youtube-player', setYoutubePlayer)
-  ipcRenderer.off('set-twitch-player', setTwitchPlayer)
-  ipcRenderer.off('set-ex_url-player', setExUrlPlayer)
-  ipcRenderer.off('set-in_pc-player', setInPcPlayer)
+  // ipcRenderer.off('set-youtube-player', setYoutubePlayer)
+  // ipcRenderer.off('set-twitch-player', setTwitchPlayer)
+  // ipcRenderer.off('set-ex_url-player', setExUrlPlayer)
+  // ipcRenderer.off('set-in_pc-player', setInPcPlayer)
 })
 
 /**
@@ -145,6 +157,10 @@ if (route.name !== 'InPcVideoPlayer') {
   &:hover > .video-container-menu {
     @apply tw-opacity-100;
   }
+
+  &:hover > .player-menu-bar {
+    @apply tw-block;
+  }
 }
 
 .video-container-menu {
@@ -153,5 +169,14 @@ if (route.name !== 'InPcVideoPlayer') {
   //@apply hover:tw-bg-gray-300 hover:tw-text-black hover:tw-shadow-xl;
   @apply tw-transition tw-ease-in-out tw-duration-300;
   @apply tw-flex;
+}
+
+.player-menu-bar {
+  @apply tw-hidden;
+  @apply tw-h-8 tw-bg-black tw-text-white tw-px-4;
+
+  &:hover {
+    @apply tw-block;
+  }
 }
 </style>
