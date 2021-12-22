@@ -2,13 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9faee569-f067-44e5-a268-fe59bf3854c5" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/renderer/views/players/components/Menubar.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/renderer/views/players/components/Navigator.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/types/store.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/types/store.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/windows/selector.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/windows/selector.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/renderer/components/HelloWorld.vue" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/renderer/views/players/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/renderer/views/players/index.vue" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -85,7 +80,7 @@
       <workItem from="1639886226296" duration="5633000" />
       <workItem from="1639981743660" duration="4249000" />
       <workItem from="1640063238797" duration="2581000" />
-      <workItem from="1640068845035" duration="3311000" />
+      <workItem from="1640068845035" duration="3945000" />
     </task>
     <servers />
   </component>
