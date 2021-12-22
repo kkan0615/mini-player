@@ -46,6 +46,7 @@ import CBtn from '@/components/commons/Button/index.vue'
 import { YoutubePlayerForm } from '@/types/models/players/form'
 import { PlayerActionTypes } from '@/store/modules/model/player/actions'
 import useStore from '@/store'
+import { SelectorWindowActionTypes } from '@/store/modules/windows/selector/actions'
 
 const videoId = ref('')
 const store = useStore()
@@ -74,7 +75,7 @@ const onClickAddToPlayListBtn = async () => {
       type: 'YOUTUBE',
       videoId: videoId.value
     } as YoutubePlayerForm
-    await store.dispatch(PlayerActionTypes.ADD_TO_PLAY_LIST, params)
+    await store.dispatch(SelectorWindowActionTypes.ADD_TO_PLAY_LIST, params)
   } catch (e) {
     console.error(e)
   }

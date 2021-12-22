@@ -8,8 +8,7 @@ const { ipcRenderer } = useElectron()
 
 export enum PlayerWindowActionTypes {
   SET_IS_OPEN_NAVIGATOR = 'playerWindow/SET_IS_OPEN_NAVIGATOR',
-  OPEN_SELECTOR_WINDOW = 'playerWindow/OPEN_SELECTOR_WINDOW',
-  CLOSE_SELECTOR_WINDOW = 'playerWindow/CLOSE_SELECTOR_WINDOW',
+
 }
 
 export type AugmentedActionContext = {
@@ -24,12 +23,6 @@ export interface PlayerWindowActions {
     { commit }: AugmentedActionContext,
     payload: boolean
   ): void
-  [PlayerWindowActionTypes.OPEN_SELECTOR_WINDOW] (
-    context: AugmentedActionContext,
-  ): void
-  [PlayerWindowActionTypes.CLOSE_SELECTOR_WINDOW] (
-    context: AugmentedActionContext,
-  ): void
 }
 
 export const playerWindowActions: ActionTree<PlayerWindowState, RootState> & PlayerWindowActions = {
@@ -42,11 +35,5 @@ export const playerWindowActions: ActionTree<PlayerWindowState, RootState> & Pla
       ipcRenderer.send('close-player-window-navigator')
     }
     commit(PlayerWindowMutationTypes.SET_IS_OPEN_NAVIGATOR, payload)
-  },
-  [PlayerWindowActionTypes.OPEN_SELECTOR_WINDOW] () {
-    ipcRenderer.send('open-selector-window')
-  },
-  [PlayerWindowActionTypes.CLOSE_SELECTOR_WINDOW] () {
-    ipcRenderer.send('close-selector-window')
   },
 }

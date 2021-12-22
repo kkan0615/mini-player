@@ -6,24 +6,30 @@
     }"
   >
     <div
-      class="video-container tw-grow tw-shrink-0 tw-flex tw-flex-col"
+      class="tw-h-full tw-grow tw-shrink-0"
+      :class="{
+        'tw-w-2/3': isOpenNavigator
+      }"
     >
-      <player-menu-drop-down />
       <div
-        class="tw-grow tw-shrink-0"
+        class="player-container tw-flex tw-flex-col"
       >
-        <router-view />
-      </div>
-      <div
-        class="player-menu-bar"
-      >
-        <player-menubar />
+        <player-menu-drop-down />
+        <div
+          class="tw-h-1 tw-grow tw-shrink-0"
+        >
+          <router-view />
+        </div>
+        <div
+          class="player-menu-bar"
+        >
+          <player-menubar />
+        </div>
       </div>
     </div>
     <player-navigator
       v-if="isOpenNavigator"
-      class="sm:tw-block tw-bg-white tw-h-full tw-w-1/3"
-      style="min-width: 300px;"
+      class="tw-grow-0 tw-shrink tw-bg-white tw-h-full tw-w-1/3"
     />
   </div>
 </template>
@@ -33,16 +39,15 @@ export default {
 }
 </script>
 <script setup lang="ts">
-import { computed, onBeforeUnmount } from 'vue'
+import { computed, onBeforeUnmount, onMounted } from 'vue'
 import useStore from '@/store'
 import { useRoute, useRouter } from 'vue-router'
 import useElectron from '@/mixins/useElectron'
 import { IpcRendererEvent } from 'electron'
-import { InPcPlayerInfo, TwitchPlayerInfo, YoutubePlayerInfo } from '@/types/models/players'
+import { InPcPlayerInfo, PlayerInfo, TwitchPlayerInfo, YoutubePlayerInfo } from '@/types/models/players'
 import { PlayerActionTypes } from '@/store/modules/model/player/actions'
 import PlayerMenuDropDown from './components/MenuDropdown.vue'
 import PlayerNavigator from './components/Navigator.vue'
-import CMaterialIcon from '@/components/commons/icons/Material/index.vue'
 import { PlayerWindowActionTypes } from '@/store/modules/windows/player/actions'
 import PlayerMenubar from '@/views/players/components/Menubar.vue'
 
@@ -52,6 +57,10 @@ const route = useRoute()
 const { ipcRenderer } = useElectron()
 
 const isOpenNavigator = computed(() => store.getters.IsOpenPlayerWindowNavigator)
+
+onMounted(() => {
+  store.dispatch(PlayerWindowActionTypes.SET_IS_OPEN_NAVIGATOR, false)
+})
 
 onBeforeUnmount(() => {
   /* Off all electron events */
@@ -133,6 +142,15 @@ const setInPcPlayer = async (event: IpcRendererEvent, args: InPcPlayerInfo) => {
   }
 }
 
+const addToPlayList = async (event: IpcRendererEvent, args: PlayerInfo) => {
+  try {
+    /* Set player */
+    await store.dispatch(PlayerActionTypes.ADD_TO_PLAY_LIST, args)
+  } catch (e) {
+    console.error(e)
+  }
+}
+
 /* List to Event listening */
 if (route.name !== 'YoutubeVideoPlayer') {
   ipcRenderer.on('set-youtube-player', setYoutubePlayer)
@@ -146,15 +164,16 @@ if (route.name !== 'ExUrlVideoPlayer') {
 if (route.name !== 'InPcVideoPlayer') {
   ipcRenderer.on('set-in_pc-player', setInPcPlayer)
 }
+ipcRenderer.on('add-to-play-list', addToPlayList)
 
 </script>
 <style
   lang="scss"
 >
-.video-container {
-  @apply tw-h-full tw-relative;
+.player-container {
+  @apply tw-h-full tw-w-full tw-relative;
 
-  &:hover > .video-container-menu {
+  &:hover > .player-container-menu {
     @apply tw-opacity-100;
   }
 
@@ -163,10 +182,9 @@ if (route.name !== 'InPcVideoPlayer') {
   }
 }
 
-.video-container-menu {
+.player-container-menu {
   @apply tw-opacity-0;
   @apply tw-absolute tw-top-1/3 tw-right-4 tw-z-10 tw-text-white tw-rounded-lg;
-  //@apply hover:tw-bg-gray-300 hover:tw-text-black hover:tw-shadow-xl;
   @apply tw-transition tw-ease-in-out tw-duration-300;
   @apply tw-flex;
 }

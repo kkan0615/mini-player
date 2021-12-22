@@ -60,7 +60,7 @@ export interface PlayerActions {
   ): void
   [PlayerActionTypes.ADD_TO_PLAY_LIST] (
     { commit }: AugmentedActionContext,
-    payload: YoutubePlayerForm | TwitchPlayerForm | ExUrlPlayerForm | InPcPlayerForm
+    payload: PlayerInfo
   ): void
 }
 
@@ -76,8 +76,8 @@ export const playerActions: ActionTree<PlayerState, RootState> & PlayerActions =
       videoId: payload.videoId,
       start: payload.start,
       end: payload.end,
-      createdAt: dayjs(),
-      updatedAt: dayjs()
+      createdAt: dayjs().toISOString(),
+      updatedAt: dayjs().toISOString(),
     }
     electron.ipcRenderer.send('set-player-info', player)
     commit(PlayerMutationTypes.SET_PLAYER, player)
@@ -88,8 +88,8 @@ export const playerActions: ActionTree<PlayerState, RootState> & PlayerActions =
       type: 'TWITCH',
       kindType: 'VIDEO',
       channelId: payload.channelId,
-      createdAt: dayjs(),
-      updatedAt: dayjs()
+      createdAt: dayjs().toISOString(),
+      updatedAt: dayjs().toISOString(),
     }
     electron.ipcRenderer.send('set-player-info', player)
     commit(PlayerMutationTypes.SET_PLAYER, player)
@@ -100,8 +100,8 @@ export const playerActions: ActionTree<PlayerState, RootState> & PlayerActions =
       type: 'EX_URL',
       kindType: 'VIDEO',
       url: payload.url,
-      createdAt: dayjs(),
-      updatedAt: dayjs()
+      createdAt: dayjs().toISOString(),
+      updatedAt: dayjs().toISOString(),
     }
     electron.ipcRenderer.send('set-player-info', player)
     commit(PlayerMutationTypes.SET_PLAYER, player)
@@ -112,65 +112,15 @@ export const playerActions: ActionTree<PlayerState, RootState> & PlayerActions =
       type: 'IN_PC',
       kindType: 'VIDEO',
       filePath: payload.filePath,
-      createdAt: dayjs(),
-      updatedAt: dayjs()
+      createdAt: dayjs().toISOString(),
+      updatedAt: dayjs().toISOString(),
     }
     electron.ipcRenderer.send('set-player-info', player)
     commit(PlayerMutationTypes.SET_PLAYER, player)
   },
-  [PlayerActionTypes.ADD_TO_PLAY_LIST] ({ commit }, payload) {
-    let player: PlayerInfo | null = null
-    switch (payload.type) {
-      case 'YOUTUBE':
-        payload = payload as YoutubePlayerForm
-        player = {
-          id: v4(),
-          kindType: 'VIDEO',
-          type: 'YOUTUBE',
-          videoId: (payload).videoId,
-          start: payload.start,
-          end: payload.end,
-          createdAt: dayjs(),
-          updatedAt: dayjs()
-        } as YoutubePlayerInfo
-        break
-      case 'TWITCH':
-        payload = payload as TwitchPlayerForm
-        player = {
-          id: v4(),
-          type: 'TWITCH',
-          kindType: 'VIDEO',
-          channelId: payload.channelId,
-          createdAt: dayjs(),
-          updatedAt: dayjs()
-        } as TwitchPlayerInfo
-        break
-      case 'EX_URL':
-        payload = payload as ExUrlPlayerForm
-        player = {
-          id: v4(),
-          type: 'EX_URL',
-          kindType: 'VIDEO',
-          url: payload.url,
-          createdAt: dayjs(),
-          updatedAt: dayjs()
-        } as ExUrlPlayerInfo
-        break
-      case 'IN_PC':
-        payload = payload as InPcPlayerForm
-        player = {
-          id: v4(),
-          type: 'IN_PC',
-          kindType: 'VIDEO',
-          filePath: payload.filePath,
-          createdAt: dayjs(),
-          updatedAt: dayjs()
-        } as InPcPlayerInfo
-        break
-    }
-    if (player) {
-      electron.ipcRenderer.send('add-to-play-list', player)
-      commit(PlayerMutationTypes.SET_PLAYER, player)
-    }
+  [PlayerActionTypes.ADD_TO_PLAY_LIST] ({ commit, state }, payload) {
+    const playerList = state.playList
+    playerList.push(payload)
+    commit(PlayerMutationTypes.SET_PLAY_LIST, playerList)
   },
 }

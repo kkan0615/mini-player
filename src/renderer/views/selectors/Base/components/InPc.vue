@@ -29,6 +29,12 @@
     >
       {{ $t('commons.actions.Save') }}
     </c-btn>
+    <c-btn
+      class="btn-secondary tw-w-full mt-2"
+      @click="onClickAddToPlayListBtn"
+    >
+      {{ $t('commons.actions.AddToPlayList') }}
+    </c-btn>
   </div>
 </template>
 <script lang="ts">
@@ -47,6 +53,7 @@ import { InPcPlayerForm } from '@/types/models/players/form'
 import useStore from '@/store'
 import { PlayerActionTypes } from '@/store/modules/model/player/actions'
 import CFileInput from '@/components/commons/inputs/File/index.vue'
+import { SelectorWindowActionTypes } from '@/store/modules/windows/selector/actions'
 
 const file = ref<File>()
 const store = useStore()
@@ -60,12 +67,26 @@ const onClickSaveBtn = async () => {
     if (file.value) {
       const params = {
         type: 'IN_PC',
-        // file: new Int8Array(await file.value.arrayBuffer()) as any
         filePath: file.value?.path
       } as InPcPlayerForm
       console.log('file', file.value)
       await store.dispatch(PlayerActionTypes.CREATE_IN_PC_PLAYER, params)
     }
+  } catch (e) {
+    console.error(e)
+  }
+}
+
+/**
+ * Add to play list button click event
+ */
+const onClickAddToPlayListBtn = async () => {
+  try {
+    const params = {
+      type: 'IN_PC',
+      filePath: file.value?.path
+    } as InPcPlayerForm
+    await store.dispatch(SelectorWindowActionTypes.ADD_TO_PLAY_LIST, params)
   } catch (e) {
     console.error(e)
   }

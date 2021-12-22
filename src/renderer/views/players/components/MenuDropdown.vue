@@ -1,6 +1,6 @@
 <template>
   <div
-    class="video-container-menu"
+    class="player-container-menu"
   >
     <div
       class="dropstart"

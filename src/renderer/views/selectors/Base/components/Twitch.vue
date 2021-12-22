@@ -22,6 +22,12 @@
     >
       {{ $t('commons.actions.Save') }}
     </c-btn>
+    <c-btn
+      class="btn-secondary tw-w-full mt-2"
+      @click="onClickAddToPlayListBtn"
+    >
+      {{ $t('commons.actions.AddToPlayList') }}
+    </c-btn>
   </div>
 </template>
 <script lang="ts">
@@ -40,6 +46,7 @@ import { useI18n } from 'vue-i18n'
 import { TwitchPlayerForm } from '@/types/models/players/form'
 import useStore from '@/store'
 import { PlayerActionTypes } from '@/store/modules/model/player/actions'
+import { SelectorWindowActionTypes } from '@/store/modules/windows/selector/actions'
 
 const channelId = ref('')
 const store = useStore()
@@ -51,6 +58,21 @@ const onClickSaveBtn = async () => {
       channelId: channelId.value
     } as TwitchPlayerForm
     await store.dispatch(PlayerActionTypes.CREATE_TWITCH_PLAYER, params)
+  } catch (e) {
+    console.error(e)
+  }
+}
+
+/**
+ * Add to play list button click event
+ */
+const onClickAddToPlayListBtn = async () => {
+  try {
+    const params = {
+      type: 'TWITCH',
+      channelId: channelId.value
+    } as TwitchPlayerForm
+    await store.dispatch(SelectorWindowActionTypes.ADD_TO_PLAY_LIST, params)
   } catch (e) {
     console.error(e)
   }

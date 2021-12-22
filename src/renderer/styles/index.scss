@@ -1,1 +1,9 @@
 @import "./libs/multiselect";
+
+.scrollable {
+  @apply tw-overflow-y-auto;
+}
+
+.c-row {
+  @apply tw-flex tw-items-center;
+}
