@@ -67,9 +67,9 @@ const onClickSaveBtn = async () => {
     if (file.value) {
       const params = {
         type: 'IN_PC',
+        title: file.value?.name,
         filePath: file.value?.path
       } as InPcPlayerForm
-      console.log('file', file.value)
       await store.dispatch(PlayerActionTypes.CREATE_IN_PC_PLAYER, params)
     }
   } catch (e) {

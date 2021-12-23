@@ -18,6 +18,7 @@ import {
   YoutubePlayerForm
 } from '@/types/models/players/form'
 import { v4 } from 'uuid'
+import { api } from '@/utils/libs/axios'
 
 const electron = window.require('electron')
 
@@ -28,6 +29,9 @@ export enum PlayerActionTypes {
   CREATE_EX_URL_PLAYER = 'player/CREATE_EX_URL_PLAYER',
   CREATE_IN_PC_PLAYER = 'player/CREATE_IN_PC_PLAYER',
   ADD_TO_PLAY_LIST = 'player/ADD_TO_PLAY_LIST',
+  REMOVE_FROM_PLAY_LIST = 'player/REMOVE_FROM_PLAY_LIST',
+  NEXT_PLAY = 'player/NEXT_PLAY',
+  PREV_PLAY = 'player/PREV_PLAY',
 }
 
 export type AugmentedActionContext = {
@@ -62,15 +66,29 @@ export interface PlayerActions {
     { commit }: AugmentedActionContext,
     payload: PlayerInfo
   ): void
+  [PlayerActionTypes.REMOVE_FROM_PLAY_LIST] (
+    { commit }: AugmentedActionContext,
+    payload: string
+  ): void
+  [PlayerActionTypes.NEXT_PLAY] (
+    { commit }: AugmentedActionContext,
+    payload: string
+  ): PlayerInfo | null
+  [PlayerActionTypes.PREV_PLAY] (
+    { commit }: AugmentedActionContext,
+    payload: string
+  ): PlayerInfo | null
 }
 
 export const playerActions: ActionTree<PlayerState, RootState> & PlayerActions = {
   [PlayerActionTypes.SET_PLAYER] ({ commit }, payload) {
     commit(PlayerMutationTypes.SET_PLAYER, payload)
   },
-  [PlayerActionTypes.CREATE_YOUTUBE_PLAYER] ({ commit }, payload) {
+  async [PlayerActionTypes.CREATE_YOUTUBE_PLAYER] ({ commit }, payload) {
+    const youtubeInfo = (await api.get(`https://noembed.com/embed?url=https://www.youtube.com/watch?v=${payload.videoId}`)).data
     const player: YoutubePlayerInfo = {
       id: v4(),
+      title: youtubeInfo.title || payload.videoId,
       kindType: 'VIDEO',
       type: 'YOUTUBE',
       videoId: payload.videoId,
@@ -85,6 +103,7 @@ export const playerActions: ActionTree<PlayerState, RootState> & PlayerActions =
   [PlayerActionTypes.CREATE_TWITCH_PLAYER] ({ commit }, payload) {
     const player: TwitchPlayerInfo = {
       id: v4(),
+      title: payload.channelId,
       type: 'TWITCH',
       kindType: 'VIDEO',
       channelId: payload.channelId,
@@ -97,6 +116,7 @@ export const playerActions: ActionTree<PlayerState, RootState> & PlayerActions =
   [PlayerActionTypes.CREATE_EX_URL_PLAYER] ({ commit }, payload) {
     const player: ExUrlPlayerInfo = {
       id: v4(),
+      title: payload.url,
       type: 'EX_URL',
       kindType: 'VIDEO',
       url: payload.url,
@@ -109,6 +129,7 @@ export const playerActions: ActionTree<PlayerState, RootState> & PlayerActions =
   [PlayerActionTypes.CREATE_IN_PC_PLAYER] ({ commit }, payload) {
     const player: InPcPlayerInfo = {
       id: v4(),
+      title: payload.title,
       type: 'IN_PC',
       kindType: 'VIDEO',
       filePath: payload.filePath,
@@ -122,5 +143,33 @@ export const playerActions: ActionTree<PlayerState, RootState> & PlayerActions =
     const playerList = state.playList
     playerList.push(payload)
     commit(PlayerMutationTypes.SET_PLAY_LIST, playerList)
+  },
+  [PlayerActionTypes.REMOVE_FROM_PLAY_LIST] ({ commit, state }, payload) {
+    const playerList = state.playList
+    const foundIndex = playerList.findIndex(play => play.id === payload)
+    if (foundIndex > -1) {
+      playerList.splice(foundIndex, 1)
+      commit(PlayerMutationTypes.SET_PLAY_LIST, playerList)
+    }
+  },
+  [PlayerActionTypes.NEXT_PLAY] ({ commit, state }, payload) {
+    const playerList = state.playList
+    const foundIndex = playerList.findIndex(play => play.id === payload)
+    if (foundIndex > -1 && foundIndex !== playerList.length - 1) {
+      commit(PlayerMutationTypes.SET_PLAYER, playerList[foundIndex + 1])
+      return playerList[foundIndex + 1]
+    } else {
+      return null
+    }
+  },
+  [PlayerActionTypes.PREV_PLAY] ({ commit, state }, payload) {
+    const playerList = state.playList
+    const foundIndex = playerList.findIndex(play => play.id === payload)
+    if (foundIndex > -1 && foundIndex !== 0) {
+      commit(PlayerMutationTypes.SET_PLAYER, playerList[foundIndex - 1])
+      return playerList[foundIndex - 1]
+    } else {
+      return null
+    }
   },
 }

@@ -5,10 +5,12 @@
     <!-- @TODO: Create custom controls -->
     <video
       v-if="src"
+      ref="playerRef"
       :src="src"
       class="tw-h-full tw-w-full"
       controls
       autoplay
+      @ended="onEndedPlayer"
     />
   </div>
 </template>
@@ -21,21 +23,32 @@ export default {
 import { computed, onMounted, ref } from 'vue'
 import useStore from '@/store'
 import useElectron from '@/mixins/useElectron'
-import { InPcPlayerInfo, TwitchPlayerInfo } from '@/types/models/players'
-import { IpcRendererEvent } from 'electron'
+import { InPcPlayerInfo, PlayerInfo, } from '@/types/models/players'
+// import { IpcRendererEvent } from 'electron'
+// import { PlayerActionTypes } from '@/store/modules/model/player/actions'
+import { PlayerMutationTypes } from '@/store/modules/model/player/mutations'
+import usePlayer from '@/mixins/usePlayer'
 import { PlayerActionTypes } from '@/store/modules/model/player/actions'
+import { useRouter } from 'vue-router'
 
 const store = useStore()
+const router = useRouter()
 const { ipcRenderer } = useElectron()
+const { moveToPlayerPageByType } = usePlayer()
 
 // @TODO: Create custom controls
-// const playerRef = ref<HTMLVideoElement>()
+const playerRef = ref<HTMLVideoElement>()
 const src = ref('')
 
 const playerInfo = computed(() => store.getters.Player as InPcPlayerInfo)
 
 onMounted(() => {
   initPlayer()
+  store.subscribe((mutation) => {
+    if (mutation.type === PlayerMutationTypes.SET_PLAYER && (mutation.payload as PlayerInfo).type === 'IN_PC') {
+      initPlayer()
+    }
+  })
 })
 
 const initPlayer = async () => {
@@ -51,15 +64,31 @@ const resetPlayer = () => {
   }
 }
 
-const setInPcPlayer = async (event: IpcRendererEvent, args: TwitchPlayerInfo) => {
+/**
+ * When player is ended (reach to end of video)
+ */
+const onEndedPlayer = async () => {
   try {
-    /* Set player */
-    await store.dispatch(PlayerActionTypes.SET_PLAYER, args)
-    await initPlayer()
+    const nextPlay = await store.dispatch(PlayerActionTypes.NEXT_PLAY)
+    if (nextPlay) {
+      await moveToPlayerPageByType(nextPlay.type)
+    } else {
+      await router.push({ name: 'BasePlayer' })
+    }
   } catch (e) {
     console.error(e)
   }
 }
 
-ipcRenderer.on('set-in_pc-player', setInPcPlayer)
+// const setInPcPlayer = async (event: IpcRendererEvent, args: TwitchPlayerInfo) => {
+//   try {
+//     /* Set player */
+//     await store.dispatch(PlayerActionTypes.SET_PLAYER, args)
+//     await initPlayer()
+//   } catch (e) {
+//     console.error(e)
+//   }
+// }
+
+// ipcRenderer.on('set-in_pc-player', setInPcPlayer)
 </script>

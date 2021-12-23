@@ -82,7 +82,8 @@ const setYoutubePlayer = async (event: IpcRendererEvent, args: YoutubePlayerInfo
     /* Off */
     ipcRenderer.off('set-youtube-player', setYoutubePlayer)
     /* Redirect to video player */
-    await router.push({ name: 'YoutubeVideoPlayer' })
+    if (route.name !== 'YoutubeVideoPlayer')
+      await router.push({ name: 'YoutubeVideoPlayer' })
   } catch (e) {
     console.error(e)
   }
@@ -98,7 +99,8 @@ const setTwitchPlayer = async (event: IpcRendererEvent, args: TwitchPlayerInfo) 
     /* Set player */
     await store.dispatch(PlayerActionTypes.SET_PLAYER, args)
     /* Redirect to video player */
-    await router.push({ name: 'TwitchVideoPlayer' })
+    if (route.name !== 'TwitchVideoPlayer')
+      await router.push({ name: 'TwitchVideoPlayer' })
     /* Off */
     ipcRenderer.off('set-twitch-player', setTwitchPlayer)
   } catch (e) {
@@ -116,7 +118,8 @@ const setExUrlPlayer = async (event: IpcRendererEvent, args: TwitchPlayerInfo) =
     /* Set player */
     await store.dispatch(PlayerActionTypes.SET_PLAYER, args)
     /* Redirect to video player */
-    await router.push({ name: 'ExUrlVideoPlayer' })
+    if (route.name !== 'ExUrlVideoPlayer')
+      await router.push({ name: 'ExUrlVideoPlayer' })
     /* Off */
     ipcRenderer.off('set-ex_url-player', setExUrlPlayer)
   } catch (e) {
@@ -134,7 +137,8 @@ const setInPcPlayer = async (event: IpcRendererEvent, args: InPcPlayerInfo) => {
     /* Set player */
     await store.dispatch(PlayerActionTypes.SET_PLAYER, args)
     /* Redirect to video player */
-    await router.push({ name: 'InPcVideoPlayer' })
+    if (route.name !== 'InPcVideoPlayer')
+      await router.push({ name: 'InPcVideoPlayer' })
     /* Off */
     ipcRenderer.off('set-in_pc-player', setInPcPlayer)
   } catch (e) {
@@ -152,18 +156,18 @@ const addToPlayList = async (event: IpcRendererEvent, args: PlayerInfo) => {
 }
 
 /* List to Event listening */
-if (route.name !== 'YoutubeVideoPlayer') {
-  ipcRenderer.on('set-youtube-player', setYoutubePlayer)
-}
-if (route.name !== 'TwitchVideoPlayer') {
-  ipcRenderer.on('set-twitch-player', setTwitchPlayer)
-}
-if (route.name !== 'ExUrlVideoPlayer') {
-  ipcRenderer.on('set-ex_url-player', setExUrlPlayer)
-}
-if (route.name !== 'InPcVideoPlayer') {
-  ipcRenderer.on('set-in_pc-player', setInPcPlayer)
-}
+// if (route.name !== 'YoutubeVideoPlayer') {
+ipcRenderer.on('set-youtube-player', setYoutubePlayer)
+// }
+// if (route.name !== 'TwitchVideoPlayer') {
+ipcRenderer.on('set-twitch-player', setTwitchPlayer)
+// }
+// if (route.name !== 'ExUrlVideoPlayer') {
+ipcRenderer.on('set-ex_url-player', setExUrlPlayer)
+// }
+// if (route.name !== 'InPcVideoPlayer') {
+ipcRenderer.on('set-in_pc-player', setInPcPlayer)
+// }
 ipcRenderer.on('add-to-play-list', addToPlayList)
 
 </script>

@@ -5,6 +5,7 @@ export type PlayerKindType = 'VIDEO' | 'AUDIO'
 export type PlayerType = 'YOUTUBE' | 'TWITCH' | 'EX_URL' | 'IN_PC'
 
 export interface Player extends Attribute {
+  title: string
   kindType: PlayerKindType
   type: PlayerType
 }
