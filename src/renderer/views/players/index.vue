@@ -46,10 +46,10 @@ import useElectron from '@/mixins/useElectron'
 import { IpcRendererEvent } from 'electron'
 import { InPcPlayerInfo, PlayerInfo, TwitchPlayerInfo, YoutubePlayerInfo } from '@/types/models/players'
 import { PlayerActionTypes } from '@/store/modules/model/player/actions'
+import { PlayerWindowActionTypes } from '@/store/modules/windows/player/actions'
 import PlayerMenuDropDown from './components/MenuDropdown.vue'
 import PlayerNavigator from './components/Navigator.vue'
-import { PlayerWindowActionTypes } from '@/store/modules/windows/player/actions'
-import PlayerMenubar from '@/views/players/components/Menubar.vue'
+import PlayerMenubar from './components/Menubar.vue'
 
 const store = useStore()
 const router = useRouter()
@@ -64,10 +64,10 @@ onMounted(() => {
 
 onBeforeUnmount(() => {
   /* Off all electron events */
-  // ipcRenderer.off('set-youtube-player', setYoutubePlayer)
-  // ipcRenderer.off('set-twitch-player', setTwitchPlayer)
-  // ipcRenderer.off('set-ex_url-player', setExUrlPlayer)
-  // ipcRenderer.off('set-in_pc-player', setInPcPlayer)
+  ipcRenderer.off('set-youtube-player', setYoutubePlayer)
+  ipcRenderer.off('set-twitch-player', setTwitchPlayer)
+  ipcRenderer.off('set-ex_url-player', setExUrlPlayer)
+  ipcRenderer.off('set-in_pc-player', setInPcPlayer)
 })
 
 /**
@@ -79,8 +79,6 @@ const setYoutubePlayer = async (event: IpcRendererEvent, args: YoutubePlayerInfo
   try {
     /* Set player */
     await store.dispatch(PlayerActionTypes.SET_PLAYER, args)
-    /* Off */
-    ipcRenderer.off('set-youtube-player', setYoutubePlayer)
     /* Redirect to video player */
     if (route.name !== 'YoutubeVideoPlayer')
       await router.push({ name: 'YoutubeVideoPlayer' })
@@ -101,8 +99,6 @@ const setTwitchPlayer = async (event: IpcRendererEvent, args: TwitchPlayerInfo) 
     /* Redirect to video player */
     if (route.name !== 'TwitchVideoPlayer')
       await router.push({ name: 'TwitchVideoPlayer' })
-    /* Off */
-    ipcRenderer.off('set-twitch-player', setTwitchPlayer)
   } catch (e) {
     console.error(e)
   }
@@ -120,8 +116,6 @@ const setExUrlPlayer = async (event: IpcRendererEvent, args: TwitchPlayerInfo) =
     /* Redirect to video player */
     if (route.name !== 'ExUrlVideoPlayer')
       await router.push({ name: 'ExUrlVideoPlayer' })
-    /* Off */
-    ipcRenderer.off('set-ex_url-player', setExUrlPlayer)
   } catch (e) {
     console.error(e)
   }
@@ -139,8 +133,6 @@ const setInPcPlayer = async (event: IpcRendererEvent, args: InPcPlayerInfo) => {
     /* Redirect to video player */
     if (route.name !== 'InPcVideoPlayer')
       await router.push({ name: 'InPcVideoPlayer' })
-    /* Off */
-    ipcRenderer.off('set-in_pc-player', setInPcPlayer)
   } catch (e) {
     console.error(e)
   }

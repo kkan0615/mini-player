@@ -1,12 +1,13 @@
+import * as fs from 'fs'
 import { IpcMainEvent, IpcMainInvokeEvent } from 'electron'
 import { createPlayerWindow, playerWindow } from '../windows/player'
 import { PlayerInfo } from '../types/models/players'
-import * as fs from 'fs'
+import { selectorWindow } from '../windows/selector'
 
 export const setPlayerInfo = (event: IpcMainEvent, payload: PlayerInfo) => {
   /* Close selector window */
-  // if (selectorWindow && selectorWindow.closable)
-  //   selectorWindow.close()
+  if (selectorWindow && selectorWindow.closable)
+    selectorWindow.close()
 
   /* Open player window */
   if (!playerWindow)
@@ -29,6 +30,8 @@ export const setPlayerInfo = (event: IpcMainEvent, payload: PlayerInfo) => {
         playerWindow.webContents.send('set-in_pc-player', payload)
         break
     }
+    /* Add to play list */
+    playerWindow.webContents.send('add-to-play-list', payload)
   }
 }
 

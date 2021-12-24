@@ -7,6 +7,7 @@ import { ExUrlPlayerInfo, InPcPlayerInfo, PlayerInfo, TwitchPlayerInfo, YoutubeP
 import { ExUrlPlayerForm, InPcPlayerForm, TwitchPlayerForm, YoutubePlayerForm } from '@/types/models/players/form'
 import { v4 } from 'uuid'
 import dayjs from 'dayjs'
+import { api } from '@/utils/libs/axios'
 
 const { ipcRenderer } = useElectron()
 
@@ -52,13 +53,15 @@ export const selectorWindowActions: ActionTree<SelectorWindowState, RootState> &
     }
     commit(SelectorWindowMutationTypes.SET_IS_OPEN_NAVIGATOR, payload)
   },
-  [SelectorWindowActionTypes.ADD_TO_PLAY_LIST] (context, payload) {
+  async [SelectorWindowActionTypes.ADD_TO_PLAY_LIST] (context, payload) {
     let player: PlayerInfo | null = null
     switch (payload.type) {
-      case 'YOUTUBE':
+      case 'YOUTUBE': {
         payload = payload as YoutubePlayerForm
+        const youtubeInfo = (await api.get(`https://noembed.com/embed?url=https://www.youtube.com/watch?v=${payload.videoId}`)).data
         player = {
           id: v4(),
+          title: youtubeInfo.title || payload.videoId,
           kindType: 'VIDEO',
           type: 'YOUTUBE',
           videoId: (payload).videoId,
@@ -68,10 +71,12 @@ export const selectorWindowActions: ActionTree<SelectorWindowState, RootState> &
           updatedAt: dayjs().toISOString(),
         } as YoutubePlayerInfo
         break
+      }
       case 'TWITCH':
         payload = payload as TwitchPlayerForm
         player = {
           id: v4(),
+          title: payload.channelId,
           type: 'TWITCH',
           kindType: 'VIDEO',
           channelId: payload.channelId,
@@ -83,6 +88,7 @@ export const selectorWindowActions: ActionTree<SelectorWindowState, RootState> &
         payload = payload as ExUrlPlayerForm
         player = {
           id: v4(),
+          title: payload.url,
           type: 'EX_URL',
           kindType: 'VIDEO',
           url: payload.url,
@@ -94,6 +100,7 @@ export const selectorWindowActions: ActionTree<SelectorWindowState, RootState> &
         payload = payload as InPcPlayerForm
         player = {
           id: v4(),
+          title: payload.title,
           type: 'IN_PC',
           kindType: 'VIDEO',
           filePath: payload.filePath,

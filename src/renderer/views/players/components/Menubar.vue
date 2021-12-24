@@ -5,7 +5,20 @@
     <div
       class="tw-ml-auto"
     >
-      <!-- Navigator -->
+      <!-- setting -->
+      <c-tooltip
+        class="tw-mr-2"
+        :title="$t('commons.tooltips.OnAlwaysTop')"
+      >
+        <button
+          @click="onClickSettingBtn"
+        >
+          <c-material-icon>
+            settings
+          </c-material-icon>
+        </button>
+      </c-tooltip>
+      <!-- Set always on the top -->
       <c-tooltip
         class="tw-mr-2"
         :title="$t('commons.tooltips.OnAlwaysTop')"
@@ -57,10 +70,15 @@ import { computed } from 'vue'
 import { PlayerWindowActionTypes } from '@/store/modules/windows/player/actions'
 import CMaterialIcon from '@/components/commons/icons/Material/index.vue'
 import CTooltip from '@/components/commons/Tooltip/index.vue'
+import { AppWindowActionTypes } from '@/store/modules/windows/app/actions'
 
 const store = useStore()
 
 const isOpenNavigator = computed(() => store.getters.IsOpenPlayerWindowNavigator)
+
+const onClickSettingBtn = () => {
+  store.dispatch(AppWindowActionTypes.OPEN_APP_WINDOW)
+}
 
 const onClickAlwaysTopBtn = async () => {
   console.log('onClickAlwaysTopBtn')

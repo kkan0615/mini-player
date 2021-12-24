@@ -7,21 +7,16 @@
     @mouseenter="onMouseEnter"
     @mouseleave="onMouseLeave"
   >
-    <div
+    <button
       v-if="isHover"
-      class="tw-w-1/12 tw-bg-gray-500"
+      @click="onClickPlayBtn"
     >
-      <button
-        @click="onClickPlayBtn"
-      >
-        <c-material-icon>
-          play_arrow
-        </c-material-icon>
-      </button>
-    </div>
+      <c-material-icon>
+        play_arrow
+      </c-material-icon>
+    </button>
     <div
       v-else
-      class="tw-w-1/12"
     >
       <!-- Youtube -->
       <c-font-awesome-icon
@@ -51,27 +46,22 @@
       />
     </div>
     <div
-      class="tw-w-10/12 tw-truncate"
+      class="tw-truncate tw-px-2"
     >
-      {{ player.title }}
+      {{ play.title }}
     </div>
-    <!-- actions -->
-    <div
-      class="tw-w-1/12"
+    <button
+      @click="onClickRemoveBtn"
     >
-      <button
-        @click="onClickRemoveBtn"
-      >
-        <c-material-icon>
-          remove
-        </c-material-icon>
-      </button>
-    </div>
+      <c-material-icon>
+        remove
+      </c-material-icon>
+    </button>
   </li>
 </template>
 <script lang="ts">
 export default {
-  name: 'PlayerNavigator',
+  name: 'PlayerNavigatorItem',
 }
 </script>
 <script setup lang="ts">

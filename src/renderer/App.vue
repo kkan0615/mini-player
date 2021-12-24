@@ -5,10 +5,8 @@
 <script setup lang="ts">
 import useElectron from '@/mixins/useElectron'
 import { useRouter } from 'vue-router'
-import useStore from '@/store'
 
 const router = useRouter()
-const store = useStore()
 const { ipcRenderer } = useElectron()
 
 ipcRenderer.on('move-to-app', async () => {

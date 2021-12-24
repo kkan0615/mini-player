@@ -3,7 +3,7 @@
     class="tw-w-full tw-h-full scrollable"
   >
     <div
-      class="tw-flex tw-items-center tw-px-2"
+      class="tw-flex tw-items-center tw-px-2 tw-sticky tw-top-0"
     >
       <div>
         list
@@ -20,23 +20,11 @@
     <ul
       class="tw-p-0 tw-px-2"
     >
-      <li
+      <player-navigator-item
         v-for="play in playList"
         :key="play.id"
-        class="c-row"
-      >
-        <div>
-          {{ play.id }}
-        </div>
-        <button
-          class="tw-ml-auto"
-          @click="onClickAddBtn"
-        >
-          <c-material-icon>
-            remove
-          </c-material-icon>
-        </button>
-      </li>
+        :play="play"
+      />
     </ul>
   </div>
 </template>
@@ -50,6 +38,7 @@ import useStore from '@/store'
 import { computed } from 'vue'
 import CMaterialIcon from '@/components/commons/icons/Material/index.vue'
 import { SelectorWindowActionTypes } from '@/store/modules/windows/selector/actions'
+import PlayerNavigatorItem from './NavigatorItem.vue'
 
 const store = useStore()
 
@@ -61,9 +50,5 @@ const onClickAddBtn = async () => {
   } catch (e) {
     console.error(e)
   }
-}
-
-const onClickRemoveBtn = async () => {
-//  onClickRemoveBtn
 }
 </script>
