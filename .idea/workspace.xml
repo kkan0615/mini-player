@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="7cae5587-9ec2-479c-9923-10b954ea1792" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/renderer/locale/langs/ko.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/renderer/locale/langs/ko.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/renderer/store/modules/model/player/actions.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/renderer/store/modules/model/player/actions.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/renderer/views/players/Base/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/renderer/views/players/Base/index.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/renderer/views/players/components/Menubar.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/renderer/views/players/components/Menubar.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/renderer/views/players/components/Navigator.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/renderer/views/players/components/Navigator.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/renderer/views/players/components/NavigatorItem.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/renderer/views/players/components/NavigatorItem.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/renderer/views/players/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/renderer/views/players/index.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/renderer/views/players/videos/InPc/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/renderer/views/players/videos/InPc/index.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/renderer/views/players/videos/Youtube/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/renderer/views/players/videos/Youtube/index.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/renderer/views/selectors/Base/components/ExUrl.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/renderer/views/selectors/Base/components/ExUrl.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/renderer/views/selectors/Base/components/InPc.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/renderer/views/selectors/Base/components/InPc.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/renderer/views/selectors/Base/components/Twitch.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/renderer/views/selectors/Base/components/Twitch.vue" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="22jSJiez3hsQuuVDZHUezpe06g5" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.standard" value="true" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.standard" value="" />
+    <property name="nodejs_package_manager_path" value="yarn" />
+    <property name="settings.editor.selected.configurable" value="settings.javascript.linters.eslint" />
+    <property name="ts.external.directory.path" value="D:\personalStudy\mini-player\node_modules\typescript\lib" />
+    <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="7cae5587-9ec2-479c-9923-10b954ea1792" name="Changes" comment="" />
+      <created>1640349435281</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1640349435281</updated>
+      <workItem from="1640349437608" duration="3859000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+    <option name="exactExcludedFiles">
+      <list>
+        <option value="$PROJECT_DIR$/src/main/windows/selector.js.map" />
+        <option value="$PROJECT_DIR$/src/main/windows/selector.js" />
+        <option value="$PROJECT_DIR$/src/main/services/playerWindow.js.map" />
+        <option value="$PROJECT_DIR$/src/main/services/playerWindow.js" />
+        <option value="$PROJECT_DIR$/src/main/services/appWindow.js.map" />
+        <option value="$PROJECT_DIR$/src/main/services/appWindow.js" />
+        <option value="$PROJECT_DIR$/src/main/preload.js.map" />
+        <option value="$PROJECT_DIR$/src/main/preload.js" />
+        <option value="$PROJECT_DIR$/src/main/main.js.map" />
+        <option value="$PROJECT_DIR$/src/main/main.js" />
+        <option value="$PROJECT_DIR$/src/main/windows/app.js.map" />
+        <option value="$PROJECT_DIR$/src/main/windows/app.js" />
+        <option value="$PROJECT_DIR$/src/main/windows/player.js.map" />
+        <option value="$PROJECT_DIR$/src/main/windows/player.js" />
+        <option value="$PROJECT_DIR$/src/main/services/selectorWindow.js.map" />
+        <option value="$PROJECT_DIR$/src/main/services/selectorWindow.js" />
+        <option value="$PROJECT_DIR$/src/main/types/store.js.map" />
+        <option value="$PROJECT_DIR$/src/main/types/store.js" />
+        <option value="$PROJECT_DIR$/src/main/types/models/attributes.js.map" />
+        <option value="$PROJECT_DIR$/src/main/types/models/attributes.js" />
+        <option value="$PROJECT_DIR$/src/main/types/systems/date.js.map" />
+        <option value="$PROJECT_DIR$/src/main/types/systems/date.js" />
+        <option value="$PROJECT_DIR$/src/main/types/models/players/form.js.map" />
+        <option value="$PROJECT_DIR$/src/main/types/models/players/form.js" />
+        <option value="$PROJECT_DIR$/src/main/types/models/players/index.js.map" />
+        <option value="$PROJECT_DIR$/src/main/types/models/players/index.js" />
+        <option value="$PROJECT_DIR$/src/main/services/player.js.map" />
+        <option value="$PROJECT_DIR$/src/main/services/player.js" />
+        <option value="$PROJECT_DIR$/src/main/types/windows/player.js.map" />
+        <option value="$PROJECT_DIR$/src/main/types/windows/player.js" />
+        <option value="$PROJECT_DIR$/src/main/types/windows/general.js.map" />
+        <option value="$PROJECT_DIR$/src/main/types/windows/general.js" />
+        <option value="$PROJECT_DIR$/src/main/store/index.js.map" />
+        <option value="$PROJECT_DIR$/src/main/store/index.js" />
+      </list>
+    </option>
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
+  </component>
+</project>

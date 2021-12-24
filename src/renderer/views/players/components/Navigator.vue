@@ -1,12 +1,14 @@
 <template>
   <div
-    class="tw-w-full tw-h-full scrollable"
+    class="tw-w-full tw-h-full scrollable tw-border-l"
   >
     <div
       class="tw-flex tw-items-center tw-px-2 tw-sticky tw-top-0"
     >
-      <div>
-        list
+      <div
+        class="tw-font-bold"
+      >
+        {{ $t('commons.titles.List') }}
       </div>
       <button
         class="tw-ml-auto"
@@ -17,6 +19,9 @@
         </c-material-icon>
       </button>
     </div>
+    <hr
+      class="tw-my-1"
+    >
     <ul
       class="tw-p-0 tw-px-2"
     >

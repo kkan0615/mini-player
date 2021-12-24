@@ -21,7 +21,7 @@
     </c-row-display-content>
   </c-row-display>
   <div
-    class="tw-mt-2 tw-flex tw-justify-end"
+    class="tw-mt-2"
   >
     <c-btn
       class="btn-primary tw-w-full"
@@ -84,6 +84,7 @@ const onClickAddToPlayListBtn = async () => {
   try {
     const params = {
       type: 'IN_PC',
+      title: file.value?.name,
       filePath: file.value?.path
     } as InPcPlayerForm
     await store.dispatch(SelectorWindowActionTypes.ADD_TO_PLAY_LIST, params)

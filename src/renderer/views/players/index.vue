@@ -169,13 +169,13 @@ ipcRenderer.on('add-to-play-list', addToPlayList)
 .player-container {
   @apply tw-h-full tw-w-full tw-relative;
 
-  &:hover > .player-container-menu {
-    @apply tw-opacity-100;
-  }
-
-  &:hover > .player-menu-bar {
-    @apply tw-block;
-  }
+  //&:hover > .player-container-menu {
+  //  @apply tw-opacity-100;
+  //}
+  //
+  //&:hover > .player-menu-bar {
+  //  @apply tw-block;
+  //}
 }
 
 .player-container-menu {
@@ -186,7 +186,7 @@ ipcRenderer.on('add-to-play-list', addToPlayList)
 }
 
 .player-menu-bar {
-  @apply tw-hidden;
+  //@apply tw-hidden;
   @apply tw-h-8 tw-bg-black tw-text-white tw-px-4;
 
   &:hover {

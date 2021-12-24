@@ -1,23 +1,23 @@
 <template>
   <div
-    class="tw-h-full tw-flex tw-items-center"
+    class="tw-h-full tw-flex tw-items-center tw-text-sm"
   >
+    <!-- setting -->
+    <c-tooltip
+      class="tw-mr-2"
+      :title="$t('commons.tooltips.Setting')"
+    >
+      <button
+        @click="onClickSettingBtn"
+      >
+        <c-material-icon>
+          settings
+        </c-material-icon>
+      </button>
+    </c-tooltip>
     <div
       class="tw-ml-auto"
     >
-      <!-- setting -->
-      <c-tooltip
-        class="tw-mr-2"
-        :title="$t('commons.tooltips.OnAlwaysTop')"
-      >
-        <button
-          @click="onClickSettingBtn"
-        >
-          <c-material-icon>
-            settings
-          </c-material-icon>
-        </button>
-      </c-tooltip>
       <!-- Set always on the top -->
       <c-tooltip
         class="tw-mr-2"

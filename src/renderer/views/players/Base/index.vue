@@ -25,11 +25,18 @@ export default {
 }
 </script>
 <script setup lang="ts">
-import { onMounted, ref } from 'vue'
+import { onMounted } from 'vue'
 import { useRouter } from 'vue-router'
+import useStore from '@/store'
+import { PlayerActionTypes } from '@/store/modules/model/player/actions'
 import CButton from '@/components/commons/Button/index.vue'
 
 const router = useRouter()
+const store = useStore()
+
+onMounted(() => {
+  store.dispatch(PlayerActionTypes.RESET_PLAYER)
+})
 
 const onClickMoveTest = async (name: string) => {
   try {

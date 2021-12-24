@@ -16,18 +16,14 @@ export default {
 <script setup lang="ts">
 import YoutubePlayerFactory from 'youtube-player'
 import { YouTubePlayer } from 'youtube-player/dist/types'
-import { computed, onBeforeUnmount, onMounted, ref } from 'vue'
+import { computed, nextTick, onBeforeUnmount, onMounted, ref } from 'vue'
 import useStore from '@/store'
-// import useElectron from '@/mixins/useElectron'
 import { PlayerInfo, YoutubePlayerInfo } from '@/types/models/players'
 import { useRouter } from 'vue-router'
-// import { PlayerActionTypes } from '@/store/modules/model/player/actions'
-// import { IpcRendererEvent } from 'electron'
 import { PlayerMutationTypes } from '@/store/modules/model/player/mutations'
 
 const router = useRouter()
 const store = useStore()
-// const { ipcRenderer } = useElectron()
 
 const player = ref<YouTubePlayer | null>()
 
@@ -37,7 +33,9 @@ onMounted(() => {
   initPlayer()
   store.subscribe((mutation) => {
     if (mutation.type === PlayerMutationTypes.SET_PLAYER && (mutation.payload as PlayerInfo).type === 'YOUTUBE') {
-      initPlayer()
+      nextTick(() => {
+        initPlayer()
+      })
     }
   })
 })
@@ -71,16 +69,4 @@ const handlePlayerErr = async () => {
     console.error(e)
   }
 }
-
-// const setYoutubePlayer = async (event: IpcRendererEvent, args: YoutubePlayerInfo) => {
-//   try {
-//     /* Set player */
-//     await store.dispatch(PlayerActionTypes.SET_PLAYER, args)
-//     initPlayer()
-//   } catch (e) {
-//     console.error(e)
-//   }
-// }
-//
-// ipcRenderer.on('set-youtube-player', setYoutubePlayer)
 </script>

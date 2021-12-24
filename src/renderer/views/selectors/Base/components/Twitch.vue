@@ -14,7 +14,7 @@
     </c-row-display-content>
   </c-row-display>
   <div
-    class="tw-mt-2 tw-flex tw-justify-end"
+    class="tw-mt-2"
   >
     <c-btn
       class="btn-primary tw-w-full"

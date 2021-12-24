@@ -20,16 +20,14 @@ export default {
 }
 </script>
 <script setup lang="ts">
-import { computed, onMounted, ref } from 'vue'
+import { computed, nextTick, onMounted, ref } from 'vue'
 import useStore from '@/store'
 import useElectron from '@/mixins/useElectron'
-import { InPcPlayerInfo, PlayerInfo, } from '@/types/models/players'
-// import { IpcRendererEvent } from 'electron'
-// import { PlayerActionTypes } from '@/store/modules/model/player/actions'
-import { PlayerMutationTypes } from '@/store/modules/model/player/mutations'
 import usePlayer from '@/mixins/usePlayer'
-import { PlayerActionTypes } from '@/store/modules/model/player/actions'
 import { useRouter } from 'vue-router'
+import { InPcPlayerInfo, PlayerInfo, } from '@/types/models/players'
+import { PlayerMutationTypes } from '@/store/modules/model/player/mutations'
+import { PlayerActionTypes } from '@/store/modules/model/player/actions'
 
 const store = useStore()
 const router = useRouter()
@@ -46,16 +44,22 @@ onMounted(() => {
   initPlayer()
   store.subscribe((mutation) => {
     if (mutation.type === PlayerMutationTypes.SET_PLAYER && (mutation.payload as PlayerInfo).type === 'IN_PC') {
-      initPlayer()
+      nextTick(() => {
+        initPlayer()
+      })
     }
   })
 })
 
 const initPlayer = async () => {
   resetPlayer()
-  const videoBuffer: Buffer = await ipcRenderer.invoke('get-video-in-pc', playerInfo.value.filePath)
-  const videoBlob = new Blob([videoBuffer], { type: 'video/mp4' })
-  src.value = URL.createObjectURL(videoBlob)
+  if (playerInfo.value.filePath) {
+    const videoBuffer: Buffer = await ipcRenderer.invoke('get-video-in-pc', playerInfo.value.filePath)
+    const videoBlob = new Blob([videoBuffer], { type: 'video/mp4' })
+    src.value = URL.createObjectURL(videoBlob)
+  } else {
+    await router.push({ name: 'BasePlayer' })
+  }
 }
 
 const resetPlayer = () => {
@@ -69,7 +73,7 @@ const resetPlayer = () => {
  */
 const onEndedPlayer = async () => {
   try {
-    const nextPlay = await store.dispatch(PlayerActionTypes.NEXT_PLAY)
+    const nextPlay = await store.dispatch(PlayerActionTypes.NEXT_PLAY, playerInfo.value.id)
     if (nextPlay) {
       await moveToPlayerPageByType(nextPlay.type)
     } else {
@@ -79,16 +83,4 @@ const onEndedPlayer = async () => {
     console.error(e)
   }
 }
-
-// const setInPcPlayer = async (event: IpcRendererEvent, args: TwitchPlayerInfo) => {
-//   try {
-//     /* Set player */
-//     await store.dispatch(PlayerActionTypes.SET_PLAYER, args)
-//     await initPlayer()
-//   } catch (e) {
-//     console.error(e)
-//   }
-// }
-
-// ipcRenderer.on('set-in_pc-player', setInPcPlayer)
 </script>

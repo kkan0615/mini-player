@@ -13,7 +13,6 @@ import dayjs from 'dayjs'
 import {
   ExUrlPlayerForm,
   InPcPlayerForm,
-  PlayerForm,
   TwitchPlayerForm,
   YoutubePlayerForm
 } from '@/types/models/players/form'
@@ -24,6 +23,7 @@ const electron = window.require('electron')
 
 export enum PlayerActionTypes {
   SET_PLAYER = 'player/SET_PLAYER',
+  RESET_PLAYER = 'player/RESET_PLAYER',
   CREATE_YOUTUBE_PLAYER = 'player/CREATE_YOUTUBE_PLAYER',
   CREATE_TWITCH_PLAYER = 'player/CREATE_TWITCH_PLAYER',
   CREATE_EX_URL_PLAYER = 'player/CREATE_EX_URL_PLAYER',
@@ -45,6 +45,9 @@ export interface PlayerActions {
   [PlayerActionTypes.SET_PLAYER] (
     { commit }: AugmentedActionContext,
     payload: PlayerInfo
+  ): void
+  [PlayerActionTypes.RESET_PLAYER] (
+    { commit }: AugmentedActionContext,
   ): void
   [PlayerActionTypes.CREATE_YOUTUBE_PLAYER] (
     { commit }: AugmentedActionContext,
@@ -83,6 +86,9 @@ export interface PlayerActions {
 export const playerActions: ActionTree<PlayerState, RootState> & PlayerActions = {
   [PlayerActionTypes.SET_PLAYER] ({ commit }, payload) {
     commit(PlayerMutationTypes.SET_PLAYER, payload)
+  },
+  [PlayerActionTypes.RESET_PLAYER] ({ commit }) {
+    commit(PlayerMutationTypes.SET_PLAYER, {} as PlayerInfo)
   },
   async [PlayerActionTypes.CREATE_YOUTUBE_PLAYER] ({ commit }, payload) {
     const youtubeInfo = (await api.get(`https://noembed.com/embed?url=https://www.youtube.com/watch?v=${payload.videoId}`)).data

@@ -1,14 +1,15 @@
 <template>
   <li
-    class="c-row"
+    class="c-row tw-px-1 tw-rounded"
     :class="{
-      'tw-bg-gray-500': isActive
+      'tw-bg-gray-200': isActive,
     }"
     @mouseenter="onMouseEnter"
     @mouseleave="onMouseLeave"
   >
     <button
       v-if="isHover"
+      class="pt-1 tw-rounded"
       @click="onClickPlayBtn"
     >
       <c-material-icon>
@@ -17,6 +18,7 @@
     </button>
     <div
       v-else
+      class="tw-pt-1"
     >
       <!-- Youtube -->
       <c-font-awesome-icon
@@ -46,11 +48,12 @@
       />
     </div>
     <div
-      class="tw-truncate tw-px-2"
+      class="tw-truncate tw-px-2 tw-text-sm"
     >
       {{ play.title }}
     </div>
     <button
+      class="tw-ml-auto pt-1"
       @click="onClickRemoveBtn"
     >
       <c-material-icon>
@@ -83,6 +86,7 @@ const props = defineProps({
 })
 
 const store = useStore()
+const router = useRouter()
 const { moveToPlayerPageByType } = usePlayer()
 
 const isHover = ref(false)
@@ -111,7 +115,7 @@ const isActive = computed(() => player.value.id === props.play?.id)
 // })
 
 const onClickPlayBtn = async () => {
-  if (props.play) {
+  if (props.play && !isActive.value) {
     try {
       /* 1. Set the play info */
       await store.dispatch(PlayerActionTypes.SET_PLAYER, props.play)
@@ -130,6 +134,11 @@ const onClickRemoveBtn = async () => {
   if (props.play) {
     try {
       await store.dispatch(PlayerActionTypes.REMOVE_FROM_PLAY_LIST, props.play.id)
+
+      if (isActive.value) {
+        await store.dispatch(PlayerActionTypes.RESET_PLAYER)
+        await router.push({ name: 'BasePlayer' })
+      }
     } catch (e) {
       console.error(e)
     }
