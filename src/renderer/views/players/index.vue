@@ -1,6 +1,6 @@
 <template>
   <div
-    class="tw-h-full"
+    class="tw-h-full tw-bg-video-background tw-text-white"
     :class="{
       'tw-flex': isOpenNavigator,
     }"
@@ -29,7 +29,7 @@
     </div>
     <player-navigator
       v-if="isOpenNavigator"
-      class="tw-grow-0 tw-shrink tw-bg-white tw-h-full tw-w-1/3"
+      class="tw-grow-0 tw-shrink tw-h-full tw-w-1/3"
     />
   </div>
 </template>
@@ -187,7 +187,7 @@ ipcRenderer.on('add-to-play-list', addToPlayList)
 
 .player-menu-bar {
   //@apply tw-hidden;
-  @apply tw-h-8 tw-bg-black tw-text-white tw-px-4;
+  @apply tw-h-8 tw-px-4;
 
   &:hover {
     @apply tw-block;

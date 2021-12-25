@@ -25,6 +25,7 @@ module.exports = {
         'TWITCH': '#9147ff',
         'EX_URL': '#405de6',
         'IN_PC': '#fffc00',
+        'video-background': '#181818',
       },
     },
   },

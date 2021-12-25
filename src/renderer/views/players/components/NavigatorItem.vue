@@ -2,7 +2,7 @@
   <li
     class="c-row tw-px-1 tw-rounded"
     :class="{
-      'tw-bg-gray-200': isActive,
+      'tw-bg-gray-600': isActive,
     }"
     @mouseenter="onMouseEnter"
     @mouseleave="onMouseLeave"
@@ -70,12 +70,12 @@ export default {
 <script setup lang="ts">
 import useStore from '@/store'
 import { computed, defineProps, PropType, ref } from 'vue'
-import { PlayerInfo, ExUrlPlayerInfo, InPcPlayerInfo, TwitchPlayerInfo, YoutubePlayerInfo } from '@/types/models/players'
+import { PlayerInfo } from '@/types/models/players'
+import { PlayerActionTypes } from '@/store/modules/model/player/actions'
+import { useRouter } from 'vue-router'
+import usePlayer from '@/mixins/usePlayer'
 import CMaterialIcon from '@/components/commons/icons/Material/index.vue'
 import CFontAwesomeIcon from '@/components/commons/icons/FontAwesome/index.vue'
-import { PlayerActionTypes } from '@/store/modules/model/player/actions'
-import { useRoute, useRouter } from 'vue-router'
-import usePlayer from '@/mixins/usePlayer'
 
 const props = defineProps({
   play: {
@@ -92,27 +92,8 @@ const { moveToPlayerPageByType } = usePlayer()
 const isHover = ref(false)
 
 const player = computed(() => store.getters.Player)
+/* Is selected play */
 const isActive = computed(() => player.value.id === props.play?.id)
-// const title = computed(() => {
-//   let result = ''
-//   if (props.play) {
-//     if (props.play.type === 'YOUTUBE') {
-//       const play = props.play as YoutubePlayerInfo
-//       result = play.videoId
-//     } else if (props.play.type === 'TWITCH') {
-//       const play = props.play as TwitchPlayerInfo
-//       result = play.channelId
-//     } else if (props.play.type === 'EX_URL') {
-//       const play = props.play as ExUrlPlayerInfo
-//       result = play.url
-//     } else if (props.play.type === 'IN_PC') {
-//       const play = props.play as InPcPlayerInfo
-//       result = play.filePath
-//     }
-//   }
-//
-//   return result
-// })
 
 const onClickPlayBtn = async () => {
   if (props.play && !isActive.value) {

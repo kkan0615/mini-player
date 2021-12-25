@@ -9,6 +9,7 @@ export const koreanDictionary = {
       Cancel: '취소'
     },
     tooltips: {
+      Add: '추가',
       Setting: '설정',
       Navigator: '네비게이터',
       OnAlwaysTop: '항상 최상단',

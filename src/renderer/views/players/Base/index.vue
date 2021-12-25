@@ -1,21 +1,17 @@
 <template>
   <div
-    class="tw-h-full"
+    class="tw-h-full tw-flex tw-items-center tw-justify-center"
   >
-    {{ $route.name }}
-    <div>
+    <div
+      class="tw-w-1/2"
+    >
       <c-button
-        @click="onClickMoveTest('YoutubeVideoPlayer')"
+        class="btn-primary btn-sm"
+        @click="onClickAddBtn"
       >
-        Youtube
+        add
       </c-button>
-    </div>
-    <div>
-      <c-button
-        @click="onClickMoveTest('TwitchVideoPlayer')"
-      >
-        Twitch
-      </c-button>
+      Add the new video
     </div>
   </div>
 </template>
@@ -30,6 +26,7 @@ import { useRouter } from 'vue-router'
 import useStore from '@/store'
 import { PlayerActionTypes } from '@/store/modules/model/player/actions'
 import CButton from '@/components/commons/Button/index.vue'
+import { SelectorWindowActionTypes } from '@/store/modules/windows/selector/actions'
 
 const router = useRouter()
 const store = useStore()
@@ -44,6 +41,10 @@ const onClickMoveTest = async (name: string) => {
   } catch (e) {
     console.error(e)
   }
+}
+
+const onClickAddBtn = () => {
+  store.dispatch(SelectorWindowActionTypes.OPEN_SELECTOR_WINDOW)
 }
 
 // const videoRef = ref<HTMLDivElement>()

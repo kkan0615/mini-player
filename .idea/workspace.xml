@@ -2,20 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7cae5587-9ec2-479c-9923-10b954ea1792" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/renderer/locale/langs/ko.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/renderer/locale/langs/ko.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/renderer/store/modules/model/player/actions.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/renderer/store/modules/model/player/actions.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/renderer/views/players/Base/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/renderer/views/players/Base/index.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/renderer/views/players/components/Menubar.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/renderer/views/players/components/Menubar.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/renderer/views/players/components/Navigator.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/renderer/views/players/components/Navigator.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/renderer/views/players/components/NavigatorItem.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/renderer/views/players/components/NavigatorItem.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/renderer/views/players/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/renderer/views/players/index.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/renderer/views/players/videos/InPc/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/renderer/views/players/videos/InPc/index.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/renderer/views/players/videos/Youtube/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/renderer/views/players/videos/Youtube/index.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/renderer/views/selectors/Base/components/ExUrl.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/renderer/views/selectors/Base/components/ExUrl.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/renderer/views/selectors/Base/components/InPc.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/renderer/views/selectors/Base/components/InPc.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/renderer/views/selectors/Base/components/Twitch.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/renderer/views/selectors/Base/components/Twitch.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/renderer/views/selectors/Base/components/Youtube.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/renderer/views/selectors/Base/components/Youtube.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tailwind.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/tailwind.config.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,7 +47,8 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1640349435281</updated>
-      <workItem from="1640349437608" duration="3859000" />
+      <workItem from="1640349437608" duration="3878000" />
+      <workItem from="1640401872064" duration="4550000" />
     </task>
     <servers />
   </component>

@@ -11,7 +11,7 @@
         {{ $t('commons.titles.List') }}
       </div>
       <button
-        class="tw-ml-auto"
+        class="tw-ml-auto pt-2"
         @click="onClickAddBtn"
       >
         <c-material-icon>

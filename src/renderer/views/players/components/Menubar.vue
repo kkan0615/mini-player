@@ -1,7 +1,22 @@
 <template>
   <div
-    class="tw-h-full tw-flex tw-items-center tw-text-sm"
+    class="tw-h-full tw-flex tw-items-center"
   >
+    <!-- setting -->
+    <c-tooltip
+      class="tw-mr-2"
+      :title="$t('commons.tooltips.Add')"
+    >
+      <button
+        @click="onClickAddBtn"
+      >
+        <c-material-icon
+          class="tw-text-lg"
+        >
+          add
+        </c-material-icon>
+      </button>
+    </c-tooltip>
     <!-- setting -->
     <c-tooltip
       class="tw-mr-2"
@@ -10,7 +25,9 @@
       <button
         @click="onClickSettingBtn"
       >
-        <c-material-icon>
+        <c-material-icon
+          class="tw-text-lg"
+        >
           settings
         </c-material-icon>
       </button>
@@ -27,7 +44,9 @@
           @click="onClickAlwaysTopBtn"
         >
           <!-- If it's on the top -->
-          <c-material-icon>
+          <c-material-icon
+            class="tw-text-lg"
+          >
             devices
           </c-material-icon>
         <!-- else -->
@@ -45,11 +64,13 @@
         >
           <c-material-icon
             v-if="isOpenNavigator"
+            class="tw-text-lg"
           >
             menu_open
           </c-material-icon>
           <c-material-icon
             v-else
+            class="tw-text-lg"
           >
             menu
           </c-material-icon>
@@ -71,10 +92,15 @@ import { PlayerWindowActionTypes } from '@/store/modules/windows/player/actions'
 import CMaterialIcon from '@/components/commons/icons/Material/index.vue'
 import CTooltip from '@/components/commons/Tooltip/index.vue'
 import { AppWindowActionTypes } from '@/store/modules/windows/app/actions'
+import { SelectorWindowActionTypes } from '@/store/modules/windows/selector/actions'
 
 const store = useStore()
 
 const isOpenNavigator = computed(() => store.getters.IsOpenPlayerWindowNavigator)
+
+const onClickAddBtn = () => {
+  store.dispatch(SelectorWindowActionTypes.OPEN_SELECTOR_WINDOW)
+}
 
 const onClickSettingBtn = () => {
   store.dispatch(AppWindowActionTypes.OPEN_APP_WINDOW)

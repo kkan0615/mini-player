@@ -56,9 +56,19 @@ const store = useStore()
  */
 const onClickSaveBtn = async () => {
   try {
+    let targetVideoId = videoId.value
+    /* If it's url */
+    if (videoId.value.includes('http')) {
+      const url = new URL(videoId.value)
+      const v = url.searchParams.get('v')
+      if (v) {
+        targetVideoId = v
+      }
+    }
+
     const params = {
       type: 'YOUTUBE',
-      videoId: videoId.value
+      videoId: targetVideoId
     } as YoutubePlayerForm
     await store.dispatch(PlayerActionTypes.CREATE_YOUTUBE_PLAYER, params)
   } catch (e) {
@@ -71,9 +81,19 @@ const onClickSaveBtn = async () => {
  */
 const onClickAddToPlayListBtn = async () => {
   try {
+    let targetVideoId = videoId.value
+    /* If it's url */
+    if (videoId.value.includes('http')) {
+      const url = new URL(videoId.value)
+      const v = url.searchParams.get('v')
+      if (v) {
+        targetVideoId = v
+      }
+    }
+
     const params = {
       type: 'YOUTUBE',
-      videoId: videoId.value
+      videoId: targetVideoId
     } as YoutubePlayerForm
     await store.dispatch(SelectorWindowActionTypes.ADD_TO_PLAY_LIST, params)
   } catch (e) {
