@@ -15,18 +15,17 @@ module.exports = {
         'bs-danger': '#dc3545', // bootstrap 5 default coors
         'bs-light': '#f8f9fa', // bootstrap 5 default coors
         'bs-dark': '#212529', // bootstrap 5 default coors
-        'app-sidebar': {
-          light: '#1c2742',
-          DEFAULT: '#1c2742',
-          dark: '#1c2742',
-        }, // app sidebar colors
+        'app-sidebar': '#1c2742', // app sidebar colors
         /* Only For this app */
         'YOUTUBE': '#cd201f',
         'TWITCH': '#9147ff',
         'EX_URL': '#405de6',
         'IN_PC': '#fffc00',
         'video-background': '#181818',
-      },
+      }, // colors end
+      width: {
+        '62': '15.5rem'
+      }, // width ends
     },
   },
   plugins: [],

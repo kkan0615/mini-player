@@ -2,15 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7cae5587-9ec2-479c-9923-10b954ea1792" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/renderer/views/apps/components/Navigator.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/renderer/locale/langs/ko.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/renderer/locale/langs/ko.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/renderer/views/players/Base/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/renderer/views/players/Base/index.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/renderer/views/players/components/Menubar.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/renderer/views/players/components/Menubar.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/renderer/views/players/components/Navigator.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/renderer/views/players/components/Navigator.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/renderer/views/players/components/NavigatorItem.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/renderer/views/players/components/NavigatorItem.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/renderer/views/players/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/renderer/views/players/index.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/renderer/views/selectors/Base/components/Youtube.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/renderer/views/selectors/Base/components/Youtube.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/main.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/main.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/services/playerWindow.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/services/playerWindow.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/types/windows/player.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/types/windows/player.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/windows/player.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/windows/player.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/renderer/components/commons/Tooltip/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/renderer/components/commons/Tooltip/index.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/renderer/components/commons/layouts/Sidebar/components/Content.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/renderer/components/commons/layouts/Sidebar/components/Content.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/renderer/components/commons/layouts/Sidebar/components/MenuList.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/renderer/components/commons/layouts/Sidebar/components/MenuList.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/renderer/components/commons/layouts/Sidebar/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/renderer/components/commons/layouts/Sidebar/index.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/renderer/views/apps/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/renderer/views/apps/index.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tailwind.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/tailwind.config.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -48,7 +51,8 @@
       <option name="presentableId" value="Default" />
       <updated>1640349435281</updated>
       <workItem from="1640349437608" duration="3878000" />
-      <workItem from="1640401872064" duration="4550000" />
+      <workItem from="1640401872064" duration="4575000" />
+      <workItem from="1640491686311" duration="6566000" />
     </task>
     <servers />
   </component>
@@ -91,6 +95,17 @@
         <option value="$PROJECT_DIR$/src/main/store/index.js.map" />
         <option value="$PROJECT_DIR$/src/main/store/index.js" />
       </list>
+    </option>
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
     </option>
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">

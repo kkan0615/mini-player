@@ -1,6 +1,6 @@
 <template>
   <div
-    class="c-sidebar-layout"
+    class="c-sidebar-layout tw-bg-app-sidebar tw-w-62"
     :class="wrapperClasses"
     @mouseover="onMouseover"
     @mouseout="onMouseout"
@@ -40,11 +40,11 @@ const props = defineProps({
     required: false,
     default: 'white',
   },
-  backgroundColor: {
-    type: String,
-    required: false,
-    default: 'general-sidebar',
-  },
+  // backgroundColor: {
+  //   type: String,
+  //   required: false,
+  //   default: 'app-sidebar',
+  // },
   mini: {
     type: Boolean,
     required: false,
@@ -57,7 +57,7 @@ const innerMini = ref(props.mini)
 const wrapperClasses = computed(() => {
   return {
     [`tw-text-${props.textColor}`]: true,
-    [`tw-bg-${props.backgroundColor}`]: true,
+    // [`tw-bg-${props.backgroundColor}`]: true,
     [`tw-w-${innerMini.value ? props.miniWidth : props.width}`]: true,
     // [`hover:tw-w-${props.width}`]: props.mini,
     [`tw-h-${props.height}`]: true,

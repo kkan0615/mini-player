@@ -1,6 +1,6 @@
 <template>
   <ul
-    class="c-sidebar-layout-menu-list"
+    class="c-sidebar-layout-menu-list tw-p-0"
     :class="{
       [`tw-text-${textSize}`]: textSize,
       'c-sidebar-layout-menu-list--mini': isMini,
@@ -54,7 +54,7 @@ const setMini = (bool: boolean) => {
 >
 .c-sidebar-layout-menu-list {
   a {
-    @apply tw-flex tw-items-center;
+    @apply tw-flex tw-items-center tw-no-underline;
   }
   &--mini {
     a {

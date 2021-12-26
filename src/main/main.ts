@@ -6,6 +6,7 @@ import { closeAppWindow, openAppWindow } from './services/appWindow'
 import { closeSelectorWindow, openSelectorWindow } from './services/selectorWindow'
 import { createSelectorWindow } from './windows/selector'
 import { addToPlayList, getVideoInPc, setPlayerInfo } from './services/player'
+import isDev from 'electron-is-dev'
 // import isDev from 'electron-is-dev'
 
 app.whenReady()
@@ -19,7 +20,8 @@ app.whenReady()
 
 /* When app is ready to open */
 app.on('ready', () => {
-  // createAppWindow()
+  if (isDev)
+    createAppWindow()
   createSelectorWindow()
   createPlayerWindow()
 

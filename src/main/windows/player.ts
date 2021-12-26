@@ -5,32 +5,41 @@ import { selectorWindow } from './selector'
 import {
   DEFAULT_PLAYER_WINDOW_HEIGHT,
   DEFAULT_PLAYER_WINDOW_MIN_WIDTH,
-  DEFAULT_PLAYER_WINDOW_WIDTH
+  DEFAULT_PLAYER_WINDOW_WIDTH, PlayerWindowConfig
 } from '../types/windows/player'
+import { createDefaultPlayerWindowConfig, onFocusPlayerWindow } from '../services/playerWindow'
+import { electronStore } from '../store'
+import { StoreKeyEnum } from '../types/store'
 
 export let playerWindow: BrowserWindow | undefined
 
 export const createPlayerWindow = () => {
-  const displayScreen = screen.getPrimaryDisplay()
-  const dimensions = displayScreen.workAreaSize
+  const playerWindowConfig = <PlayerWindowConfig>electronStore.get(StoreKeyEnum.PLAYER_WINDOW_CONFIG)
 
   playerWindow = new BrowserWindow({
-    // width: parseInt((dimensions.width * 0.8).toString()),
-    // height: parseInt((dimensions.height * 0.8).toString()),
-    width: DEFAULT_PLAYER_WINDOW_WIDTH,
-    height: DEFAULT_PLAYER_WINDOW_HEIGHT,
-    minWidth: DEFAULT_PLAYER_WINDOW_MIN_WIDTH,
-    minHeight: DEFAULT_PLAYER_WINDOW_HEIGHT,
+    width: playerWindowConfig ? playerWindowConfig.lastWidth : DEFAULT_PLAYER_WINDOW_WIDTH,
+    height: playerWindowConfig ? playerWindowConfig.lastHeight : DEFAULT_PLAYER_WINDOW_HEIGHT,
+    minWidth: playerWindowConfig ? playerWindowConfig.lastMinWidth : DEFAULT_PLAYER_WINDOW_MIN_WIDTH,
+    minHeight: playerWindowConfig ? playerWindowConfig.lastMinHeight : DEFAULT_PLAYER_WINDOW_HEIGHT,
+    x: playerWindowConfig ? playerWindowConfig.lastX : undefined,
+    y: playerWindowConfig ? playerWindowConfig.lastY : undefined,
     autoHideMenuBar: true,
     maximizable: true,
     resizable: true,
-    alwaysOnTop: true,
+    alwaysOnTop: playerWindowConfig ? playerWindowConfig.isAlwaysTop : true,
     webPreferences: {
       preload: path.join(__dirname, '../preload.js'),
       nodeIntegration: true,
       contextIsolation: false,
     }
   })
+
+  /**
+   * Add default setting
+   */
+  if (!playerWindowConfig) {
+    createDefaultPlayerWindowConfig()
+  }
 
   playerWindow.loadURL(isDev ? 'http://localhost:3000' : `file://${path.join(__dirname, '../../dist/index.html')}`)
   if (isDev) {
@@ -51,5 +60,5 @@ export const createPlayerWindow = () => {
     playerWindow = undefined
   })
 
-  // playerWindow.on('focus', onFocusPlayerWindow)
+  playerWindow.on('focus', onFocusPlayerWindow)
 }

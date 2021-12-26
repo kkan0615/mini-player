@@ -65,6 +65,6 @@ const destroyTooltip = () => {
   lang="scss"
 >
 .c-tooltip {
-  margin-bottom: 15px !important;
+  margin-bottom: 5px !important;
 }
 </style>
