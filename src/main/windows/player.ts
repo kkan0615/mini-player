@@ -7,7 +7,7 @@ import {
   DEFAULT_PLAYER_WINDOW_MIN_WIDTH,
   DEFAULT_PLAYER_WINDOW_WIDTH, PlayerWindowConfig
 } from '../types/windows/player'
-import { createDefaultPlayerWindowConfig, onFocusPlayerWindow } from '../services/playerWindow'
+import { createDefaultPlayerWindowConfig, onFocusPlayerWindow, onResizePlayerWindow } from '../services/playerWindow'
 import { electronStore } from '../store'
 import { StoreKeyEnum } from '../types/store'
 
@@ -61,4 +61,5 @@ export const createPlayerWindow = () => {
   })
 
   playerWindow.on('focus', onFocusPlayerWindow)
+  playerWindow.on('resized', onResizePlayerWindow)
 }

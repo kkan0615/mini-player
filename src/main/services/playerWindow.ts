@@ -3,7 +3,7 @@ import { createPlayerWindow, playerWindow } from '../windows/player'
 import { selectorWindow } from '../windows/selector'
 import {
   DEFAULT_PLAYER_WINDOW_HEIGHT,
-  DEFAULT_PLAYER_WINDOW_MIN_WIDTH, PlayerWindowConfig, PlayerWindowConfigForm,
+  DEFAULT_PLAYER_WINDOW_MIN_WIDTH, DEFAULT_PLAYER_WINDOW_WIDTH, PlayerWindowConfig, PlayerWindowConfigForm,
 } from '../types/windows/player'
 import { electronStore } from '../store'
 import { StoreKeyEnum } from '../types/store'
@@ -19,6 +19,35 @@ export const createDefaultPlayerWindowConfig = () => {
       lastMinWidth: DEFAULT_PLAYER_WINDOW_MIN_WIDTH,
       lastMinHeight: DEFAULT_PLAYER_WINDOW_HEIGHT,
       isAlwaysTop: true,
+    } as PlayerWindowConfig)
+  } else {
+    electronStore.set(StoreKeyEnum.PLAYER_WINDOW_CONFIG, {
+      lastY: undefined,
+      lastX: undefined,
+      lastWidth: DEFAULT_PLAYER_WINDOW_WIDTH,
+      lastHeight: DEFAULT_PLAYER_WINDOW_HEIGHT,
+      lastMinWidth: DEFAULT_PLAYER_WINDOW_MIN_WIDTH,
+      lastMinHeight: DEFAULT_PLAYER_WINDOW_HEIGHT,
+      isAlwaysTop: true,
+    } as PlayerWindowConfig)
+  }
+}
+
+/**
+ * Set player window config to current player window setting values
+ */
+export const setPlayerWindowConfigToCurrent = () => {
+  if (playerWindow) {
+    const { width, height, x, y } = playerWindow.getContentBounds()
+    const minimumSizes = playerWindow.getMinimumSize()
+    electronStore.set(StoreKeyEnum.PLAYER_WINDOW_CONFIG, {
+      lastX: x,
+      lastY: y,
+      lastWidth: width,
+      lastHeight: height,
+      lastMinWidth: minimumSizes[0],
+      lastMinHeight: minimumSizes[1],
+      isAlwaysTop: playerWindow.isAlwaysOnTop(),
     } as PlayerWindowConfig)
   }
 }
@@ -41,9 +70,12 @@ export const closePlayerWindow = () => {
   }
 }
 
+/**
+ * When player window is resized
+ */
 export const onResizePlayerWindow = () => {
   if (playerWindow) {
-    // @TODO: Save current width and height to electron store
+    setPlayerWindowConfigToCurrent()
   }
 }
 
@@ -52,25 +84,30 @@ export const onResizePlayerWindow = () => {
  */
 export const onFocusPlayerWindow = () => {
   if (selectorWindow) {
+    if (playerWindow) {
+      playerWindow.blur()
+    }
+    /* Focus to Selector window */
     selectorWindow.focus()
   }
 }
 
 /**
  * Set play window config, only can change some
- * @param event
- * @param payload
+ * @param event - IpcMainInvokeEvent
+ * @param payload - Player Window config
  */
-export const setPlayWindowConfig = (event: IpcMainInvokeEvent, payload: PlayerWindowConfigForm) => {
+export const setPlayerWindowConfig = (event: IpcMainInvokeEvent, payload: PlayerWindowConfigForm) => {
   const playerWindowConfig = <PlayerWindowConfig>electronStore.get(StoreKeyEnum.PLAYER_WINDOW_CONFIG)
-  if (playerWindowConfig) {
-    electronStore.set(StoreKeyEnum.PLAYER_WINDOW_CONFIG, {
-      ...playerWindowConfig,
-      isAlwaysTop: payload.isAlwaysTop,
-    } as PlayerWindowConfig)
-  } else {
+  if (!playerWindowConfig) {
     createDefaultPlayerWindowConfig()
   }
+  /* Window change */
+  if (playerWindow) {
+    playerWindow.setAlwaysOnTop(payload.isAlwaysTop)
+  }
+  /* set */
+  setPlayerWindowConfigToCurrent()
 }
 
 /**
@@ -84,6 +121,8 @@ export const openPlayWindowNavigator = () => {
       playerWindow.setBounds({ width: DEFAULT_PLAYER_WINDOW_MIN_WIDTH + 300, height, }, true)
       /*  Change minWidth */
       playerWindow.setMinimumSize(DEFAULT_PLAYER_WINDOW_MIN_WIDTH + 300, DEFAULT_PLAYER_WINDOW_HEIGHT)
+      /* Change player window config to current window setting */
+      setPlayerWindowConfigToCurrent()
     }
   }
 }
@@ -99,6 +138,8 @@ export const closePlayWindowNavigator = () => {
       playerWindow.setMinimumSize(DEFAULT_PLAYER_WINDOW_MIN_WIDTH, DEFAULT_PLAYER_WINDOW_HEIGHT)
       /*  Change width */
       playerWindow.setBounds({ width: DEFAULT_PLAYER_WINDOW_MIN_WIDTH, height, }, true)
+      /* Change player window config to current window setting */
+      setPlayerWindowConfigToCurrent()
     }
   }
 }

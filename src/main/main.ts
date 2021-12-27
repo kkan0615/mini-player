@@ -1,12 +1,19 @@
 import { app, BrowserWindow, ipcMain } from 'electron'
 import { createAppWindow } from './windows/app'
 import { createPlayerWindow } from './windows/player'
-import { closePlayerWindow, closePlayWindowNavigator, openPlayerWindow, openPlayWindowNavigator } from './services/playerWindow'
+import {
+  closePlayerWindow,
+  closePlayWindowNavigator,
+  createDefaultPlayerWindowConfig,
+  openPlayerWindow,
+  openPlayWindowNavigator, setPlayerWindowConfig
+} from './services/playerWindow'
 import { closeAppWindow, openAppWindow } from './services/appWindow'
 import { closeSelectorWindow, openSelectorWindow } from './services/selectorWindow'
 import { createSelectorWindow } from './windows/selector'
 import { addToPlayList, getVideoInPc, setPlayerInfo } from './services/player'
 import isDev from 'electron-is-dev'
+import { changeElectronSystemTheme, getElectronSystemTheme } from './services/systemForWindow'
 // import isDev from 'electron-is-dev'
 
 app.whenReady()
@@ -25,6 +32,10 @@ app.on('ready', () => {
   createSelectorWindow()
   createPlayerWindow()
 
+  /* System for window */
+  ipcMain.handle('get-electron-system-theme', getElectronSystemTheme)
+  ipcMain.handle('change-electron-system-theme', changeElectronSystemTheme)
+
   /** App windows */
   ipcMain.on('open-app-window', openAppWindow)
   ipcMain.on('close-app-window', closeAppWindow)
@@ -34,6 +45,8 @@ app.on('ready', () => {
   ipcMain.on('close-player-window', closePlayerWindow)
   ipcMain.on('open-player-window-navigator', openPlayWindowNavigator)
   ipcMain.on('close-player-window-navigator', closePlayWindowNavigator)
+  ipcMain.on('set-default-player-window', createDefaultPlayerWindowConfig)
+  ipcMain.on('set-player-window', setPlayerWindowConfig)
 
   /** Selector windows */
   ipcMain.on('open-selector-window', openSelectorWindow)
