@@ -93,10 +93,12 @@ import CMaterialIcon from '@/components/commons/icons/Material/index.vue'
 import CTooltip from '@/components/commons/Tooltip/index.vue'
 import { AppWindowActionTypes } from '@/store/modules/windows/app/actions'
 import { SelectorWindowActionTypes } from '@/store/modules/windows/selector/actions'
+import { PlayerWindowConfig } from '@/types/models/windows/player'
 
 const store = useStore()
 
 const isOpenNavigator = computed(() => store.getters.IsOpenPlayerWindowNavigator)
+const playerWindowConfig = computed(() => store.getters.PlayerWindowConfig)
 
 const onClickAddBtn = () => {
   store.dispatch(SelectorWindowActionTypes.OPEN_SELECTOR_WINDOW)
@@ -107,7 +109,10 @@ const onClickSettingBtn = () => {
 }
 
 const onClickAlwaysTopBtn = async () => {
-  console.log('onClickAlwaysTopBtn')
+  store.dispatch(PlayerWindowActionTypes.SET_CONFIG, {
+    ...playerWindowConfig.value,
+    isAlwaysTop: !playerWindowConfig.value.isAlwaysTop,
+  } as PlayerWindowConfig)
 }
 
 const onClickNavigatorBtn = async () => {

@@ -3,12 +3,13 @@ import { RootState } from '@/store'
 import { PlayerWindowMutations, PlayerWindowMutationTypes } from './mutations'
 import { PlayerWindowState } from './state'
 import useElectron from '@/mixins/useElectron'
+import { PlayerWindowConfig } from '@/types/models/windows/player'
 
 const { ipcRenderer } = useElectron()
 
 export enum PlayerWindowActionTypes {
   SET_IS_OPEN_NAVIGATOR = 'playerWindow/SET_IS_OPEN_NAVIGATOR',
-
+  SET_CONFIG = 'playerWindow/SET_CONFIG',
 }
 
 export type AugmentedActionContext = {
@@ -23,6 +24,10 @@ export interface PlayerWindowActions {
     { commit }: AugmentedActionContext,
     payload: boolean
   ): void
+  [PlayerWindowActionTypes.SET_CONFIG] (
+    { commit }: AugmentedActionContext,
+    payload: PlayerWindowConfig
+  ): void
 }
 
 export const playerWindowActions: ActionTree<PlayerWindowState, RootState> & PlayerWindowActions = {
@@ -35,5 +40,9 @@ export const playerWindowActions: ActionTree<PlayerWindowState, RootState> & Pla
       ipcRenderer.send('close-player-window-navigator')
     }
     commit(PlayerWindowMutationTypes.SET_IS_OPEN_NAVIGATOR, payload)
+  },
+  [PlayerWindowActionTypes.SET_CONFIG] ({ commit }, payload) {
+    ipcRenderer.send('set-player-window-config', payload)
+    commit(PlayerWindowMutationTypes.SET_CONFIG, payload)
   },
 }

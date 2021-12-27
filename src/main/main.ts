@@ -27,8 +27,8 @@ app.whenReady()
 
 /* When app is ready to open */
 app.on('ready', () => {
-  if (isDev)
-    createAppWindow()
+  // if (isDev)
+  //   createAppWindow()
   createSelectorWindow()
   createPlayerWindow()
 
@@ -46,7 +46,7 @@ app.on('ready', () => {
   ipcMain.on('open-player-window-navigator', openPlayWindowNavigator)
   ipcMain.on('close-player-window-navigator', closePlayWindowNavigator)
   ipcMain.on('set-default-player-window', createDefaultPlayerWindowConfig)
-  ipcMain.on('set-player-window', setPlayerWindowConfig)
+  ipcMain.on('set-player-window-config', setPlayerWindowConfig)
 
   /** Selector windows */
   ipcMain.on('open-selector-window', openSelectorWindow)

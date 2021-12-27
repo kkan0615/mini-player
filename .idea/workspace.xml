@@ -2,12 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7cae5587-9ec2-479c-9923-10b954ea1792" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/services/systemForWindow.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/renderer/types/models/windows/player.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/main.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/main.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/services/playerWindow.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/services/playerWindow.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/types/windows/player.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/types/windows/player.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/windows/player.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/windows/player.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/renderer/store/modules/windows/player/actions.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/renderer/store/modules/windows/player/actions.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/renderer/store/modules/windows/player/getters.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/renderer/store/modules/windows/player/getters.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/renderer/store/modules/windows/player/mutations.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/renderer/store/modules/windows/player/mutations.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/renderer/store/modules/windows/player/state.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/renderer/store/modules/windows/player/state.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/renderer/views/players/components/Menubar.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/renderer/views/players/components/Menubar.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/renderer/views/players/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/renderer/views/players/index.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tailwind.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/tailwind.config.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,7 +42,7 @@
     <property name="node.js.selected.package.standard" value="" />
     <property name="nodejs_package_manager_path" value="yarn" />
     <property name="settings.editor.selected.configurable" value="settings.javascript.linters.eslint" />
-    <property name="ts.external.directory.path" value="D:\GITGIT\mini-player\node_modules\typescript\lib" />
+    <property name="ts.external.directory.path" value="C:\Users\kkan0\Desktop\Study\mini-player\node_modules\typescript\lib" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -57,40 +64,42 @@
     <option name="version" value="3" />
     <option name="exactExcludedFiles">
       <list>
-        <option value="$PROJECT_DIR$/src/main/windows/selector.js.map" />
+        <option value="$PROJECT_DIR$/src/main/preload.js.map" />
+        <option value="$PROJECT_DIR$/src/main/services/player.js.map" />
+        <option value="$PROJECT_DIR$/src/main/main.js" />
+        <option value="$PROJECT_DIR$/src/main/windows/app.js" />
+        <option value="$PROJECT_DIR$/src/main/windows/app.js.map" />
+        <option value="$PROJECT_DIR$/src/main/main.js.map" />
+        <option value="$PROJECT_DIR$/src/main/types/windows/player.js.map" />
+        <option value="$PROJECT_DIR$/src/main/preload.js" />
+        <option value="$PROJECT_DIR$/src/main/types/windows/player.js" />
+        <option value="$PROJECT_DIR$/src/main/services/selectorWindow.js" />
+        <option value="$PROJECT_DIR$/src/main/services/selectorWindow.js.map" />
         <option value="$PROJECT_DIR$/src/main/windows/selector.js" />
+        <option value="$PROJECT_DIR$/src/main/windows/selector.js.map" />
+        <option value="$PROJECT_DIR$/src/main/types/store.js" />
+        <option value="$PROJECT_DIR$/src/main/types/store.js.map" />
+        <option value="$PROJECT_DIR$/src/main/types/windows/general.js.map" />
         <option value="$PROJECT_DIR$/src/main/services/playerWindow.js.map" />
+        <option value="$PROJECT_DIR$/src/main/types/windows/general.js" />
         <option value="$PROJECT_DIR$/src/main/services/playerWindow.js" />
+        <option value="$PROJECT_DIR$/src/main/services/systemForWindow.js.map" />
+        <option value="$PROJECT_DIR$/src/main/windows/player.js.map" />
+        <option value="$PROJECT_DIR$/src/main/services/systemForWindow.js" />
+        <option value="$PROJECT_DIR$/src/main/windows/player.js" />
         <option value="$PROJECT_DIR$/src/main/services/appWindow.js.map" />
         <option value="$PROJECT_DIR$/src/main/services/appWindow.js" />
-        <option value="$PROJECT_DIR$/src/main/preload.js.map" />
-        <option value="$PROJECT_DIR$/src/main/preload.js" />
-        <option value="$PROJECT_DIR$/src/main/main.js.map" />
-        <option value="$PROJECT_DIR$/src/main/main.js" />
-        <option value="$PROJECT_DIR$/src/main/windows/app.js.map" />
-        <option value="$PROJECT_DIR$/src/main/windows/app.js" />
-        <option value="$PROJECT_DIR$/src/main/windows/player.js.map" />
-        <option value="$PROJECT_DIR$/src/main/windows/player.js" />
-        <option value="$PROJECT_DIR$/src/main/services/selectorWindow.js.map" />
-        <option value="$PROJECT_DIR$/src/main/services/selectorWindow.js" />
-        <option value="$PROJECT_DIR$/src/main/types/store.js.map" />
-        <option value="$PROJECT_DIR$/src/main/types/store.js" />
-        <option value="$PROJECT_DIR$/src/main/types/models/attributes.js.map" />
-        <option value="$PROJECT_DIR$/src/main/types/models/attributes.js" />
-        <option value="$PROJECT_DIR$/src/main/types/systems/date.js.map" />
-        <option value="$PROJECT_DIR$/src/main/types/systems/date.js" />
         <option value="$PROJECT_DIR$/src/main/types/models/players/form.js.map" />
         <option value="$PROJECT_DIR$/src/main/types/models/players/form.js" />
         <option value="$PROJECT_DIR$/src/main/types/models/players/index.js.map" />
         <option value="$PROJECT_DIR$/src/main/types/models/players/index.js" />
-        <option value="$PROJECT_DIR$/src/main/services/player.js.map" />
-        <option value="$PROJECT_DIR$/src/main/services/player.js" />
-        <option value="$PROJECT_DIR$/src/main/types/windows/player.js.map" />
-        <option value="$PROJECT_DIR$/src/main/types/windows/player.js" />
-        <option value="$PROJECT_DIR$/src/main/types/windows/general.js.map" />
-        <option value="$PROJECT_DIR$/src/main/types/windows/general.js" />
+        <option value="$PROJECT_DIR$/src/main/types/systems/date.js" />
+        <option value="$PROJECT_DIR$/src/main/types/systems/date.js.map" />
         <option value="$PROJECT_DIR$/src/main/store/index.js.map" />
+        <option value="$PROJECT_DIR$/src/main/types/models/attributes.js.map" />
         <option value="$PROJECT_DIR$/src/main/store/index.js" />
+        <option value="$PROJECT_DIR$/src/main/types/models/attributes.js" />
+        <option value="$PROJECT_DIR$/src/main/services/player.js" />
       </list>
     </option>
   </component>
@@ -104,6 +113,7 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

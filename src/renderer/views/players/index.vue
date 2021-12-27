@@ -1,6 +1,6 @@
 <template>
   <div
-    class="tw-h-full tw-bg-video-background tw-text-white"
+    class="tw-h-full tw-bg-background-a tw-text-white"
     :class="{
       'tw-flex': isOpenNavigator,
     }"
