@@ -13,7 +13,7 @@ import { closeSelectorWindow, openSelectorWindow } from './services/selectorWind
 import { createSelectorWindow } from './windows/selector'
 import { addToPlayList, getVideoInPc, setPlayerInfo } from './services/player'
 import isDev from 'electron-is-dev'
-import { changeElectronSystemTheme, getElectronSystemTheme } from './services/systemForWindow'
+import { changeElectronSystemDarkMode, getElectronSystemDarkMode } from './services/systemForWindow'
 // import isDev from 'electron-is-dev'
 
 app.whenReady()
@@ -33,8 +33,8 @@ app.on('ready', () => {
   createPlayerWindow()
 
   /* System for window */
-  ipcMain.handle('get-electron-system-theme', getElectronSystemTheme)
-  ipcMain.handle('change-electron-system-theme', changeElectronSystemTheme)
+  ipcMain.handle('get-electron-system-dark-mode', getElectronSystemDarkMode)
+  ipcMain.handle('change-electron-system-dark-mode', changeElectronSystemDarkMode)
 
   /** App windows */
   ipcMain.on('open-app-window', openAppWindow)

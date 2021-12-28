@@ -6,12 +6,12 @@ import { IpcMainInvokeEvent, nativeTheme } from 'electron'
  * @param payload
  * @return - true: if it's dark theme. false: if it's light theme
  */
-export const changeElectronSystemTheme = (event: IpcMainInvokeEvent, payload: 'light' | 'dark' | 'system') => {
+export const changeElectronSystemDarkMode = (event: IpcMainInvokeEvent, payload: 'light' | 'dark' | 'system') => {
   nativeTheme.themeSource = payload
 
   return nativeTheme.shouldUseDarkColors
 }
 
-export const getElectronSystemTheme = (event: IpcMainInvokeEvent) => {
+export const getElectronSystemDarkMode = (event: IpcMainInvokeEvent) => {
   return nativeTheme.shouldUseDarkColors
 }

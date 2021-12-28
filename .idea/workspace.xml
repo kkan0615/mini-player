@@ -2,12 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7cae5587-9ec2-479c-9923-10b954ea1792" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/services/systemForWindow.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/renderer/router/modules/apps/about.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/renderer/store/modules/windows/system/actions.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/renderer/store/modules/windows/system/getters.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/renderer/store/modules/windows/system/index.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/renderer/store/modules/windows/system/mutations.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/renderer/store/modules/windows/system/state.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/main.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/main.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/services/playerWindow.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/services/playerWindow.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/types/windows/player.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/types/windows/player.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/windows/player.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/windows/player.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/services/systemForWindow.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/services/systemForWindow.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/renderer/router/modules/apps/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/renderer/router/modules/apps/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/renderer/store/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/renderer/store/index.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,6 +35,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/renderer/store/modules/windows" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.standard" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
@@ -37,6 +44,11 @@
     <property name="settings.editor.selected.configurable" value="settings.javascript.linters.eslint" />
     <property name="ts.external.directory.path" value="D:\GITGIT\mini-player\node_modules\typescript\lib" />
     <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\GITGIT\mini-player\src\renderer\store\modules\windows" />
+    </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -49,7 +61,7 @@
       <workItem from="1640349437608" duration="3878000" />
       <workItem from="1640401872064" duration="4575000" />
       <workItem from="1640491686311" duration="6590000" />
-      <workItem from="1640590625373" duration="2244000" />
+      <workItem from="1640590625373" duration="5105000" />
     </task>
     <servers />
   </component>
