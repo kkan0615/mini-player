@@ -1,7 +1,8 @@
 <template>
   <div
-    class="c-sidebar-layout tw-bg-app-sidebar tw-w-62"
+    class="c-sidebar-layout "
     :class="wrapperClasses"
+    :style="wrapperStyles"
     @mouseover="onMouseover"
     @mouseout="onMouseout"
   >
@@ -23,12 +24,12 @@ const props = defineProps({
   width: {
     type: [String, Number],
     required: false,
-    default: 62,
+    default: '15.5rem',
   },
   miniWidth: {
     type: [String, Number],
     required: false,
-    default: 20,
+    default: '5rem',
   },
   height: {
     type: [String, Number],
@@ -40,11 +41,6 @@ const props = defineProps({
     required: false,
     default: 'white',
   },
-  // backgroundColor: {
-  //   type: String,
-  //   required: false,
-  //   default: 'app-sidebar',
-  // },
   mini: {
     type: Boolean,
     required: false,
@@ -57,12 +53,15 @@ const innerMini = ref(props.mini)
 const wrapperClasses = computed(() => {
   return {
     [`tw-text-${props.textColor}`]: true,
-    // [`tw-bg-${props.backgroundColor}`]: true,
-    [`tw-w-${innerMini.value ? props.miniWidth : props.width}`]: true,
-    // [`hover:tw-w-${props.width}`]: props.mini,
     [`tw-h-${props.height}`]: true,
     /* If it's mini text is center */
     'tw-text-center': innerMini.value,
+  }
+})
+
+const wrapperStyles = computed(() => {
+  return {
+    width: innerMini.value ? props.miniWidth : props.width
   }
 })
 

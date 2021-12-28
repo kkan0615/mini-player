@@ -53,9 +53,19 @@ const store = useStore()
 
 const onClickSaveBtn = async () => {
   try {
+    let targetChannelId = channelId.value
+    /* If it's url */
+    if (channelId.value.includes('http')) {
+      const url = new URL(channelId.value)
+      const splitPathNames = url.pathname.split('/')
+      if (splitPathNames.length > 0) {
+        targetChannelId = splitPathNames[1]
+      }
+    }
+
     const params = {
       type: 'TWITCH',
-      channelId: channelId.value
+      channelId: targetChannelId,
     } as TwitchPlayerForm
     await store.dispatch(PlayerActionTypes.CREATE_TWITCH_PLAYER, params)
   } catch (e) {
@@ -68,11 +78,21 @@ const onClickSaveBtn = async () => {
  */
 const onClickAddToPlayListBtn = async () => {
   try {
+    let targetChannelId = channelId.value
+    /* If it's url */
+    if (channelId.value.includes('http')) {
+      const url = new URL(channelId.value)
+      const splitPathNames = url.pathname.split('/')[1]
+      if (splitPathNames.length > 0) {
+        targetChannelId = splitPathNames[1]
+      }
+    }
+
     const params = {
       type: 'TWITCH',
-      channelId: channelId.value
+      channelId: targetChannelId,
     } as TwitchPlayerForm
-    await store.dispatch(SelectorWindowActionTypes.ADD_TO_PLAY_LIST, params)
+    await store.dispatch(PlayerActionTypes.CREATE_TWITCH_PLAYER, params)
   } catch (e) {
     console.error(e)
   }

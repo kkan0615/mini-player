@@ -60,14 +60,14 @@ const setMini = (bool: boolean) => {
   lang="scss"
 >
 .c-sidebar-layout-menu-item {
-  @apply tw-p-1 tw-px-3 tw-text-gray-500 tw-flex tw-items-center tw-transition tw-ease-out tw-duration-200 hover:tw-text-current tw-cursor-pointer;
+  @apply tw-p-1 tw-px-3 tw-text-gray-500 tw-flex tw-items-center tw-w-full tw-transition tw-ease-out tw-duration-200 hover:tw-text-current tw-cursor-pointer;
 
   &--active {
-    @apply tw-py-1 tw-text-current tw-bg-gray-500 tw-rounded;
+    @apply tw-py-1 tw-text-current tw-bg-gray-600 tw-rounded;
   }
 
   &-menugroup--active {
-    @apply tw-p-1 tw-text-current;
+    @apply tw-p-1 tw-text-white;
   }
 
   .material-icons {
@@ -76,6 +76,8 @@ const setMini = (bool: boolean) => {
 }
 
 .c-sidebar-layout-menu-item--mini  {
+  @apply tw-w-auto;
+
   a {
     @apply tw-text-center;
   }

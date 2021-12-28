@@ -6,7 +6,7 @@
       class="tw-w-1/2"
     >
       <c-button
-        class="btn-primary btn-sm"
+        class="btn-primary btn-sm "
         @click="onClickAddBtn"
       >
         add

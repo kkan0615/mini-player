@@ -30,6 +30,7 @@ export const createPlayerWindow = () => {
     // height: DEFAULT_PLAYER_WINDOW_HEIGHT,
     // minWidth: DEFAULT_PLAYER_WINDOW_MIN_WIDTH,
     // minHeight: DEFAULT_PLAYER_WINDOW_HEIGHT,
+    // frame: false,
     autoHideMenuBar: true,
     maximizable: true,
     resizable: true,

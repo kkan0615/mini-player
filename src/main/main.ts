@@ -12,9 +12,8 @@ import { closeAppWindow, openAppWindow } from './services/appWindow'
 import { closeSelectorWindow, openSelectorWindow } from './services/selectorWindow'
 import { createSelectorWindow } from './windows/selector'
 import { addToPlayList, getVideoInPc, setPlayerInfo } from './services/player'
-import isDev from 'electron-is-dev'
 import { changeElectronSystemDarkMode, getElectronSystemDarkMode } from './services/systemForWindow'
-// import isDev from 'electron-is-dev'
+import isDev from 'electron-is-dev'
 
 app.whenReady()
   .then(() => {

@@ -2,7 +2,6 @@
   <ul
     class="c-sidebar-layout-menu-list tw-p-0"
     :class="{
-      [`tw-text-${textSize}`]: textSize,
       'c-sidebar-layout-menu-list--mini': isMini,
     }"
   >
@@ -17,16 +16,8 @@ export default {
 }
 </script>
 <script setup lang="ts">
-import { defineProps, getCurrentInstance, inject, onBeforeUnmount, onMounted, ref } from 'vue'
+import { getCurrentInstance, inject, onBeforeUnmount, onMounted, ref } from 'vue'
 import { CSidebarProvideKey } from '@/components/commons/layouts/Sidebar/types'
-
-const props = defineProps({
-  textSize: {
-    type: String,
-    required: false,
-    default: 'lg',
-  }
-})
 
 const isMini = ref(false)
 
@@ -53,8 +44,10 @@ const setMini = (bool: boolean) => {
   lang="scss"
 >
 .c-sidebar-layout-menu-list {
+  @apply tw-flex tw-flex-col tw-space-y-2;
+
   a {
-    @apply tw-flex tw-items-center tw-no-underline;
+    @apply tw-flex tw-items-center tw-no-underline tw-text-current;
   }
   &--mini {
     a {

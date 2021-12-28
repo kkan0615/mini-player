@@ -1,6 +1,7 @@
 import { RouteRecordRaw } from 'vue-router'
 import AppLayout from '@/views/apps/index.vue'
 import { aboutAppRoutes } from '@/router/modules/apps/about'
+import { systemAppRoutes } from '@/router/modules/apps/system'
 
 export const appRoutes: RouteRecordRaw = {
   path: '/app',
@@ -14,5 +15,6 @@ export const appRoutes: RouteRecordRaw = {
       component: () => import('@/views/apps/Home/index.vue'),
     },
     ...aboutAppRoutes,
+    ...systemAppRoutes,
   ],
 }

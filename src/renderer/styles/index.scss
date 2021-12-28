@@ -7,3 +7,8 @@
 .c-row {
   @apply tw-flex tw-items-center;
 }
+
+.region-draggable {
+  -webkit-user-select: none;
+  -webkit-app-region: drag;
+}

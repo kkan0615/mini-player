@@ -1,6 +1,6 @@
 <template>
   <div
-    class="tw-h-full tw-flex tw-items-center"
+    class="tw-h-full tw-flex tw-items-center region-draggable"
   >
     <!-- setting -->
     <c-tooltip
