@@ -110,11 +110,9 @@ export const setPlayerWindowConfig = (event: IpcMainInvokeEvent, payload: Player
   }
   /* Window change */
   if (playerWindow) {
-    console.log('pass?', payload)
     playerWindow.setAlwaysOnTop(payload.isAlwaysTop)
   }
 
-  console.log('after', playerWindow?.isAlwaysOnTop())
   /* set */
   setPlayerWindowConfigToCurrent()
 }

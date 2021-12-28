@@ -2,23 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6160b4d4-0cff-4cc6-9152-75963210c3d9" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/renderer/router/modules/apps/system.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/renderer/views/apps/System/index.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/renderer/views/apps/System/main/index.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/main.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/main.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/services/systemForWindow.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/services/systemForWindow.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/windows/player.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/windows/player.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/renderer/App.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/renderer/App.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/renderer/components/commons/layouts/Sidebar/components/MenuItem.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/renderer/components/commons/layouts/Sidebar/components/MenuItem.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/renderer/components/commons/layouts/Sidebar/components/MenuList.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/renderer/components/commons/layouts/Sidebar/components/MenuList.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/renderer/components/commons/layouts/Sidebar/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/renderer/components/commons/layouts/Sidebar/index.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/renderer/router/modules/apps/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/renderer/router/modules/apps/index.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/renderer/styles/index.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/renderer/styles/index.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/renderer/views/apps/components/Navigator.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/renderer/views/apps/components/Navigator.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/renderer/views/players/Base/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/renderer/views/players/Base/index.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/renderer/views/players/components/Menubar.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/renderer/views/players/components/Menubar.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/renderer/views/players/videos/Twitch/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/renderer/views/players/videos/Twitch/index.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/renderer/views/selectors/Base/components/Twitch.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/renderer/views/selectors/Base/components/Twitch.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/services/playerWindow.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/services/playerWindow.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/renderer/store/modules/windows/player/actions.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/renderer/store/modules/windows/player/actions.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/renderer/types/models/windows/player.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/renderer/types/models/windows/player.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,7 +39,8 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1640690419314</updated>
-      <workItem from="1640690420505" duration="6827000" />
+      <workItem from="1640690420505" duration="6838000" />
+      <workItem from="1640699259067" duration="741000" />
     </task>
     <servers />
   </component>

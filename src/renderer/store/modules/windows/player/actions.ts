@@ -9,6 +9,7 @@ const { ipcRenderer } = useElectron()
 
 export enum PlayerWindowActionTypes {
   SET_IS_OPEN_NAVIGATOR = 'playerWindow/SET_IS_OPEN_NAVIGATOR',
+  LOAD_CONFIG = 'playerWindow/LOAD_CONFIG',
   SET_CONFIG = 'playerWindow/SET_CONFIG',
 }
 
@@ -23,6 +24,9 @@ export interface PlayerWindowActions {
   [PlayerWindowActionTypes.SET_IS_OPEN_NAVIGATOR] (
     { commit }: AugmentedActionContext,
     payload: boolean
+  ): void
+  [PlayerWindowActionTypes.LOAD_CONFIG] (
+    { commit }: AugmentedActionContext,
   ): void
   [PlayerWindowActionTypes.SET_CONFIG] (
     { commit }: AugmentedActionContext,
@@ -40,6 +44,9 @@ export const playerWindowActions: ActionTree<PlayerWindowState, RootState> & Pla
       ipcRenderer.send('close-player-window-navigator')
     }
     commit(PlayerWindowMutationTypes.SET_IS_OPEN_NAVIGATOR, payload)
+  },
+  [PlayerWindowActionTypes.LOAD_CONFIG] ({ commit }) {
+    // commit(PlayerWindowMutationTypes.SET_CONFIG, payload)
   },
   [PlayerWindowActionTypes.SET_CONFIG] ({ commit }, payload) {
     ipcRenderer.send('set-player-window-config', payload)
