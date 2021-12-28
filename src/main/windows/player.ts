@@ -7,7 +7,12 @@ import {
   DEFAULT_PLAYER_WINDOW_MIN_WIDTH,
   DEFAULT_PLAYER_WINDOW_WIDTH, PlayerWindowConfig
 } from '../types/windows/player'
-import { createDefaultPlayerWindowConfig, onFocusPlayerWindow, onResizePlayerWindow } from '../services/playerWindow'
+import {
+  createDefaultPlayerWindowConfig,
+  onFocusPlayerWindow,
+  onMovedPlayerWindow,
+  onResizePlayerWindow
+} from '../services/playerWindow'
 import { electronStore } from '../store'
 import { StoreKeyEnum } from '../types/store'
 
@@ -21,8 +26,10 @@ export const createPlayerWindow = () => {
     height: playerWindowConfig ? playerWindowConfig.lastHeight : DEFAULT_PLAYER_WINDOW_HEIGHT,
     minWidth: playerWindowConfig ? playerWindowConfig.lastMinWidth : DEFAULT_PLAYER_WINDOW_MIN_WIDTH,
     minHeight: playerWindowConfig ? playerWindowConfig.lastMinHeight : DEFAULT_PLAYER_WINDOW_HEIGHT,
-    x: playerWindowConfig ? playerWindowConfig.lastX : undefined,
-    y: playerWindowConfig ? playerWindowConfig.lastY : undefined,
+    // width: DEFAULT_PLAYER_WINDOW_WIDTH,
+    // height: DEFAULT_PLAYER_WINDOW_HEIGHT,
+    // minWidth: DEFAULT_PLAYER_WINDOW_MIN_WIDTH,
+    // minHeight: DEFAULT_PLAYER_WINDOW_HEIGHT,
     autoHideMenuBar: true,
     maximizable: true,
     resizable: true,
@@ -33,6 +40,12 @@ export const createPlayerWindow = () => {
       contextIsolation: false,
     }
   })
+  if (playerWindowConfig.lastX && playerWindowConfig.lastY) {
+    playerWindow.setBounds({
+      x: playerWindowConfig.lastX,
+      y: playerWindowConfig.lastY
+    })
+  }
 
   /**
    * Add default setting
@@ -61,5 +74,6 @@ export const createPlayerWindow = () => {
   })
 
   playerWindow.on('focus', onFocusPlayerWindow)
+  playerWindow.on('moved', onMovedPlayerWindow)
   playerWindow.on('resized', onResizePlayerWindow)
 }

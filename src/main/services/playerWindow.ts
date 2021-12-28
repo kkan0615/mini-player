@@ -79,6 +79,12 @@ export const onResizePlayerWindow = () => {
   }
 }
 
+export const onMovedPlayerWindow = () => {
+  if (playerWindow) {
+    setPlayerWindowConfigToCurrent()
+  }
+}
+
 /**
  * Window Focus event handler
  */
@@ -104,8 +110,11 @@ export const setPlayerWindowConfig = (event: IpcMainInvokeEvent, payload: Player
   }
   /* Window change */
   if (playerWindow) {
+    console.log('pass?', payload)
     playerWindow.setAlwaysOnTop(payload.isAlwaysTop)
   }
+
+  console.log('after', playerWindow?.isAlwaysOnTop())
   /* set */
   setPlayerWindowConfigToCurrent()
 }

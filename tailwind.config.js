@@ -16,12 +16,26 @@ module.exports = {
         'bs-light': '#f8f9fa', // bootstrap 5 default coors
         'bs-dark': '#212529', // bootstrap 5 default coors
         'app-sidebar': '#1c2742', // app sidebar colors
+        'background-a': {
+          light: '#181818',
+          DEFAULT: '#181818',
+          dark: '#181818',
+        },
+        'background-solid': {
+          light: '#212121',
+          DEFAULT: '#212121',
+          dark: '#212121',
+        },
         /* Only For this app */
+        'player-menu-bar': {
+          light: '#181818',
+          DEFAULT: '#181818',
+          dark: '#181818',
+        },
         'YOUTUBE': '#cd201f',
         'TWITCH': '#9147ff',
         'EX_URL': '#405de6',
         'IN_PC': '#fffc00',
-        'video-background': '#181818',
       }, // colors end
       width: {
         '62': '15.5rem'
