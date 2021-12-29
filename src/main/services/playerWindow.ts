@@ -19,6 +19,7 @@ export const createDefaultPlayerWindowConfig = () => {
       lastMinWidth: DEFAULT_PLAYER_WINDOW_MIN_WIDTH,
       lastMinHeight: DEFAULT_PLAYER_WINDOW_HEIGHT,
       isAlwaysTop: true,
+      frame: true,
     } as PlayerWindowConfig)
   } else {
     electronStore.set(StoreKeyEnum.PLAYER_WINDOW_CONFIG, {
@@ -29,6 +30,7 @@ export const createDefaultPlayerWindowConfig = () => {
       lastMinWidth: DEFAULT_PLAYER_WINDOW_MIN_WIDTH,
       lastMinHeight: DEFAULT_PLAYER_WINDOW_HEIGHT,
       isAlwaysTop: true,
+      frame: true,
     } as PlayerWindowConfig)
   }
 }
@@ -38,9 +40,11 @@ export const createDefaultPlayerWindowConfig = () => {
  */
 export const setPlayerWindowConfigToCurrent = () => {
   if (playerWindow) {
+    const playerWindowConfig = <PlayerWindowConfig>electronStore.get(StoreKeyEnum.PLAYER_WINDOW_CONFIG)
     const { width, height, x, y } = playerWindow.getContentBounds()
     const minimumSizes = playerWindow.getMinimumSize()
     electronStore.set(StoreKeyEnum.PLAYER_WINDOW_CONFIG, {
+      ...playerWindowConfig,
       lastX: x,
       lastY: y,
       lastWidth: width,
@@ -112,12 +116,39 @@ export const setPlayerWindowConfig = (event: IpcMainInvokeEvent, payload: Player
   if (playerWindow) {
     /* Change alwaysOnTheTop option */
     playerWindow.setAlwaysOnTop(payload.isAlwaysTop)
-    /* Change frame option */
-    playerWindow.flashFrame(payload.frame)
   }
 
   /* set */
   setPlayerWindowConfigToCurrent()
+}
+
+export const setFrameOfPlayerWindow = (event: IpcMainInvokeEvent, payload: boolean) => {
+  const playerWindowConfig = getPlayerWindowConfig()
+  electronStore.set(StoreKeyEnum.PLAYER_WINDOW_CONFIG, {
+    ...playerWindowConfig,
+    frame: payload,
+  } as PlayerWindowConfig)
+  /* Window change */
+  if (playerWindow && playerWindow.isClosable()) {
+    /* Rebuild */
+    playerWindow.close()
+    setTimeout(() => {
+      createPlayerWindow()
+    }, 250)
+  }
+}
+
+/**
+ * Get player window config
+ */
+export const getPlayerWindowConfig = () => {
+  let playerWindowConfig = <PlayerWindowConfig>electronStore.get(StoreKeyEnum.PLAYER_WINDOW_CONFIG)
+  if (!playerWindowConfig) {
+    createDefaultPlayerWindowConfig()
+    playerWindowConfig = <PlayerWindowConfig>electronStore.get(StoreKeyEnum.PLAYER_WINDOW_CONFIG)
+  }
+
+  return playerWindowConfig
 }
 
 /**

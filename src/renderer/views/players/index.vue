@@ -11,6 +11,12 @@
         'tw-w-2/3': isOpenNavigator
       }"
     >
+      <c-material-icon
+        v-if="!playerWindowConfig.frame"
+        class="tw-absolute tw-left-2 tw-top-2 region-draggable"
+      >
+        drag_indicator
+      </c-material-icon>
       <div
         class="player-container tw-flex tw-flex-col"
       >
@@ -50,6 +56,7 @@ import { PlayerWindowActionTypes } from '@/store/modules/windows/player/actions'
 import PlayerMenuDropDown from './components/MenuDropdown.vue'
 import PlayerNavigator from './components/Navigator.vue'
 import PlayerMenubar from './components/Menubar.vue'
+import CMaterialIcon from '@/components/commons/icons/Material/index.vue'
 
 const store = useStore()
 const router = useRouter()
@@ -57,6 +64,10 @@ const route = useRoute()
 const { ipcRenderer } = useElectron()
 
 const isOpenNavigator = computed(() => store.getters.IsOpenPlayerWindowNavigator)
+const playerWindowConfig = computed(() => store.getters.PlayerWindowConfig)
+
+/* Load config of player window */
+store.dispatch(PlayerWindowActionTypes.LOAD_CONFIG)
 
 onMounted(() => {
   store.dispatch(PlayerWindowActionTypes.SET_IS_OPEN_NAVIGATOR, false)

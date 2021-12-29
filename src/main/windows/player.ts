@@ -1,4 +1,4 @@
-import { BrowserWindow, screen } from 'electron'
+import { BrowserWindow, nativeTheme, screen } from 'electron'
 import path from 'path'
 import isDev from 'electron-is-dev'
 import { selectorWindow } from './selector'
@@ -30,7 +30,7 @@ export const createPlayerWindow = () => {
     // height: DEFAULT_PLAYER_WINDOW_HEIGHT,
     // minWidth: DEFAULT_PLAYER_WINDOW_MIN_WIDTH,
     // minHeight: DEFAULT_PLAYER_WINDOW_HEIGHT,
-    // frame: false,
+    frame: playerWindowConfig ? playerWindowConfig.frame : false,
     autoHideMenuBar: true,
     maximizable: true,
     resizable: true,
@@ -39,7 +39,7 @@ export const createPlayerWindow = () => {
       preload: path.join(__dirname, '../preload.js'),
       nodeIntegration: true,
       contextIsolation: false,
-    }
+    },
   })
   if (playerWindowConfig.lastX && playerWindowConfig.lastY) {
     playerWindow.setBounds({

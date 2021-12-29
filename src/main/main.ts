@@ -4,9 +4,9 @@ import { createPlayerWindow } from './windows/player'
 import {
   closePlayerWindow,
   closePlayWindowNavigator,
-  createDefaultPlayerWindowConfig,
+  createDefaultPlayerWindowConfig, getPlayerWindowConfig,
   openPlayerWindow,
-  openPlayWindowNavigator, setPlayerWindowConfig
+  openPlayWindowNavigator, setFrameOfPlayerWindow, setPlayerWindowConfig
 } from './services/playerWindow'
 import { closeAppWindow, openAppWindow } from './services/appWindow'
 import { closeSelectorWindow, openSelectorWindow } from './services/selectorWindow'
@@ -14,6 +14,7 @@ import { createSelectorWindow } from './windows/selector'
 import { addToPlayList, getVideoInPc, setPlayerInfo } from './services/player'
 import { changeElectronSystemDarkMode, getElectronSystemDarkMode } from './services/systemForWindow'
 import isDev from 'electron-is-dev'
+import { createTray } from './windows/tray'
 
 app.whenReady()
   .then(() => {
@@ -30,6 +31,7 @@ app.on('ready', () => {
   //   createAppWindow()
   createSelectorWindow()
   createPlayerWindow()
+  createTray()
 
   /* System for window */
   ipcMain.handle('get-electron-system-dark-mode', getElectronSystemDarkMode)
@@ -45,7 +47,9 @@ app.on('ready', () => {
   ipcMain.on('open-player-window-navigator', openPlayWindowNavigator)
   ipcMain.on('close-player-window-navigator', closePlayWindowNavigator)
   ipcMain.on('set-default-player-window', createDefaultPlayerWindowConfig)
+  ipcMain.handle('get-player-window-config', getPlayerWindowConfig)
   ipcMain.on('set-player-window-config', setPlayerWindowConfig)
+  ipcMain.on('set-frame-player-window', setFrameOfPlayerWindow)
 
   /** Selector windows */
   ipcMain.on('open-selector-window', openSelectorWindow)

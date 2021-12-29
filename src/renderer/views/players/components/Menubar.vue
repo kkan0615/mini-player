@@ -1,6 +1,6 @@
 <template>
   <div
-    class="tw-h-full tw-flex tw-items-center region-draggable"
+    class="tw-h-full tw-flex tw-items-center"
   >
     <!-- setting -->
     <c-tooltip
@@ -41,18 +41,34 @@
         :title="$t('commons.tooltips.OnAlwaysTop')"
       >
         <button
+          @click="onClickFrameBtn"
+        >
+          <c-material-icon>
+            crop_square
+          </c-material-icon>
+        </button>
+      </c-tooltip>
+      <!-- Set always on the top -->
+      <c-tooltip
+        class="tw-mr-2"
+        :title="$t('commons.tooltips.OnAlwaysTop')"
+      >
+        <button
           @click="onClickAlwaysTopBtn"
         >
           <!-- If it's on the top -->
           <c-material-icon
+            v-if="playerWindowConfig.isAlwaysTop"
             class="tw-text-lg"
           >
             devices
           </c-material-icon>
-        <!-- else -->
-        <!--          <c-material-icon>-->
-        <!--            phonelink_off-->
-        <!--          </c-material-icon>-->
+          <!-- else -->
+          <c-material-icon
+            v-else
+          >
+            phonelink_off
+          </c-material-icon>
         </button>
       </c-tooltip>
       <!-- Navigator -->
@@ -94,8 +110,10 @@ import CTooltip from '@/components/commons/Tooltip/index.vue'
 import { AppWindowActionTypes } from '@/store/modules/windows/app/actions'
 import { SelectorWindowActionTypes } from '@/store/modules/windows/selector/actions'
 import { PlayerWindowConfig } from '@/types/models/windows/player'
+import { useI18n } from 'vue-i18n'
 
 const store = useStore()
+const i18n = useI18n()
 
 const isOpenNavigator = computed(() => store.getters.IsOpenPlayerWindowNavigator)
 const playerWindowConfig = computed(() => store.getters.PlayerWindowConfig)
@@ -106,6 +124,14 @@ const onClickAddBtn = () => {
 
 const onClickSettingBtn = () => {
   store.dispatch(AppWindowActionTypes.OPEN_APP_WINDOW)
+}
+
+const onClickFrameBtn = () => {
+  // @TODO: TO I18N
+  if (confirm(i18n.t('commons.confirms.CanBeClosed'))) {
+    store.dispatch(PlayerWindowActionTypes.SET_FRAME, !playerWindowConfig.value.frame)
+    store.dispatch(PlayerWindowActionTypes.LOAD_CONFIG)
+  }
 }
 
 const onClickAlwaysTopBtn = async () => {

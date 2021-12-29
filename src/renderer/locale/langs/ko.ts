@@ -17,6 +17,9 @@ export const koreanDictionary = {
     titles: {
       List: '목록',
     },
+    confirms: {
+      CanBeClosed: '프로그램을 껏다 켜야할 수 도 있습니다. 진행하시겠습니까?'
+    }
   },
   types: {
     models: {

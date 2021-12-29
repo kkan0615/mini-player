@@ -47,6 +47,26 @@
             </span>
           </c-sidebar-layout-menu-item>
         </router-link>
+        <router-link
+          :to="{ name: 'MainPlayerApp' }"
+        >
+          <c-sidebar-layout-menu-item
+            :active="currentRouteName === 'MainPlayerApp'"
+            class="tw-text-xl"
+          >
+            <c-material-icon
+              type="outlined"
+              class="tw-text-xl"
+            >
+              radio
+            </c-material-icon>
+            <span
+              class="c-sidebar-menu-item--title"
+            >
+              Player
+            </span>
+          </c-sidebar-layout-menu-item>
+        </router-link>
       </c-sidebar-layout-menu-list>
     </c-sidebar-layout-content>
   </c-sidebar-layout>
