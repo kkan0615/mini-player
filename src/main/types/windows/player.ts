@@ -10,6 +10,7 @@ export interface PlayerWindowConfig {
   lastMinWidth: number
   lastMinHeight: number
   isAlwaysTop: boolean
+  frame: boolean
 }
 
-export type PlayerWindowConfigForm = Pick<PlayerWindowConfig, 'isAlwaysTop'>
+export type PlayerWindowConfigForm = Pick<PlayerWindowConfig, 'isAlwaysTop' | 'frame'>

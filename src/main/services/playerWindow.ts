@@ -110,7 +110,10 @@ export const setPlayerWindowConfig = (event: IpcMainInvokeEvent, payload: Player
   }
   /* Window change */
   if (playerWindow) {
+    /* Change alwaysOnTheTop option */
     playerWindow.setAlwaysOnTop(payload.isAlwaysTop)
+    /* Change frame option */
+    playerWindow.flashFrame(payload.frame)
   }
 
   /* set */

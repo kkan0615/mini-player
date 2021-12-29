@@ -3,10 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="6160b4d4-0cff-4cc6-9152-75963210c3d9" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/main.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/main.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/services/playerWindow.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/services/playerWindow.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/renderer/store/modules/windows/player/actions.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/renderer/store/modules/windows/player/actions.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/renderer/types/models/windows/player.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/renderer/types/models/windows/player.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/types/windows/player.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/types/windows/player.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -15,6 +13,9 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectId" id="22ubRuN3jpJyySTkQfXn0md595N" />
   <component name="ProjectViewState">
@@ -28,7 +29,7 @@
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="yarn" />
-    <property name="ts.external.directory.path" value="C:\Users\kkan0\Desktop\Study\mini-player\node_modules\typescript\lib" />
+    <property name="ts.external.directory.path" value="D:\GITGIT\mini-player\node_modules\typescript\lib" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
