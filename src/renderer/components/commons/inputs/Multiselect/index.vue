@@ -61,7 +61,7 @@
     lang="ts"
 >
 export default {
-  name: 'CMultiSelect',
+  name: 'CMultiselect',
 }
 </script>
 <script setup lang="ts">

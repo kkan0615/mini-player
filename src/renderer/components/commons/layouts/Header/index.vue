@@ -1,9 +1,9 @@
 <template>
   <div
-    class="tw-flex"
+    class="tw-flex tw-py-3"
   >
     <div
-      class="tw-font-semibold"
+      class="tw-font-semibold tw-text-2xl"
     >
       {{ title }}
     </div>
@@ -44,7 +44,7 @@ export default {
 <script setup lang="ts">
 import { defineProps } from 'vue'
 import type { PropType } from 'vue'
-import type { CBreadcrumb } from '@/types/libs/components/breadcrumb'
+import type { CBreadcrumb } from '@/types/commons/components/breadcrumb'
 
 const props = defineProps({
   title: {

@@ -59,8 +59,7 @@ export default {
 }
 </script>
 <script setup lang="ts">
-import { computed, ref } from 'vue'
-import { useRouter } from 'vue-router'
+import { ref } from 'vue'
 import CForm from '@/components/commons/Form/index.vue'
 import CMultiSelect from '@/components/commons/inputs/Multiselect/index.vue'
 import CRowDisplay from '@/components/commons/displays/Row/index.vue'
@@ -69,7 +68,7 @@ import CRowDisplayContent from '@/components/commons/displays/Row/components/Con
 import TwitchBaseSelector from './components/Twitch.vue'
 import YoutubeBaseSelector from './components/Youtube.vue'
 import ExUrlBaseSelector from '@/views/selectors/Base/components/ExUrl.vue'
-import { playerTypeList, playerTypeColor } from '@/data/models/players'
+import { playerTypeList } from '@/data/models/players'
 import { PlayerType } from '@/types/models/players'
 import BaseSelectorYoutubeLogo from '@/views/selectors/Base/components/YoutubeLogo.vue'
 import BaseSelectorTwitchLogo from '@/views/selectors/Base/components/TwitchLogo.vue'
@@ -77,35 +76,6 @@ import BaseSelectorExUrlLogo from '@/views/selectors/Base/components/ExUrlLogo.v
 import InPcBaseSelector from '@/views/selectors/Base/components/InPc.vue'
 import BaseSelectorInPcLogo from '@/views/selectors/Base/components/InPcLogo.vue'
 
-const router = useRouter()
-
 const playerType = ref<PlayerType>()
-
-const playerBgColor = computed(() => playerType.value ? `tw-bg-${playerType.value}` : undefined)
-
-
-// const onUpdatePlayerType = async (value: PlayerType) => {
-//   try {
-//     switch (value) {
-//       case 'YOUTUBE':
-//         await router.push({ name: 'YoutubeFormSelector' })
-//         break
-//       case 'TWITCH':
-//         await router.push({ name: 'TwitchFormSelector' })
-//         break
-//       case 'EX_URL':
-//         await router.push({ name: 'TwitchFormSelector' })
-//         break
-//       case 'IN_PC':
-//         await router.push({ name: 'TwitchFormSelector' })
-//         break
-//       default:
-//         await router.push({ name: 'BaseFormSelector' })
-//         break
-//     }
-//   } catch (e) {
-//     console.error(e)
-//   }
-// }
 
 </script>

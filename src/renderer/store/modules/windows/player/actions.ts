@@ -12,6 +12,7 @@ export enum PlayerWindowActionTypes {
   LOAD_CONFIG = 'playerWindow/LOAD_CONFIG',
   SET_CONFIG = 'playerWindow/SET_CONFIG',
   SET_FRAME = 'playerWindow/SET_FRAME',
+  SET_TO_DEFAULT = 'playerWindow/SET_TO_DEFAULT',
 }
 
 export type AugmentedActionContext = {
@@ -37,6 +38,9 @@ export interface PlayerWindowActions {
     context: AugmentedActionContext,
     payload: boolean
   ): void
+  [PlayerWindowActionTypes.SET_TO_DEFAULT] (
+    context: AugmentedActionContext,
+  ): void
 }
 
 export const playerWindowActions: ActionTree<PlayerWindowState, RootState> & PlayerWindowActions = {
@@ -52,7 +56,6 @@ export const playerWindowActions: ActionTree<PlayerWindowState, RootState> & Pla
   },
   async [PlayerWindowActionTypes.LOAD_CONFIG] ({ commit }) {
     const playerWindowConfig: PlayerWindowConfig = await ipcRenderer.invoke('get-player-window-config')
-    console.log('playerWindowConfig', playerWindowConfig)
     commit(PlayerWindowMutationTypes.SET_CONFIG, playerWindowConfig)
   },
   [PlayerWindowActionTypes.SET_CONFIG] ({ commit }, payload) {
@@ -61,5 +64,8 @@ export const playerWindowActions: ActionTree<PlayerWindowState, RootState> & Pla
   },
   [PlayerWindowActionTypes.SET_FRAME] (context, payload) {
     ipcRenderer.send('set-frame-player-window', payload)
+  },
+  [PlayerWindowActionTypes.SET_TO_DEFAULT] (context) {
+    ipcRenderer.send('set-default-player-window-config')
   },
 }

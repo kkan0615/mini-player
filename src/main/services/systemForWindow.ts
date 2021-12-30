@@ -15,3 +15,9 @@ export const changeElectronSystemDarkMode = (event: IpcMainInvokeEvent, payload:
 export const getElectronSystemDarkMode = () => {
   return nativeTheme.shouldUseDarkColors
 }
+
+export const getElectronSystemConfig = () => {
+  return {
+    themeSource: nativeTheme.themeSource,
+  }
+}

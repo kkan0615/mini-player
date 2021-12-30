@@ -35,7 +35,6 @@ ipcRenderer.on('move-to-app', async () => {
 
 ipcRenderer.on('move-to-player', async () => {
   try {
-    console.log('what about me?')
     await router.push({ name: 'PlayerLayout' })
   } catch (e) {
     console.error(e)

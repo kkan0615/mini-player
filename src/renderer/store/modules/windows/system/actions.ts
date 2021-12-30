@@ -33,6 +33,8 @@ export const systemWindowActions: ActionTree<SystemWindowState, RootState> & Sys
     /* Set dark mode */
     const isDarkModeRes: boolean = await ipcRenderer.invoke('get-electron-system-dark-mode')
     commit(SystemWindowMutationTypes.SET_IS_DARK_MODE, isDarkModeRes)
+    const configRes: boolean = await ipcRenderer.invoke('get-electron-system-config')
+    commit(SystemWindowMutationTypes.SET_CONFIG, configRes)
   },
   async [SystemWindowActionTypes.SET_DARK_MODE] ({ commit }, payload) {
     const isDarkModeRes: boolean = await ipcRenderer.invoke('change-electron-system-dark-mode', payload)
