@@ -11,6 +11,7 @@ export const createSelectorWindow = () => {
     minWidth: 300,
     maximizable: isDev,
     resizable: isDev,
+    autoHideMenuBar: true,
     alwaysOnTop: !isDev,
     webPreferences: {
       preload: path.join(__dirname, '../preload.js'),
@@ -19,10 +20,16 @@ export const createSelectorWindow = () => {
     }
   })
 
-  selectorWindow.loadURL(isDev ? 'http://localhost:3000' : `file://${path.join(__dirname, '../../dist/index.html')}`)
-  if (isDev) {
-    selectorWindow.webContents.openDevTools()
-  }
+  // if (isDev) {
+  //   selectorWindow.loadURL('http://localhost:3000')
+  // } else {
+  //   selectorWindow.loadFile(path.join(__dirname, '../../../../../../index.html'))
+  // }
+  selectorWindow.loadURL(isDev ? 'http://localhost:3000' : `file://${path.join(__dirname, '../../../../../../index.html')}`)
+  // selectorWindow.loadURL(isDev ? 'http://localhost:3000' : `file://${path.join(__dirname, '../dist/index.html')}`)
+  // if (isDev) {
+  selectorWindow.webContents.openDevTools()
+  // }
 
   /* When finish frame loading */
   selectorWindow.webContents.once('did-finish-load', () => {

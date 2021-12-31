@@ -56,10 +56,16 @@ export const createPlayerWindow = () => {
     createDefaultPlayerWindowConfig()
   }
 
-  playerWindow.loadURL(isDev ? 'http://localhost:3000' : `file://${path.join(__dirname, '../../dist/index.html')}`)
-  if (isDev) {
-    playerWindow.webContents.openDevTools()
-  }
+  // if (isDev) {
+  //   playerWindow.loadURL('http://localhost:3000')
+  // } else {
+  //   playerWindow.loadFile(path.join(__dirname, '../../../../../../index.html'))
+  // }
+  playerWindow.loadURL(isDev ? 'http://localhost:3000' : `file://${path.join(__dirname, '../../../../../../index.html')}`)
+  // playerWindow.loadURL(isDev ? 'http://localhost:3000' : `file://${path.join(__dirname, '../dist/index.html')}`)
+  // if (isDev) {
+  playerWindow.webContents.openDevTools()
+  // }
 
   /* When finish to frame loaded */
   playerWindow.webContents.once('did-finish-load', () => {

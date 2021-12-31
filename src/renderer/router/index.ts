@@ -11,5 +11,6 @@ export const routes: Array<RouteRecordRaw> = [
 
 export const router = createRouter({
   history: createWebHistory(''),
+  // history: process.env.IS_DEV === 'true' ? createWebHistory('') : createWebHashHistory('/'),
   routes,
 })

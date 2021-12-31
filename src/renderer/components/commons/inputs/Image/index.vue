@@ -77,8 +77,8 @@ import {
   ref
 } from 'vue'
 import { BFormProvideKey } from '@/components/commons/Form/types'
-import { InputRuleType } from '@/types/libs/components/form'
-import { validate } from '@/utils/libs/bootstraps/form'
+import { InputRuleType } from '@/types/commons/components/form'
+import { validate } from '@/utils/bootstrap/validate'
 import CButton from '@/components/commons/Button/index.vue'
 
 const props = defineProps({

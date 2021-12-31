@@ -20,7 +20,7 @@
           :disabled="disabled"
           :placeholder="placeholder"
           :value="modelValue"
-          :checked="modelValue"
+          :checked="isChecked"
           class="form-check-input"
           :class="{
             'is-invalid': errorMessage,
@@ -33,7 +33,7 @@
           v-if="label"
           :for="id"
         >
-          {{ Label }}
+          {{ label }}
         </label>
       </div>
     </slot>
@@ -53,7 +53,7 @@ export default {
 }
 </script>
 <script setup lang="ts">
-import { defineEmits, defineProps, getCurrentInstance, inject, onBeforeUnmount, onMounted, ref } from 'vue'
+import { computed, defineEmits, defineProps, getCurrentInstance, inject, onBeforeUnmount, onMounted, ref } from 'vue'
 import { BFormProvideKey } from '@/components/commons/Form/types'
 import { InputRuleType } from '@/types/commons/components/form'
 import { validate } from '@/utils/bootstrap/validate'
@@ -100,6 +100,7 @@ const props = defineProps({
     default: () => []
   },
   modelValue: {
+    type: [Boolean, Object],
     required: false,
   },
 })
@@ -108,6 +109,8 @@ const emits = defineEmits(['update:modelValue'])
 
 const errorMessage = ref('')
 const inputRef = ref<HTMLInputElement | null>(null)
+
+const isChecked = computed(() => !!props.modelValue)
 
 const form = inject(BFormProvideKey)
 

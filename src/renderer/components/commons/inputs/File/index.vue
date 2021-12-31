@@ -126,10 +126,12 @@ onBeforeUnmount(() => {
 // @TODO: Event 변경
 const onInput = (event: any) => {
   if (event.target) {
-    const elemet = event.target as HTMLInputElement
-    const elementValue = props.multiple ? elemet.files : elemet.files[0]
-    inputValidate(elementValue)
-    emits('update:modelValue', elementValue)
+    const element = event.target as HTMLInputElement
+    if (element && element.files) {
+      const elementValue = props.multiple  ? element.files : element.files[0]
+      inputValidate(elementValue)
+      emits('update:modelValue', elementValue)
+    }
   }
 }
 

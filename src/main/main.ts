@@ -10,7 +10,6 @@ import {
 } from './services/playerWindow'
 import { closeAppWindow, openAppWindow } from './services/appWindow'
 import { closeSelectorWindow, openSelectorWindow } from './services/selectorWindow'
-import { createSelectorWindow } from './windows/selector'
 import { addToPlayList, getVideoInPc, setPlayerInfo } from './services/player'
 import {
   changeElectronSystemDarkMode,
@@ -22,6 +21,11 @@ import { createTray } from './windows/tray'
 
 app.whenReady()
   .then(() => {
+    if (isDev)
+      createAppWindow()
+    createPlayerWindow()
+    createTray()
+
     app.on('activate', () => {
       if (!BrowserWindow.getAllWindows().length) {
         createAppWindow()
@@ -31,11 +35,6 @@ app.whenReady()
 
 /* When app is ready to open */
 app.on('ready', () => {
-  if (isDev)
-    createAppWindow()
-  createPlayerWindow()
-  createTray()
-
   /* System for window */
   ipcMain.handle('get-electron-system-config', getElectronSystemConfig)
   ipcMain.handle('get-electron-system-dark-mode', getElectronSystemDarkMode)

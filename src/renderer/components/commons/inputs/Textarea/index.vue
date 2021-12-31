@@ -41,8 +41,8 @@ export default {
 
 import { defineEmits, defineProps, getCurrentInstance, inject, onBeforeUnmount, onMounted, ref } from 'vue'
 import { BFormProvideKey } from '@/components/commons/Form/types'
-import { InputRuleType } from '@/types/libs/components/form'
-import { validate } from '@/utils/libs/bootstraps/form'
+import { InputRuleType } from '@/types/commons/components/form'
+import { validate } from '@/utils/bootstrap/validate'
 
 const props = defineProps({
   id: {
