@@ -1,6 +1,10 @@
 
 <template>
-  <router-view />
+  <div
+    class="tw-h-full tw-w-full dark:tw-bg-general-background-dark tw-bg-general-background dark:tw-text-bs-light tw-text-bs-dark"
+  >
+    <router-view />
+  </div>
 </template>
 <script setup lang="ts">
 import useElectron from '@/mixins/useElectron'

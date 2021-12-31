@@ -1,4 +1,7 @@
-import { IpcMainInvokeEvent, nativeTheme } from 'electron'
+import { IpcMainInvokeEvent, IpcMainEvent, nativeTheme } from 'electron'
+import { electronStore } from '../store'
+import { StoreKeyEnum } from '../types/store'
+import { GeneralWindowConfig, GeneralWindowConfigForStore } from '../types/windows/general'
 
 /**
  * Change theme of system
@@ -16,8 +19,15 @@ export const getElectronSystemDarkMode = () => {
   return nativeTheme.shouldUseDarkColors
 }
 
+export const setElectronSystemConfig = (event: IpcMainEvent, payload: GeneralWindowConfigForStore) => {
+  console.log('payload', payload)
+  electronStore.set(StoreKeyEnum.SYSTEM_CONFIG, payload)
+}
+
 export const getElectronSystemConfig = () => {
+  const electronSystemConfig = <GeneralWindowConfigForStore>electronStore.get(StoreKeyEnum.SYSTEM_CONFIG)
   return {
+    ...electronSystemConfig,
     themeSource: nativeTheme.themeSource,
-  }
+  } as GeneralWindowConfig
 }

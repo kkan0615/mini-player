@@ -23,7 +23,7 @@
             <span
               class="c-sidebar-menu-item--title"
             >
-              Home
+              {{ $t('router.titles.HomeApp') }}
             </span>
           </c-sidebar-layout-menu-item>
         </router-link>
@@ -43,7 +43,8 @@
             <span
               class="c-sidebar-menu-item--title"
             >
-              System
+              {{ $t('router.titles.SystemApp') }}
+
             </span>
           </c-sidebar-layout-menu-item>
         </router-link>
@@ -63,7 +64,7 @@
             <span
               class="c-sidebar-menu-item--title"
             >
-              Player
+              {{ $t('router.titles.PlayerApp') }}
             </span>
           </c-sidebar-layout-menu-item>
         </router-link>

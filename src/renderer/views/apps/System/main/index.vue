@@ -3,21 +3,31 @@
     <c-header-layout
       :title="$t('router.titles.SystemApp')"
     />
-    <c-form>
+    <c-form
+      class="tw-space-y-2"
+    >
       <c-vertical-input-group>
         <c-vertical-input-group-label>
-          Dark mode
+          {{ $t('types.models.windows.systems.configs.themeSource') }}
         </c-vertical-input-group-label>
         <c-vertical-input-group-content>
           <c-multiselect
             id="multiselect-dark-mode"
             v-model="darkMode"
+            disabled
             mode="single"
-            :options="[
-              {value: 'light', label: 'light!'},
-              {value: 'dark', label: 'dark!'},
-              {value: 'system', label: 'system!'},
-            ]"
+            :options="darkModeOptions"
+          />
+        </c-vertical-input-group-content>
+      </c-vertical-input-group>
+      <c-vertical-input-group>
+        <c-vertical-input-group-label>
+          {{ $t('types.models.windows.systems.configs.isOpenSelectorWhenOpen') }}
+        </c-vertical-input-group-label>
+        <c-vertical-input-group-content>
+          <c-check-input
+            id="check-is-open-selector-when-open"
+            v-model="isOpenSelectorWhenOpen"
           />
         </c-vertical-input-group-content>
       </c-vertical-input-group>
@@ -40,12 +50,6 @@
       </c-card-content>
     </c-card>
     <div>
-      <!--      <c-btn-->
-      <!--        class="btn-danger tw-mr-2"-->
-      <!--        @click="onClickToDefaultBtn"-->
-      <!--      >-->
-      <!--        {{ $t('commons.actions.ToDefault') }}-->
-      <!--      </c-btn>-->
       <c-btn
         class="btn-primary"
         @click="onClickSaveBtn"
@@ -73,12 +77,24 @@ import CVerticalInputGroupContent from '@/components/commons/displays/VerticalIn
 import CMultiselect from '@/components/commons/inputs/Multiselect/index.vue'
 import useStore from '@/store'
 import { computed, onMounted, ref } from 'vue'
+import CCheckInput from '@/components/commons/inputs/Check/index.vue'
+import { SystemWindowActionTypes } from '@/store/modules/windows/system/actions'
+import { SystemWindowConfigForStore } from '@/types/models/windows/general'
+import { useI18n } from 'vue-i18n'
 
 const store = useStore()
+const i18n = useI18n()
+
+const darkModeOptions = [
+  { value: 'light', label: i18n.t('types.models.windows.systems.configs.themeSourceOptions.light') },
+  { value: 'dark', label: i18n.t('types.models.windows.systems.configs.themeSourceOptions.dark') },
+  { value: 'system', label: i18n.t('types.models.windows.systems.configs.themeSourceOptions.system') },
+]
 
 const darkMode = ref<'dark' | 'light' | 'system'>('dark')
+const isOpenSelectorWhenOpen = ref(false)
 
-const systemWindowIsDarkMode = computed(() => store.getters.SystemWindowIsDarkMode)
+// const systemWindowIsDarkMode = computed(() => store.getters.SystemWindowIsDarkMode)
 const systemWindowConfig = computed(() => store.getters.SystemWindowConfig)
 
 onMounted(() => {
@@ -86,11 +102,20 @@ onMounted(() => {
 })
 
 const initData = () => {
-  console.log(systemWindowConfig.value)
   darkMode.value = systemWindowConfig.value.themeSource
+  isOpenSelectorWhenOpen.value = systemWindowConfig.value.isOpenSelectorWhenOpen || false
 }
 
-const onClickSaveBtn = () => {
-  console.log('onClickSaveBtn')
+const onClickSaveBtn = async () => {
+  try {
+    await store.dispatch(SystemWindowActionTypes.SET_CONFIG, {
+      isOpenSelectorWhenOpen: isOpenSelectorWhenOpen.value
+    } as SystemWindowConfigForStore)
+    /* RELOAD */
+    await store.dispatch(SystemWindowActionTypes.LOAD_SYSTEM_WINDOW_CONFIG)
+    initData()
+  } catch (e) {
+    console.error(e)
+  }
 }
 </script>

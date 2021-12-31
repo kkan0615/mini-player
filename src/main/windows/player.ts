@@ -15,6 +15,7 @@ import {
 } from '../services/playerWindow'
 import { electronStore } from '../store'
 import { StoreKeyEnum } from '../types/store'
+import { openSelectorWindowAuto } from '../services/selectorWindow'
 
 export let playerWindow: BrowserWindow | undefined
 
@@ -65,6 +66,9 @@ export const createPlayerWindow = () => {
     if (playerWindow) {
       playerWindow.webContents.send('move-to-player')
     }
+
+    /* Open Selector for window */
+    openSelectorWindowAuto()
   })
 
   playerWindow.on('closed', () => {

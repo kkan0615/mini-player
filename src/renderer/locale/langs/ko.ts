@@ -28,6 +28,7 @@ export const koreanDictionary = {
   },
   router: {
     titles: {
+      HomeApp: '홈',
       SystemApp: '시스템 설정',
       PlayerApp: '플레이어 설정',
     }
@@ -65,6 +66,17 @@ export const koreanDictionary = {
         },
       },
       windows: {
+        systems: {
+          configs: {
+            themeSource: '다크 모드 사용',
+            isOpenSelectorWhenOpen: '플레이어 사용시 선택창 자동 열기 사용',
+            themeSourceOptions: {
+              dark: '다크',
+              light: '라이트',
+              system: '시스템',
+            }
+          },
+        },
         players: {
           configs: {
             IsAlwaysTop: '항상 최상단 사용',

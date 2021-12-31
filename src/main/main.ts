@@ -15,7 +15,7 @@ import { addToPlayList, getVideoInPc, setPlayerInfo } from './services/player'
 import {
   changeElectronSystemDarkMode,
   getElectronSystemConfig,
-  getElectronSystemDarkMode
+  getElectronSystemDarkMode, setElectronSystemConfig
 } from './services/systemForWindow'
 import isDev from 'electron-is-dev'
 import { createTray } from './windows/tray'
@@ -31,9 +31,8 @@ app.whenReady()
 
 /* When app is ready to open */
 app.on('ready', () => {
-  // if (isDev)
-  //   createAppWindow()
-  createSelectorWindow()
+  if (isDev)
+    createAppWindow()
   createPlayerWindow()
   createTray()
 
@@ -41,6 +40,7 @@ app.on('ready', () => {
   ipcMain.handle('get-electron-system-config', getElectronSystemConfig)
   ipcMain.handle('get-electron-system-dark-mode', getElectronSystemDarkMode)
   ipcMain.handle('change-electron-system-dark-mode', changeElectronSystemDarkMode)
+  ipcMain.on('set-electron-system-config', setElectronSystemConfig)
 
   /** App windows */
   ipcMain.on('open-app-window', openAppWindow)
@@ -61,6 +61,8 @@ app.on('ready', () => {
   ipcMain.on('close-selector-window', closeSelectorWindow)
 
   /* Player */
+  ipcMain.on('open-player-window', openPlayerWindow)
+  ipcMain.on('close-player-window', closePlayerWindow)
   ipcMain.on('set-player-info', setPlayerInfo)
   ipcMain.on('add-to-play-list', addToPlayList)
   ipcMain.handle('get-video-in-pc', getVideoInPc)

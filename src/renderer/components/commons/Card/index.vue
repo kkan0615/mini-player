@@ -1,6 +1,6 @@
 <template>
   <div
-    class="tw-border tw-rounded tw-shadow"
+    class="tw-border tw-rounded tw-shadow dark:tw-border-gray-700"
   >
     <slot />
   </div>

@@ -4,6 +4,25 @@ import { createPlayerWindow, playerWindow } from '../windows/player'
 import { PlayerInfo } from '../types/models/players'
 import { selectorWindow } from '../windows/selector'
 
+/**
+ * Open Selector window
+ */
+
+export const openPlayerWindow = () => {
+  if (!playerWindow) {
+    createPlayerWindow()
+  }
+}
+
+/**
+ * close Selector window
+ */
+export const closePlayerWindow = () => {
+  if (playerWindow && playerWindow.closable) {
+    playerWindow.close()
+  }
+}
+
 export const setPlayerInfo = (event: IpcMainEvent, payload: PlayerInfo) => {
   /* Close selector window */
   if (selectorWindow && selectorWindow.closable)

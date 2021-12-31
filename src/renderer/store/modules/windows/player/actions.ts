@@ -8,6 +8,8 @@ import useElectron from '@/mixins/useElectron'
 const { ipcRenderer } = useElectron()
 
 export enum PlayerWindowActionTypes {
+  OPEN_PLAYER = 'OPEN_PLAYER',
+  CLOSE_PLAYER = 'CLOSE_PLAYER',
   SET_IS_OPEN_NAVIGATOR = 'playerWindow/SET_IS_OPEN_NAVIGATOR',
   LOAD_CONFIG = 'playerWindow/LOAD_CONFIG',
   SET_CONFIG = 'playerWindow/SET_CONFIG',
@@ -23,6 +25,12 @@ export type AugmentedActionContext = {
 } & Omit<ActionContext<PlayerWindowState, RootState>, 'commit'>
 
 export interface PlayerWindowActions {
+  [PlayerWindowActionTypes.OPEN_PLAYER] (
+    { commit }: AugmentedActionContext,
+  ): void
+  [PlayerWindowActionTypes.CLOSE_PLAYER] (
+    { commit }: AugmentedActionContext,
+  ): void
   [PlayerWindowActionTypes.SET_IS_OPEN_NAVIGATOR] (
     { commit }: AugmentedActionContext,
     payload: boolean
@@ -44,6 +52,12 @@ export interface PlayerWindowActions {
 }
 
 export const playerWindowActions: ActionTree<PlayerWindowState, RootState> & PlayerWindowActions = {
+  [PlayerWindowActionTypes.OPEN_PLAYER] (context) {
+    ipcRenderer.send('open-player-window')
+  },
+  [PlayerWindowActionTypes.CLOSE_PLAYER] (context) {
+    ipcRenderer.send('close-player-window')
+  },
   [PlayerWindowActionTypes.SET_IS_OPEN_NAVIGATOR] ({ commit }, payload) {
     if (payload) {
       // open

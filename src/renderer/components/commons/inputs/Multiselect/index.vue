@@ -20,7 +20,7 @@
       :searchable="searchable"
       :close-on-select="closeOnSelect"
       :create-tag="createTag"
-      class=""
+      class="tw-text-black"
       :class="{
         'is-invalid': errorMessage,
         'form-select-sm': size === 'sm',
@@ -28,6 +28,8 @@
       }"
       :classes="{
         tags: 'multiselect-tags tw-w-1 tw-p-0',
+        optionSelected: 'tw-bg-bs-primary',
+        optionSelectedPointed: 'tw-bg-bs-primary',
       }"
       :options="options"
       @change="onChangeSelect"
