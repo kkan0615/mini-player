@@ -7,8 +7,10 @@ export let appWindow: BrowserWindow | undefined
 export const createAppWindow = () => {
   const displayScreen = screen.getPrimaryDisplay()
   const dimensions = displayScreen.workAreaSize
+  const iconPath = isDev ? path.join(__dirname, '../assets/icons/256x256.png') : path.join(process.resourcesPath, 'ex-assets', 'icons', '256x256.png')
 
   appWindow = new BrowserWindow({
+    icon: iconPath,
     width: parseInt((dimensions.width * 0.8).toString()),
     height: parseInt((dimensions.height * 0.8).toString()),
     autoHideMenuBar: true,
@@ -23,13 +25,7 @@ export const createAppWindow = () => {
     }
   })
 
-  // if (isDev) {
-  //   appWindow.loadURL('http://localhost:3000')
-  // } else {
-  //   appWindow.loadFile(path.join(__dirname, '../../../../index.html'))
-  // }
   appWindow.loadURL(isDev ? 'http://localhost:3000' : `file://${path.join(__dirname, '../../../../../../index.html')}`)
-  // appWindow.loadURL(isDev ? 'http://localhost:3000' : `file://${path.join(__dirname, '../dist/index.html')}`)
 
   /* When finish to frame loaded */
   appWindow.webContents.once('did-frame-finish-load', () => {
@@ -38,9 +34,9 @@ export const createAppWindow = () => {
     }
   })
 
-  // if (isDev) {
-  appWindow.webContents.openDevTools()
-  // }
+  if (isDev) {
+    appWindow.webContents.openDevTools()
+  }
 
   appWindow.on('closed', () => {
     appWindow = undefined

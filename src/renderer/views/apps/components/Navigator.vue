@@ -68,6 +68,26 @@
             </span>
           </c-sidebar-layout-menu-item>
         </router-link>
+        <router-link
+          :to="{ name: 'MainAboutApp' }"
+        >
+          <c-sidebar-layout-menu-item
+            :active="currentRouteName === 'MainAboutApp'"
+            class="tw-text-xl"
+          >
+            <c-material-icon
+              type="outlined"
+              class="tw-text-xl"
+            >
+              face
+            </c-material-icon>
+            <span
+              class="c-sidebar-menu-item--title"
+            >
+              {{ $t('router.titles.AboutApp') }}
+            </span>
+          </c-sidebar-layout-menu-item>
+        </router-link>
       </c-sidebar-layout-menu-list>
     </c-sidebar-layout-content>
   </c-sidebar-layout>

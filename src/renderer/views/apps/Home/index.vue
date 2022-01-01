@@ -34,6 +34,20 @@
           </div>
         </c-card-content>
       </c-card>
+      <c-card
+        class="tw-text-center tw-cursor-pointer"
+        style="background-color: #0f0f0f;"
+        @click="onClickMoveToRouter('MainAboutApp')"
+      >
+        <c-card-content>
+          <c-material-icon>
+            face
+          </c-material-icon>
+          <div>
+            {{ $t('router.titles.AboutApp') }}
+          </div>
+        </c-card-content>
+      </c-card>
     </div>
     <c-btn
       class="btn-primary tw-mt-2"

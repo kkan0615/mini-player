@@ -21,16 +21,14 @@ export let playerWindow: BrowserWindow | undefined
 
 export const createPlayerWindow = () => {
   const playerWindowConfig = <PlayerWindowConfig>electronStore.get(StoreKeyEnum.PLAYER_WINDOW_CONFIG)
+  const iconPath = isDev ? path.join(__dirname, '../assets/icons/256x256.png') : path.join(process.resourcesPath, 'ex-assets', 'icons', '256x256.png')
 
   playerWindow = new BrowserWindow({
+    icon: iconPath,
     width: playerWindowConfig ? playerWindowConfig.lastWidth : DEFAULT_PLAYER_WINDOW_WIDTH,
     height: playerWindowConfig ? playerWindowConfig.lastHeight : DEFAULT_PLAYER_WINDOW_HEIGHT,
     minWidth: playerWindowConfig ? playerWindowConfig.lastMinWidth : DEFAULT_PLAYER_WINDOW_MIN_WIDTH,
     minHeight: playerWindowConfig ? playerWindowConfig.lastMinHeight : DEFAULT_PLAYER_WINDOW_HEIGHT,
-    // width: DEFAULT_PLAYER_WINDOW_WIDTH,
-    // height: DEFAULT_PLAYER_WINDOW_HEIGHT,
-    // minWidth: DEFAULT_PLAYER_WINDOW_MIN_WIDTH,
-    // minHeight: DEFAULT_PLAYER_WINDOW_HEIGHT,
     frame: playerWindowConfig ? playerWindowConfig.frame : false,
     autoHideMenuBar: true,
     maximizable: true,
@@ -56,16 +54,10 @@ export const createPlayerWindow = () => {
     createDefaultPlayerWindowConfig()
   }
 
-  // if (isDev) {
-  //   playerWindow.loadURL('http://localhost:3000')
-  // } else {
-  //   playerWindow.loadFile(path.join(__dirname, '../../../../../../index.html'))
-  // }
   playerWindow.loadURL(isDev ? 'http://localhost:3000' : `file://${path.join(__dirname, '../../../../../../index.html')}`)
-  // playerWindow.loadURL(isDev ? 'http://localhost:3000' : `file://${path.join(__dirname, '../dist/index.html')}`)
-  // if (isDev) {
-  playerWindow.webContents.openDevTools()
-  // }
+  if (isDev) {
+    playerWindow.webContents.openDevTools()
+  }
 
   /* When finish to frame loaded */
   playerWindow.webContents.once('did-finish-load', () => {

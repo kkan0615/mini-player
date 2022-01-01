@@ -31,6 +31,7 @@ export const koreanDictionary = {
       HomeApp: '홈',
       SystemApp: '시스템 설정',
       PlayerApp: '플레이어 설정',
+      AboutApp: '제작자'
     }
   },
   types: {

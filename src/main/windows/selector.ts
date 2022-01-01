@@ -5,7 +5,10 @@ import isDev from 'electron-is-dev'
 export let selectorWindow: BrowserWindow | undefined
 
 export const createSelectorWindow = () => {
+  const iconPath = isDev ? path.join(__dirname, '../assets/icons/256x256.png') : path.join(process.resourcesPath, 'ex-assets', 'icons', '256x256.png')
+
   selectorWindow = new BrowserWindow({
+    icon: iconPath,
     width: 300,
     height: 400,
     minWidth: 300,
@@ -20,16 +23,10 @@ export const createSelectorWindow = () => {
     }
   })
 
-  // if (isDev) {
-  //   selectorWindow.loadURL('http://localhost:3000')
-  // } else {
-  //   selectorWindow.loadFile(path.join(__dirname, '../../../../../../index.html'))
-  // }
   selectorWindow.loadURL(isDev ? 'http://localhost:3000' : `file://${path.join(__dirname, '../../../../../../index.html')}`)
-  // selectorWindow.loadURL(isDev ? 'http://localhost:3000' : `file://${path.join(__dirname, '../dist/index.html')}`)
-  // if (isDev) {
-  selectorWindow.webContents.openDevTools()
-  // }
+  if (isDev) {
+    selectorWindow.webContents.openDevTools()
+  }
 
   /* When finish frame loading */
   selectorWindow.webContents.once('did-finish-load', () => {

@@ -9,9 +9,8 @@ import packageJson from '../../../package.json'
 export let tray: Tray
 
 export const createTray = () => {
-  const trayImgPath = isDev ? path.join(__dirname, '../assets/tray.jpg') : path.join(process.resourcesPath, 'default', 'tray.jpg')
+  const trayImgPath = isDev ? path.join(__dirname, '../assets/icons/256x256.png') : path.join(process.resourcesPath, 'ex-assets', 'icons', '256x256.png')
   tray = new Tray(trayImgPath)
-  // tray = new Tray('https://raw.githubusercontent.com/kkan0615/my-personal-manger/main/src/main/default/tray.jpg')
   tray.setToolTip(packageJson.name)
 
   const trayTemplate: Array<(MenuItemConstructorOptions) | (MenuItem)> = [{

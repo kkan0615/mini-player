@@ -14,6 +14,7 @@ import 'bootstrap'
 /* i18n */
 import i18n from '@/locale'
 // import FontAwesomeIcon from '@/utils/libs/fontAwesomeIcon'
+import '@/utils/libs/fontAwesomeIcon'
 /* Vueform/multiselect */
 // import '@vueform/multiselect/themes/default.scss'
 
@@ -22,5 +23,5 @@ app
   .use(i18n)
   .use(store)
   .use(router)
-  // .component('font-awesome-icon', FontAwesomeIcon) // Add fontAwesomeIcon component globally
+  // .component('font-awesome-icon', FontAwesomeIcon as any) // Add fontAwesomeIcon component globally
   .mount('#app')

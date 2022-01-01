@@ -1,6 +1,6 @@
 {
   "name": "mini-player",
-  "version": "0.0.4d",
+  "version": "0.0.4e",
   "author": "Youngjin Kwak",
   "description": "Create your personal manager",
   "private": "true",
@@ -22,7 +22,7 @@
   "build": {
     "appId": "com.my-website.mini-player",
     "productName": "Mini player",
-    "copyright": "Copyright © 2021 ${author}",
+    "copyright": "Copyright © 2022 ${author}",
     "publish": [
       {
         "provider": "github",
@@ -31,9 +31,11 @@
       }
     ],
     "mac": {
+      "icon": "public/icons/256x256.png",
       "category": "public.app-category.utilities"
     },
     "win": {
+      "icon": "public/icons/256x256.png",
       "publish": [
         "github"
       ],
@@ -47,9 +49,22 @@
       "allowToChangeInstallationDirectory": true
     },
     "files": [
+      "./publish/**/*",
       "dist/**/*",
       "src/main/**/*"
-    ]
+    ],
+    "extraResources": [
+      {
+        "from": "./src/main/assets/",
+        "to": "ex-assets",
+        "filter": [
+          "**/*"
+        ]
+      }
+    ],
+    "directories": {
+      "buildResources": "public"
+    }
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.36",
