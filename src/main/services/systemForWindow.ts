@@ -20,7 +20,6 @@ export const getElectronSystemDarkMode = () => {
 }
 
 export const setElectronSystemConfig = (event: IpcMainEvent, payload: GeneralWindowConfigForStore) => {
-  console.log('payload', payload)
   electronStore.set(StoreKeyEnum.SYSTEM_CONFIG, payload)
 }
 

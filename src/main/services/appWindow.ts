@@ -6,6 +6,8 @@ import { appWindow, createAppWindow } from '../windows/app'
 export const openAppWindow = () => {
   if (!appWindow) {
     createAppWindow()
+  } else {
+    appWindow.focus()
   }
 }
 

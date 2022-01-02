@@ -16,7 +16,9 @@ export const koreanDictionary = {
       OnAlwaysTop: '항상 최상단',
     },
     placeholders: {
-      WarnForProgramOff: '변경시 작동중인 프로그램이 껏다 켜질 수 있습니다.'
+      WarnForProgramOff: '변경시 작동중인 프로그램이 껏다 켜질 수 있습니다.',
+      version: '버전',
+      author: '제작자'
     },
     titles: {
       List: '목록',
@@ -79,6 +81,10 @@ export const koreanDictionary = {
           },
         },
         players: {
+          actions: {
+            open: '플레이어 열기',
+            close: '플레이어 닫기'
+          },
           configs: {
             IsAlwaysTop: '항상 최상단 사용',
             Frame: '윈도우 프레임 사용'

@@ -38,7 +38,6 @@ const checkValidation = () => {
   if (fieldComponents.value && fieldComponents.value.length) {
     for (const component of fieldComponents.value) {
       if (component.inputValidate) {
-        console.log(component)
         const result = component.inputValidate()
         if (!result || typeof result === 'string') {
           valid = false

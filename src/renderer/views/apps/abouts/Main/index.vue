@@ -10,7 +10,7 @@
       >
         <tr>
           <th>
-            Version
+            {{ $t('commons.placeholders.version') }}
           </th>
           <td>
             {{ packageJson.version }}
@@ -18,7 +18,7 @@
         </tr>
         <tr>
           <th>
-            Name
+            {{ $t('commons.placeholders.author') }}
           </th>
           <td>
             {{ packageJson.author }}
@@ -35,6 +35,7 @@
         <a
           class="text-decoration-none tw-text-white"
           href="https://github.com/kkan0615/mini-player"
+          target="_blank"
         >
           Github Link
         </a>
@@ -49,12 +50,7 @@ export default {
 </script>
 <script setup lang="ts">
 import packageJson from '../../../../../../package.json'
-import { onBeforeMount } from 'vue'
 import CFontAwesomeIcon from '@/components/commons/icons/FontAwesome/index.vue'
-
-onBeforeMount(() => {
-  console.log(packageJson)
-})
 </script>
 <style
   lang="scss"

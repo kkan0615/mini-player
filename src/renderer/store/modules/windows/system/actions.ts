@@ -47,7 +47,6 @@ export const systemWindowActions: ActionTree<SystemWindowState, RootState> & Sys
     commit(SystemWindowMutationTypes.SET_IS_DARK_MODE, isDarkModeRes)
   },
   async [SystemWindowActionTypes.SET_CONFIG] (context, payload) {
-    console.log('payload', payload)
     ipcRenderer.send('set-electron-system-config', payload)
   },
 }

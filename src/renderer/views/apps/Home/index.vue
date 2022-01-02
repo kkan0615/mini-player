@@ -49,12 +49,16 @@
         </c-card-content>
       </c-card>
     </div>
-    <c-btn
-      class="btn-primary tw-mt-2"
-      @click="onClickPlayerWindowBtn"
+    <div
+      class="tw-space-x-2"
     >
-      Open Player
-    </c-btn>
+      <c-btn
+        class="btn-primary tw-mt-2"
+        @click="onClickPlayerWindowBtn"
+      >
+        {{ $t('types.models.windows.players.actions.open') }}
+      </c-btn>
+    </div>
   </div>
 </template>
 <script lang="ts">
@@ -63,7 +67,6 @@ export default {
 }
 </script>
 <script setup lang="ts">
-import { ref } from 'vue'
 import CCard from '@/components/commons/Card/index.vue'
 import CCardContent from '@/components/commons/Card/components/Content.vue'
 import CMaterialIcon from '@/components/commons/icons/Material/index.vue'
