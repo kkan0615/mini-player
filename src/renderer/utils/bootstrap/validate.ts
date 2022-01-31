@@ -1,4 +1,4 @@
-import { InputRuleType } from '../../../../../guild-app/src/types/bootstrap/validate'
+import { InputRuleType } from '@/types/commons/components/form'
 
 /**
  * Check validation by rules
