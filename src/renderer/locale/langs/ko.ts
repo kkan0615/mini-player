@@ -13,6 +13,7 @@ export const koreanDictionary = {
       Add: '추가',
       Setting: '설정',
       Navigator: '네비게이터',
+      NoFrame: '프레임 삭제',
       OnAlwaysTop: '항상 최상단',
     },
     placeholders: {

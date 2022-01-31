@@ -35,10 +35,10 @@
     <div
       class="tw-ml-auto"
     >
-      <!-- Set always on the top -->
+      <!-- Frame remove -->
       <c-tooltip
         class="tw-mr-2"
-        :title="$t('commons.tooltips.OnAlwaysTop')"
+        :title="$t('commons.tooltips.NoFrame')"
       >
         <button
           @click="onClickFrameBtn"
