@@ -5,6 +5,6 @@ export const generateIpc = () => {
 }
 
 export const test = (event: IpcMainEvent, message: string) => {
-  console.log('test', message)
+  console.log('', message)
 }
 

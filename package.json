@@ -10,8 +10,9 @@
     "build:watch": "vite build --watch",
     "preview": "vite preview",
     "electron:build": "tsc --p src/main/tsconfig.json",
+    "electron:build:watch": "tsc-watch --noClear -p ./src/main/tsconfig.json --onSuccess \"yarn electron . \"",
     "electron:dev": "concurrently -k \"yarn dev\" \"yarn electron:build && yarn electron . \"",
-    "electron:build-watch": "concurrently -k \"yarn build:watch\" \"yarn electron:build && yarn electron . \"",
+    "electron:dev:watch": "concurrently -k \"yarn dev\" \"yarn electron:build:watch \"",
     "app:build": "cross-env ELECTRON=true && yarn build && yarn electron:build && electron-builder",
     "app:publish": "yarn electron:build && yarn build:for:electron && yarn electron:builder-publish"
   },
@@ -56,12 +57,14 @@
     "electron-is-dev": "^2.0.0",
     "electron-reload": "^2.0.0-alpha.1",
     "quasar": "^2.7.3",
+    "tsc-watch": "^5.0.3",
     "vue": "^3.2.25"
   },
   "devDependencies": {
     "@quasar/vite-plugin": "^1.0.10",
     "@types/electron": "^1.6.10",
     "@types/node": "^17.0.41",
+    "@types/tsc-watch": "^4.2.0",
     "@typescript-eslint/parser": "^5.27.1",
     "@vitejs/plugin-vue": "^2.3.3",
     "autoprefixer": "^10.4.7",

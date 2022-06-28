@@ -5,7 +5,7 @@ import { createAppWindow } from './windows/app'
 import { generateIpc } from './services'
 
 /* hot-reload */
-electronReload(path.join(__dirname, '../../'), {})
+electronReload(path.join(__dirname, '../'), {})
 
 app.whenReady()
   .then(async () => {
@@ -22,10 +22,6 @@ app.whenReady()
 /* When app is ready to open */
 app.on('ready', () => {
   console.log('App is ready to start')
-})
-
-app.on('render-process-gone', () => {
-  app.quit()
 })
 
 app.on('window-all-closed', () => {
