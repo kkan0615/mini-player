@@ -1,27 +1,17 @@
 import { createApp } from 'vue'
 import App from './App.vue'
-/* Store */
-import { store } from '@/store'
-/* Router */
-import { router } from '@/router'
-/* Add default index scss */
+
+/* Add global styles */
 import './styles/index.scss'
-/* Tailwind */
-import '@/styles/tailwind.scss'
-/* Bootstrap */
-import 'bootstrap/dist/css/bootstrap.min.css'
-import 'bootstrap'
-/* i18n */
-import i18n from '@/locale'
-// import FontAwesomeIcon from '@/utils/libs/fontAwesomeIcon'
-import '@/utils/libs/fontAwesomeIcon'
-/* Vueform/multiselect */
-// import '@vueform/multiselect/themes/default.scss'
+/* Import quasar */
+import { Quasar } from 'quasar'
+// Import Quasar css
+import 'quasar/src/css/index.sass'
+// Import icon libraries
+import '@quasar/extras/material-icons/material-icons.css'
 
 const app = createApp(App)
-app
-  .use(i18n)
-  .use(store)
-  .use(router)
-  // .component('font-awesome-icon', FontAwesomeIcon as any) // Add fontAwesomeIcon component globally
-  .mount('#app')
+app.use(Quasar, {
+  plugins: {}, // import Quasar plugins and add here
+})
+app.mount('#app')

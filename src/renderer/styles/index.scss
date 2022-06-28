@@ -1,14 +1,1 @@
-@import "./libs/multiselect";
-
-.scrollable {
-  @apply tw-overflow-y-auto;
-}
-
-.c-row {
-  @apply tw-flex tw-items-center;
-}
-
-.region-draggable {
-  -webkit-user-select: none;
-  -webkit-app-region: drag;
-}
+@import "libs";

@@ -8,23 +8,29 @@
     "jsx": "preserve",
     "sourceMap": true,
     "resolveJsonModule": true,
+    "isolatedModules": true,
     "esModuleInterop": true,
-    "allowSyntheticDefaultImports": true,
-    "baseUrl": ".",
-    "paths": {
-      "@/*": [
-        "src/renderer/*"
-      ],
-      "@main/*": [
-        "src/main/*"
-      ],
-    }
+    "lib": ["esnext", "dom"],
+    "skipLibCheck": true,
+    "outDir": "../../dist/app"
   },
-  "exclude": ["node_modules"],
+  "exclude": ["node_modules", "../src/renderer/**/*"],
   "include": [
     "./**/*.ts",
     "./**/*.d.ts",
-    "./**/*.tsx",
-    "./**/*.vue"
   ],
+  // NEW: Options for file/directory watching
+  "watchOptions": {
+    // Use native file system events for files and directories
+    "watchFile": "useFsEvents",
+    "watchDirectory": "useFsEvents",
+    // Poll files for updates more frequently
+    // when they're updated a lot.
+    "fallbackPolling": "dynamicPriority",
+    // Don't coalesce watch notification
+    "synchronousWatchDirectory": true,
+    // Finally, two additional settings for reducing the amount of possible
+    // files to track  work from these directories
+    "excludeDirectories": ["**/node_modules", "../src/renderer/**/*"],
+  }
 }

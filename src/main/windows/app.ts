@@ -1,44 +1,24 @@
-import { BrowserWindow, screen } from 'electron'
-import path from 'path'
+import { BrowserWindow } from 'electron'
 import isDev from 'electron-is-dev'
+import path from 'path'
 
 export let appWindow: BrowserWindow | undefined
 
-export const createAppWindow = () => {
-  const displayScreen = screen.getPrimaryDisplay()
-  const dimensions = displayScreen.workAreaSize
-  const iconPath = isDev ? path.join(__dirname, '../assets/icons/256x256.png') : path.join(process.resourcesPath, 'ex-assets', 'icons', '256x256.png')
-
+export const createAppWindow = async () => {
+  // Create the browser window.
   appWindow = new BrowserWindow({
-    icon: iconPath,
-    width: parseInt((dimensions.width * 0.8).toString()),
-    height: parseInt((dimensions.height * 0.8).toString()),
-    autoHideMenuBar: true,
-    minWidth: 1024,
-    minHeight: 576,
-    maximizable: true,
-    resizable: true,
+    width: 1280,
+    height: 720,
     webPreferences: {
-      preload: path.join(__dirname, '../preload.js'),
       nodeIntegration: true,
       contextIsolation: false,
-    }
+      preload: path.join(__dirname, '../preload.js')
+    },
   })
 
-  appWindow.loadURL(isDev ? 'http://localhost:3000' : `file://${path.join(__dirname, '../../../../../../index.html')}`)
-
-  /* When finish to frame loaded */
-  appWindow.webContents.once('did-frame-finish-load', () => {
-    if (appWindow) {
-      appWindow.webContents.send('move-to-app')
-    }
-  })
-
+  await appWindow.loadURL(isDev ? 'http://localhost:3000' : `file://${path.join(__dirname, '../../vue/index.html')}`)
   if (isDev) {
+    // Open chrome devtools
     appWindow.webContents.openDevTools()
   }
-
-  appWindow.on('closed', () => {
-    appWindow = undefined
-  })
 }
