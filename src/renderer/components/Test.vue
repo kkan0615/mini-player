@@ -22,7 +22,7 @@ export default {
 
 </script>
 <script setup lang="ts">
-import { ipcRenderer } from '../utils/electron'
+import { ipcRenderer } from '@/utils/electron'
 
 const onClickTestBtn = () => {
   ipcRenderer.send('test', 'Strange message')

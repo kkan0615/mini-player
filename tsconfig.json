@@ -15,9 +15,12 @@
     "baseUrl": ".",
     "paths": {
       "@/*": [
-        "src/*"
-      ],
-    }
+        "src/renderer/*"
+      ]
+    },
+    "types": [
+      "youtube"
+    ]
   },
   "include": ["src/renderer/**/*.ts", "src/renderer/**/*.d.ts", "src/renderer/**/*.tsx", "src/renderer/**/*.vue"],
   "exclude": ["src/main/**/*.ts", "src/main/**/*.d.ts"],

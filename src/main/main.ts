@@ -1,8 +1,8 @@
 import path from 'path'
 import { app, BrowserWindow } from 'electron'
 import electronReload from 'electron-reload'
-import { createAppWindow } from './windows/app'
 import { generateIpc } from './services'
+import { createPlayerWindow } from './windows/player'
 
 /* hot-reload */
 electronReload(path.join(__dirname, '../'), {})
@@ -10,11 +10,12 @@ electronReload(path.join(__dirname, '../'), {})
 app.whenReady()
   .then(async () => {
     generateIpc()
-    await createAppWindow()
+    // await createAppWindow()
+    await createPlayerWindow()
 
     app.on('activate', () => {
       if (!BrowserWindow.getAllWindows().length) {
-        createAppWindow()
+        createPlayerWindow()
       }
     })
   })

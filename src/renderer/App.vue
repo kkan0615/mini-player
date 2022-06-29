@@ -1,11 +1,18 @@
 <template>
-  <div>
-    <test-comp />
-  </div>
+  <router-view />
 </template>
 <script setup lang="ts">
+import { ipcRenderer } from '@/utils/electron'
+import { useRouter } from 'vue-router'
 
-import TestComp from '@/renderer/components/Test.vue'
+const router = useRouter()
+
+/*
+  Redirect to player page
+ */
+ipcRenderer.on('redirect-to-player', () => {
+  router.push({ name: 'PlayerLayout' })
+})
 </script>
 <style>
 
