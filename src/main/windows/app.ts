@@ -16,7 +16,7 @@ export const createAppWindow = async () => {
     },
   })
 
-  await appWindow.loadURL(isDev ? 'http://localhost:3000' : `file://${path.join(__dirname, '../../vue/index.html')}`)
+  await appWindow.loadURL(isDev ? 'http://localhost:3000' : `file://${path.join(__dirname, '../../renderer/index.html')}`)
   if (isDev) {
     // Open chrome devtools
     appWindow.webContents.openDevTools()

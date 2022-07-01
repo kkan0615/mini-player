@@ -17,7 +17,7 @@ export const createPlayerWindow = async () => {
     },
   })
 
-  await playerWindow.loadURL(isDev ? 'http://localhost:3000' : `file://${path.join(__dirname, '../../vue/index.html')}`)
+  await playerWindow.loadURL(isDev ? 'http://localhost:3000' : `file://${path.join(__dirname, '../../renderer/index.html')}`)
 
   playerWindow.webContents.send('redirect-to-player')
 

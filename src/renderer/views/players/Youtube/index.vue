@@ -11,28 +11,45 @@ export default {
 }
 </script>
 <script setup lang="ts">
-import { onMounted, ref } from 'vue'
+import { onBeforeUnmount, onMounted, ref } from 'vue'
 import YouTubePlayer from 'youtube-player'
 import { YouTubePlayer as YouTubePlayerType } from 'youtube-player/dist/types'
+import usePlayerStore from '@/store/moduels/player'
+import { storeToRefs } from 'pinia'
 
-/* This code loads the IFrame Player API code asynchronously. */
-const tag = document.createElement('script')
-tag.src = 'https://www.youtube.com/iframe_api'
-const firstScriptTag = document.getElementsByTagName('script')[0]
-firstScriptTag?.parentNode?.insertBefore(tag, firstScriptTag)
+const playerStore = usePlayerStore()
 
-const player = ref<YouTubePlayerType | undefined>(undefined)
+const { player, playerOption } = storeToRefs(playerStore)
+
+const playerContainer = ref<YouTubePlayerType | undefined>(undefined)
 
 onMounted(() => {
-  player.value = YouTubePlayer('youtube-player', {
-    videoId: 'XciV74GH6nk',
+  initPlayer()
+})
+
+onBeforeUnmount(() => {
+  destroyPlayer()
+})
+
+const initPlayer = () => {
+  // Check and destroy player
+  destroyPlayer()
+
+  playerContainer.value = YouTubePlayer('youtube-player', {
+    videoId: playerOption.value.video,
     playerVars: {
       'playsinline': 1
     },
   })
 
-  player.value.playVideo()
-})
+  playerContainer.value.playVideo()
+}
+
+const destroyPlayer = () => {
+  if (playerContainer.value) {
+    playerContainer.value.destroy()
+  }
+}
 
 </script>
 <style>

@@ -13,11 +13,14 @@ import '@quasar/extras/material-icons/material-icons.css'
 import { router } from '@/router'
 /* Localization */
 import { i18n } from '@/locales'
+/* store */
+import pinia from '@/store'
 
 const app = createApp(App)
 app.use(Quasar, {
   plugins: {}, // import Quasar plugins and add here
 })
+app.use(i18n)
+app.use(pinia)
 app.use(router)
-  .use(i18n)
 app.mount('#app')
