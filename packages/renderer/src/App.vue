@@ -1,11 +1,10 @@
 <template>
-  <div>
-    <test />
-  </div>
+  <router-view />
 </template>
 <script setup lang="ts">
+import { useRoute } from 'vue-router'
 
-import Test from '@/components/Test.vue'
+const route = useRoute()
 </script>
 <style>
 

@@ -1,6 +1,7 @@
 // packages/main/src/index.ts
 import { app } from 'electron'
 import { createAppWindow } from './windows/app'
+import { createPlayerWindow } from './windows/player'
 
 const isSingleInstance = app.requestSingleInstanceLock()
 
@@ -31,5 +32,6 @@ app
   .whenReady()
   .then(async () => {
     await createAppWindow()
+    await createPlayerWindow()
   })
   .catch((e) => console.error('Failed to create window:', e))

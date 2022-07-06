@@ -10,8 +10,8 @@
     "release": "ts-node scripts/build.ts && electron-builder --publish=always"
   },
   "repository": {
-    "type" : "git",
-    "url" : "https://github.com/kkan0615/mini-player"
+    "type": "git",
+    "url": "https://github.com/kkan0615/mini-player"
   },
   "build": {
     "appId": "com.my-website.mini-player",
@@ -50,7 +50,8 @@
   },
   "dependencies": {
     "electron-is-dev": "^2.0.0",
-    "vue": "^3.2.25"
+    "vue": "^3.2.25",
+    "vue-router": "4"
   },
   "devDependencies": {
     "@types/electron": "^1.6.10",
