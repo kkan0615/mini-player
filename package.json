@@ -3,28 +3,28 @@
   "author": "Youngin Kwak",
   "private": true,
   "version": "1.0.1",
-  "main": "./dist/app/main.js",
+  "main": "./dist/main/main.cjs",
   "scripts": {
-    "dev": "vite",
-    "build": "vue-tsc --noEmit && vite build",
-    "build:watch": "vite build --watch",
-    "preview": "vite preview",
-    "electron:build": "tsc --p src/main/tsconfig.json",
-    "electron:build:watch": "tsc-watch --noClear -p ./src/main/tsconfig.json --onSuccess \"yarn electron . \"",
-    "electron:dev": "concurrently -k \"yarn dev\" \"yarn electron:build && yarn electron . \"",
-    "electron:dev:watch": "concurrently -k \"yarn dev\" \"yarn electron:build:watch \"",
+    "dev": "cross-env NODE_ENV=development ts-node scripts/devServer.ts",
+    "build:renderer": "vue-tsc -p packages/renderer/vite.config.ts --noEmit && vite build packages/renderer",
+    "build:preload": "tsc -p packages/preload/vite.config.ts --noEmit && vite build packages/preload",
+    "build:main": "tsc -p packages/main/vite.config.ts --noEmit && vite build packages/main",
+    "build:test": "yarn build:renderer && yarn build:preload && yarn build:main",
+    "build": "ts-node scripts/build.ts && electron-builder",
+    "start": "electron .",
+    "dev:renderer": "vite packages/renderer",
     "app:build": "cross-env ELECTRON=true && yarn build && yarn electron:build && electron-builder",
     "app:publish": "yarn electron:build && yarn build:for:electron && yarn electron:builder-publish"
   },
   "build": {
-    "appId": "com.my-website.min-player",
-    "productName": "min-player",
+    "appId": "com.my-website.mini-player",
+    "productName": "mini-player",
     "copyright": "Copyright © 2022 ${author}",
     "publish": [
       {
         "provider": "github",
         "owner": "kkan0615",
-        "repo": "min-player"
+        "repo": "mini-player"
       }
     ],
     "mac": {
@@ -45,7 +45,6 @@
     },
     "files": [
       "dist/**/*",
-      "src/main/**/*"
     ],
     "directories": {
       "buildResources": "assets",
@@ -53,35 +52,21 @@
     }
   },
   "dependencies": {
-    "@quasar/extras": "^1.14.1",
     "electron-is-dev": "^2.0.0",
-    "electron-reload": "^2.0.0-alpha.1",
-    "pinia": "^2.0.14",
-    "quasar": "^2.7.3",
-    "tsc-watch": "^5.0.3",
-    "vue": "^3.2.25",
-    "vue-i18n": "9",
-    "vue-router": "4",
-    "youtube-player": "^5.5.2"
+    "vue": "^3.2.25"
   },
   "devDependencies": {
-    "@quasar/vite-plugin": "^1.0.10",
     "@types/electron": "^1.6.10",
     "@types/node": "^17.0.41",
-    "@types/tsc-watch": "^4.2.0",
-    "@types/youtube-player": "^5.5.6",
     "@typescript-eslint/parser": "^5.27.1",
     "@vitejs/plugin-vue": "^2.3.3",
-    "autoprefixer": "^10.4.7",
     "concurrently": "^7.2.1",
     "cross-env": "^7.0.3",
     "electron": "^19.0.4",
     "electron-builder": "^23.0.3",
     "eslint": "^8.17.0",
     "eslint-plugin-vue": "^9.1.0",
-    "postcss": "^8.4.14",
-    "sass": "1.32.12",
-    "tailwindcss": "^3.1.4",
+    "ts-node": "^10.8.2",
     "typescript": "^4.5.4",
     "vite": "^2.9.9",
     "vue-tsc": "^0.34.7"
