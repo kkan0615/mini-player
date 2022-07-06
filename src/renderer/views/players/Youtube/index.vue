@@ -19,7 +19,7 @@ import { storeToRefs } from 'pinia'
 
 const playerStore = usePlayerStore()
 
-const { player, playerOption } = storeToRefs(playerStore)
+const { option } = storeToRefs(playerStore)
 
 const playerContainer = ref<YouTubePlayerType | undefined>(undefined)
 
@@ -36,13 +36,14 @@ const initPlayer = () => {
   destroyPlayer()
 
   playerContainer.value = YouTubePlayer('youtube-player', {
-    videoId: playerOption.value.video,
+    videoId: option.value.video,
     playerVars: {
       'playsinline': 1
     },
   })
 
-  playerContainer.value.playVideo()
+  // Auto-play
+  // playerContainer.value.playVideo()
 }
 
 const destroyPlayer = () => {

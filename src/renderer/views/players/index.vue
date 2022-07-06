@@ -5,12 +5,12 @@
     <player-layout-header />
     <q-page-container>
       <q-page
-        v-if="player.status === 'ERROR'"
+        v-if="status === 'ERROR'"
       >
         ERROR
       </q-page>
       <q-page
-        v-else-if="player.status === 'LOADING'"
+        v-else-if="status === 'LOADING'"
       >
         LOADING
       </q-page>
@@ -36,7 +36,7 @@ import { storeToRefs } from 'pinia'
 const playerStore = usePlayerStore()
 const router = useRouter()
 
-const { player } = storeToRefs(playerStore)
+const { status } = storeToRefs(playerStore)
 
 // @TODO: For test
 router.push({ name: 'PlayerYoutube' })

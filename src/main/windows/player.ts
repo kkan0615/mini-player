@@ -10,6 +10,7 @@ export const createPlayerWindow = async () => {
     width: 1280,
     height: 720,
     autoHideMenuBar: true,
+    frame: false,
     webPreferences: {
       nodeIntegration: true,
       contextIsolation: false,
@@ -19,10 +20,23 @@ export const createPlayerWindow = async () => {
 
   await playerWindow.loadURL(isDev ? 'http://localhost:3000' : `file://${path.join(__dirname, '../../renderer/index.html')}`)
 
+  playerWindow.webContents.send('set-window-option', {
+    isMaximized: playerWindow.isMaximized()
+  })
   playerWindow.webContents.send('redirect-to-player')
 
   if (isDev) {
     // Open chrome devtools
     playerWindow.webContents.openDevTools()
   }
+
+  /**
+   * When the player window closed
+   */
+  playerWindow.on('closed', () => {
+    if (playerWindow) {
+      playerWindow.destroy()
+      playerWindow = undefined
+    }
+  })
 }

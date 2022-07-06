@@ -9,6 +9,7 @@ import { Quasar } from 'quasar'
 import 'quasar/src/css/index.sass'
 // Import icon libraries
 import '@quasar/extras/material-icons/material-icons.css'
+import '@quasar/extras/fontawesome-v6/fontawesome-v6.css'
 /* Router */
 import { router } from '@/router'
 /* Localization */
@@ -18,7 +19,9 @@ import pinia from '@/store'
 
 const app = createApp(App)
 app.use(Quasar, {
-  plugins: {}, // import Quasar plugins and add here
+  plugins: {
+
+  }, // import Quasar plugins and add here
 })
 app.use(i18n)
 app.use(pinia)
