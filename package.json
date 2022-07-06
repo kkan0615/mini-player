@@ -1,20 +1,17 @@
 {
   "name": "mini-player",
   "author": "Youngin Kwak",
-  "private": true,
   "version": "1.0.1",
   "main": "./dist/main/main.cjs",
   "scripts": {
     "dev": "cross-env NODE_ENV=development ts-node scripts/devServer.ts",
-    "build:renderer": "vue-tsc -p packages/renderer/vite.config.ts --noEmit && vite build packages/renderer",
-    "build:preload": "tsc -p packages/preload/vite.config.ts --noEmit && vite build packages/preload",
-    "build:main": "tsc -p packages/main/vite.config.ts --noEmit && vite build packages/main",
-    "build:test": "yarn build:renderer && yarn build:preload && yarn build:main",
-    "build": "ts-node scripts/build.ts && electron-builder",
-    "start": "electron .",
     "dev:renderer": "vite packages/renderer",
-    "app:build": "cross-env ELECTRON=true && yarn build && yarn electron:build && electron-builder",
-    "app:publish": "yarn electron:build && yarn build:for:electron && yarn electron:builder-publish"
+    "build": "ts-node scripts/build.ts && electron-builder",
+    "release": "ts-node scripts/build.ts && electron-builder --publish=always"
+  },
+  "repository": {
+    "type" : "git",
+    "url" : "https://github.com/kkan0615/mini-player"
   },
   "build": {
     "appId": "com.my-website.mini-player",
