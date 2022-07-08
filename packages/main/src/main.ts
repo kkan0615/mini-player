@@ -2,6 +2,7 @@
 import { app } from 'electron'
 import { createAppWindow } from './windows/app'
 import { createPlayerWindow } from './windows/player'
+import { setupIpcMain } from './services'
 
 const isSingleInstance = app.requestSingleInstanceLock()
 
@@ -31,6 +32,7 @@ app.on('activate', () => {
 app
   .whenReady()
   .then(async () => {
+    setupIpcMain()
     await createAppWindow()
     await createPlayerWindow()
   })
