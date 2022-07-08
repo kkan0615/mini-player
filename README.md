@@ -52,7 +52,3 @@
 - https://github.com/twstyled/electron-vite-react/blob/main/scripts/run-electron.ts
 
 # Boilerplate 에 추가해야할 사항
-- Preload 변경
-- Vue utils 에 electron 추가
-- Readme 변경
-- concurrently 라이브러리 삭제하기

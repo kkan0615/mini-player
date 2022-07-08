@@ -1,6 +1,4 @@
 const electronPath = require('electron')
-// import * as electronPath from 'electron'
-// const electronPath = import('electron')
 import type { InlineConfig, ViteDevServer } from 'vite'
 import { build, createLogger, createServer } from 'vite'
 import { spawn, ChildProcessWithoutNullStreams } from 'child_process'
@@ -22,7 +20,6 @@ const stderrFilterPatterns = [
   /ExtensionLoadWarning/,
 ]
 
-
 /**
  * Create a Vite build watcher that automatically recompiles when a file is
  * edited.
@@ -34,7 +31,6 @@ const getWatcher = ({ name, configFile, writeBundle }) => {
     plugins: [{ name, writeBundle }],
   })
 }
-
 
 /**
  * Setup a watcher for the 'preload'.
@@ -69,7 +65,7 @@ const setupMainPackageWatcher = (viteServer: ViteDevServer) => {
   })
 
   /** @type {ChildProcessWithoutNullStreams | null} */
-  let spawnProcess = null
+  let spawnProcess: ChildProcessWithoutNullStreams | null = null
 
   return getWatcher({
     name: 'reload-app-on-main-package-change',
@@ -89,6 +85,7 @@ const setupMainPackageWatcher = (viteServer: ViteDevServer) => {
         if (!data) return
         const mayIgnore = stderrFilterPatterns.some((r) => r.test(data))
         if (mayIgnore) return
+        // Error handling
         logger.error(data, { timestamp: true })
       })
 
@@ -98,16 +95,23 @@ const setupMainPackageWatcher = (viteServer: ViteDevServer) => {
   })
 }
 
+/**
+   * Run dev-server with watcher for preload and main
+   */
 ;(async () => {
   try {
     const viteDevServer = await createServer({
       ...sharedConfig,
       configFile: 'packages/renderer/vite.config.ts',
     })
+    // Start server
     await viteDevServer.listen()
+    // Print urls on console
     viteDevServer.printUrls()
 
+    // Watch preload
     await setupPreloadPackageWatcher(viteDevServer)
+    // Watch main
     await setupMainPackageWatcher(viteDevServer)
   } catch (err) {
     console.error(err)
