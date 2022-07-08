@@ -58,7 +58,6 @@
     "@types/node": "^17.0.41",
     "@typescript-eslint/parser": "^5.27.1",
     "@vitejs/plugin-vue": "^2.3.3",
-    "concurrently": "^7.2.1",
     "cross-env": "^7.0.3",
     "electron": "^19.0.4",
     "electron-builder": "^23.0.3",
