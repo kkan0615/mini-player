@@ -33,7 +33,7 @@ app
   .whenReady()
   .then(async () => {
     setupIpcMain()
-    await createAppWindow()
+    // await createAppWindow()
     await createPlayerWindow()
   })
   .catch((e) => console.error('Failed to create window:', e))
